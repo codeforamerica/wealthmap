@@ -12,7 +12,7 @@ Copy the local_settings file and update the settings to fit your machine.
 
   cp local_settings.py.example local_settings.py
 
-Test that Django is working and pointed at your database.
+Test that Django is working and pointed at your database(migrations not yet created).
 
   ./manage migrate
 
