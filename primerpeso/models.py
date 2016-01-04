@@ -22,7 +22,7 @@ class Agency(WhoAndWhenBase):
     address = models.TextField(blank=True)
     municipality = models.CharField(blank=True, max_length=255)
     state = USStateField(blank=True)
-    postal_code = USPostalCodeField(blank=True) #zip is a global function
+    postal_code = USPostalCodeField(blank=True)  # zip is a global function
     web = models.URLField(max_length=255, blank=True)
 
 
@@ -37,9 +37,9 @@ class Requirement(WhoAndWhenBase):
 class Oppurtunity(WhoAndWhenBase):
     title = models.CharField(max_length=255, unique=True)
     gender = models.CharField(max_length=6,
-                              choices=(('`male',_('Male')),
-                                       ('female',_('Female')),
-                                       ('any',_('Any')),
+                              choices=(('male', _('Male')),
+                                       ('female', _('Female')),
+                                       ('any', _('Any')),
                                        ('other', _('Other')),))
     application_cost = models.IntegerField()
     application_deadline = models.DateField()
@@ -69,7 +69,7 @@ class Oppurtunity(WhoAndWhenBase):
     eligibleEntityTypes          | character varying(255)[] | not null
     eligibleIndustries           | character varying(255)[] | not null
     additionalDemographics       | character varying(255)[] |
-    benefitType                  | character varying(255)[] | not null default ARRAY['incentive'::character varying] 
+    benefitType                  | character varying(255)[] | not null default ARRAY['incentive'::character varying]
     purpose                      | text[]                   | not null default ARRAY['anything'::text]
 
     """
