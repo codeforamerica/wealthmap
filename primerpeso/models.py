@@ -17,7 +17,7 @@ class WhoAndWhenBase(models.Model):
 
 
 class Agency(WhoAndWhenBase):
-    """A government or NGO organization which manages oppurtunities.
+    """A government or NGO organization which manages ``Oppurtunities``.
     """
     name = models.CharField(max_length=255, unique=True)
     mission = models.TextField(blank=True)
