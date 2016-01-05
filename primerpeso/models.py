@@ -5,6 +5,9 @@ from localflavor.us.models import USStateField, USPostalCodeField
 
 
 class WhoAndWhenBase(models.Model):
+    """An abstract base class which manages created at and updated at as well as
+    who created it.
+    """
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     creator = models.ForeignKey(settings.AUTH_USER_MODEL)
@@ -14,6 +17,8 @@ class WhoAndWhenBase(models.Model):
 
 
 class Agency(WhoAndWhenBase):
+    """A government or NGO organization which manages oppurtunities.
+    """
     name = models.CharField(max_length=255, unique=True)
     mission = models.TextField(blank=True)
     phone = models.CharField(blank=True, max_length=255)
@@ -27,6 +32,9 @@ class Agency(WhoAndWhenBase):
 
 
 class Requirement(WhoAndWhenBase):
+    """An ``Oppurtunity`` can have multiple ``Requirements`` each represent
+    a different step to utilitizing it.
+    """
     name = models.CharField(max_length=255, unique=True)
     description = models.TextField(blank=True)
     provider = models.CharField(blank=True, max_length=255)
@@ -35,6 +43,9 @@ class Requirement(WhoAndWhenBase):
 
 
 class Oppurtunity(WhoAndWhenBase):
+    """A government sponsored incentive/grant/tax break for businessses local
+    to Puerto Rico.
+    """
     title = models.CharField(max_length=255, unique=True)
     gender = models.CharField(max_length=6,
                               choices=(('male', _('Male')),
@@ -60,7 +71,7 @@ class Oppurtunity(WhoAndWhenBase):
     annual_revenue_min = models.IntegerField()
     annual_revenue_max = models.IntegerField(null=True, blank=True)
 
-    _average_application_time = models.CharField(max_length=255, blank=True)
+    average_application_time = models.CharField(max_length=255, blank=True)
     """
     Convert to Many to Many with a single field for location.
     eligibleBusinessLocation     | character varying(255)[] | not null
