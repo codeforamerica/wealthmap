@@ -17,7 +17,7 @@ class WhoAndWhenBase(models.Model):
 
 
 class Agency(WhoAndWhenBase):
-    """A government or NGO organization which manages ``Oppurtunities``.
+    """A government or NGO organization which manages ``Opportunities``.
     """
     name = models.CharField(max_length=255, unique=True)
     mission = models.TextField(blank=True)
@@ -32,7 +32,7 @@ class Agency(WhoAndWhenBase):
 
 
 class Requirement(WhoAndWhenBase):
-    """An ``Oppurtunity`` can have multiple ``Requirements`` each represent
+    """An ``Opportunity`` can have multiple ``Requirements`` each represent
     a different step to utilitizing it.
     """
     name = models.CharField(max_length=255, unique=True)
@@ -42,7 +42,7 @@ class Requirement(WhoAndWhenBase):
     cost = models.TextField(blank=True)
 
 
-class Oppurtunity(WhoAndWhenBase):
+class Opportunity(WhoAndWhenBase):
     """A government sponsored incentive/grant/tax break for businessses local
     to Puerto Rico.
     """
@@ -89,4 +89,5 @@ class Oppurtunity(WhoAndWhenBase):
         return self.title
 
     class Meta:
-        verbose_name_plural = 'Oppurtunities'
+        verbose_name = _('Opportunity')
+        verbose_name_plural = _('Opportunities')
