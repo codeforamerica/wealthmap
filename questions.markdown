@@ -4,5 +4,5 @@
   * If so how soon can we have people do that? I could have something that people could use in a week or two easily.
 * Should all of the dropdowns and multiselects be converted from strings to foreign keys?
 * Agencies have sparse data on emails but each opp. has an agnecy email, should we fix this?
-
+* Is locations list exhaustive? Is it complete and precise? Is this what PR wants in describing opportunities? Would it be better to have a postal code, zip code or other spatial recognition? 
 
