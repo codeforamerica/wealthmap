@@ -1,4 +1,5 @@
 from django.conf import settings
+from django.contrib.postgres.fields import ArrayField
 from django.db import models
 from django.utils.translation import ugettext as _
 from localflavor.us.models import USStateField, USPostalCodeField
@@ -42,6 +43,12 @@ class Requirement(WhoAndWhenBase):
     cost = models.TextField(blank=True)
 
 
+DEMOGRAPHICS = (('any', 'cualquiera'),
+                ('student', 'estudiante'),
+                ('veteran', 'veterano'),
+                ('minority', 'minoría'),)
+
+
 class Opportunity(WhoAndWhenBase):
     """A government sponsored incentive/grant/tax break for businessses local
     to Puerto Rico.
@@ -70,20 +77,32 @@ class Opportunity(WhoAndWhenBase):
     employees_max = models.IntegerField(null=True, blank=True)
     annual_revenue_min = models.IntegerField()
     annual_revenue_max = models.IntegerField(null=True, blank=True)
-
     average_application_time = models.CharField(max_length=255, blank=True)
-    """
-    Convert to Many to Many with a single field for location.
-    eligibleBusinessLocation     | character varying(255)[] | not null
-
-    Use this tutorial https://bradmontgomery.net/blog/nice-arrayfield-widgets-choices-and-chosenjs/
-    eligibleEntityTypes          | character varying(255)[] | not null
-    eligibleIndustries           | character varying(255)[] | not null
-    additionalDemographics       | character varying(255)[] |
-    benefitType                  | character varying(255)[] | not null default ARRAY['incentive'::character varying]
-    purpose                      | text[]                   | not null default ARRAY['anything'::text]
-
-    """
+    locations = ArrayField(
+        models.CharField(max_length=255, choices=LOCATIONS),
+        default=list,
+    )
+    entity_types = ArrayField(
+        models.CharField(max_length=255, choices=ENTITY_TYPES),
+        default=list,
+    )
+    industries = ArrayField(
+        models.CharField(max_length=255, choices=INDUSTRIES),
+        default=list,
+    )
+    demographics = ArrayField(
+        models.CharField(max_length=255, choices=DEMOGRAPHICS),
+        default=list,
+        blank=True,
+    )
+    benefit_types = ArrayField(
+        models.CharField(max_length=255, choices=BENEFIT_TYPES),
+        default=list,
+    )
+    purpose = ArrayField(
+        models.CharField(max_length=255, choices=PURPOSE),
+        default=list,
+    )
 
     def __str__(self):
         return self.title
