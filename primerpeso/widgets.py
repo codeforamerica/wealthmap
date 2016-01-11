@@ -1,4 +1,5 @@
 from django import forms
+from django.utils.datastructures import MultiValueDict
 
 
 class ArrayFieldSelectMultiple(forms.SelectMultiple):
@@ -6,7 +7,6 @@ class ArrayFieldSelectMultiple(forms.SelectMultiple):
     a multi-select interface that can be given a set of `choices`.
 
     You can provide a `delimiter` keyword argument to specify the delimeter used.
-
     """
 
     def __init__(self, *args, **kwargs):

@@ -3,10 +3,12 @@ from primerpeso import models
 
 from primerpeso.widgets import ArrayFieldSelectMultiple
 
+
 class OpportunityForm(forms.ModelForm):
+
     class Meta:
         model = models.Opportunity
-        exclude = []
+        exclude = ['creator']
         widgets = {
             "locations": ArrayFieldSelectMultiple(
                 choices=models.LOCATIONS, attrs={'class': 'chosen'}),

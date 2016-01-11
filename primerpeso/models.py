@@ -42,6 +42,7 @@ class Requirement(WhoAndWhenBase):
     link = models.TextField(blank=True)
     cost = models.TextField(blank=True)
 
+
 LOCATIONS = (('anywhere_in_pr', 'Cualquier municipio'),
              ('adjuntas', 'Adjuntas'),
              ('aguada', 'Aguada'),
@@ -155,13 +156,13 @@ DEMOGRAPHICS = (('any', 'cualquiera'),
                 ('veteran', 'veterano'),
                 ('minority', 'minoría'),)
 
-BENEFIT_TYPES =  (('incentive', 'Incentivos'),
-                  ('loan', 'Créditos'),
-                  ('grant', 'Becas'),
-                  ('reimbursement', 'Reembolsos'),
-                  ('expertise', 'Talleres'),
-                  ('financing', 'Financiamiento'),
-                  ('other', 'Otros'),)
+BENEFIT_TYPES = (('incentive', 'Incentivos'),
+                 ('loan', 'Créditos'),
+                 ('grant', 'Becas'),
+                 ('reimbursement', 'Reembolsos'),
+                 ('expertise', 'Talleres'),
+                 ('financing', 'Financiamiento'),
+                 ('other', 'Otros'),)
 
 PURPOSE = (('anything', 'Cualquiera'),
            ('open_location', 'Abrir un Nuevo Local'),
