@@ -203,7 +203,7 @@ class Opportunity(WhoAndWhenBase):
     investing_own_money = models.BooleanField()
     money_invested = models.CharField(max_length=255)
     agency = models.ForeignKey(Agency)
-    requirement = models.ManyToMany(Requirement)
+    requirement = models.ManyToManyField(Requirement)
     age_min = models.IntegerField()
     age_max = models.IntegerField(null=True, blank=True)
     employees_min = models.IntegerField()
