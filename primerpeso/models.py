@@ -31,6 +31,10 @@ class Agency(WhoAndWhenBase):
     postal_code = USPostalCodeField(blank=True)  # zip is a global function
     web = models.URLField(max_length=255, blank=True)
 
+    class Meta:
+        verbose_name = _('Agency')
+        verbose_name_plural = _('Agencies')
+
 
 class Requirement(WhoAndWhenBase):
     """An ``Opportunity`` can have multiple ``Requirements`` each represent
@@ -41,6 +45,10 @@ class Requirement(WhoAndWhenBase):
     provider = models.CharField(blank=True, max_length=255)
     link = models.TextField(blank=True)
     cost = models.TextField(blank=True)
+
+    class Meta:
+        verbose_name = _('Requirement')
+        verbose_name_plural = _('Requirements')
 
 
 LOCATIONS = (('anywhere_in_pr', 'Cualquier municipio'),
