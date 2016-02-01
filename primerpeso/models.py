@@ -20,6 +20,7 @@ class WhoAndWhenBase(models.Model):
 class Agency(WhoAndWhenBase):
     """A government or NGO organization which manages ``Opportunities``.
     """
+    id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=255, unique=True)
     mission = models.TextField(blank=True)
     phone = models.CharField(blank=True, max_length=255)
@@ -40,6 +41,7 @@ class Requirement(WhoAndWhenBase):
     """An ``Opportunity`` can have multiple ``Requirements`` each represent
     a different step to utilitizing it.
     """
+    id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=255, unique=True)
     description = models.TextField(blank=True)
     provider = models.CharField(blank=True, max_length=255)
@@ -195,6 +197,7 @@ class Opportunity(WhoAndWhenBase):
     """A government sponsored incentive/grant/tax break for businessses local
     to Puerto Rico.
     """
+    id = models.IntegerField(primary_key=True)
     title = models.CharField(max_length=255, unique=True)
     gender = models.CharField(max_length=6,
                               choices=(('male', _('Male')),
