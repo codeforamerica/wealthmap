@@ -8,7 +8,7 @@ class OpportunityForm(forms.ModelForm):
 
     class Meta:
         model = models.Opportunity
-        exclude = ['creator']
+        exclude = []
         widgets = {
             "locations": ArrayFieldSelectMultiple(
                 choices=models.LOCATIONS, attrs={'class': 'chosen'}),

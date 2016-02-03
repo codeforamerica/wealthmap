@@ -53,6 +53,14 @@ class Requirement(WhoAndWhenBase):
         verbose_name_plural = _('Requirements')
 
 
+class RequirementRelationship(WhoAndWhenBase):
+    opportunity = models.ForeignKey('Opportunity')
+    requirement = models.ForeignKey(Requirement)
+    class Meta:
+        verbose_name = _('Requirement Relationship')
+        verbose_name_plural = _('Requirement Relationships')
+
+
 LOCATIONS = (('anywhere_in_pr', 'Cualquier municipio'),
              ('adjuntas', 'Adjuntas'),
              ('aguada', 'Aguada'),
@@ -215,7 +223,7 @@ class Opportunity(WhoAndWhenBase):
     investing_own_money = models.BooleanField()
     money_invested = models.CharField(max_length=255)
     agency = models.ForeignKey(Agency)
-    requirement = models.ManyToManyField(Requirement)
+    requirement = models.ManyToManyField(Requirement, through=RequirementRelationship)
     age_min = models.IntegerField()
     age_max = models.IntegerField(null=True, blank=True)
     employees_min = models.IntegerField()
