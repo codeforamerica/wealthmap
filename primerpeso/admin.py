@@ -21,6 +21,7 @@ class OpportunityAdmin(AddCreator):
 class RequirementAdmin(AddCreator):
     pass
 
+
 @admin.register(models.Agency)
 class AgencyAdmin(AddCreator):
     pass

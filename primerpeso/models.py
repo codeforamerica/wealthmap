@@ -2,7 +2,7 @@ from django.conf import settings
 from django.contrib.postgres.fields import ArrayField
 from django.db import models
 from django.utils.translation import ugettext as _
-from localflavor.us.models import USStateField, USPostalCodeField
+from localflavor.us.models import USStateField, USZipCodeField
 
 
 class WhoAndWhenBase(models.Model):
@@ -29,7 +29,7 @@ class Agency(WhoAndWhenBase):
     address = models.TextField(blank=True)
     municipality = models.CharField(blank=True, max_length=255)
     state = USStateField(blank=True)
-    postal_code = USPostalCodeField(blank=True)  # zip is a global function
+    postal_code = USZipCodeField(blank=True)  # zip is a global function
     web = models.URLField(max_length=255, blank=True)
 
     class Meta:
@@ -56,6 +56,7 @@ class Requirement(WhoAndWhenBase):
 class RequirementRelationship(WhoAndWhenBase):
     opportunity = models.ForeignKey('Opportunity')
     requirement = models.ForeignKey(Requirement)
+
     class Meta:
         verbose_name = _('Requirement Relationship')
         verbose_name_plural = _('Requirement Relationships')

@@ -1,0 +1,798 @@
+id,title,eligibleBusinessLocation,applicationCost,applicationDeadline,avgApplicationTime,benefitDescription,agencyContactName,agencyContactEmail,agencyContactPhone,minimumYearsInBusiness,eligibleEntityTypes,currentEmployeesRequired,annualRevenue,eligibleIndustries,gender,additionalDemographics,additionalGeneralInformation,investingOwnMoney,moneyInvested,createdAt,updatedAt,purpose,age,benefitType,creatorId,agencyId
+49,Pequeñas Hospederías,{anywhere_in_pr},25,2040-12-30 16:00:00-08,90 días,"
+Cantidad: 
+
+•Hasta $10,000,000 
+
+Uso de fondos: 
+
+•Capital de operaciones hasta 5 años. 
+•Compra de maquinaria y equipo hasta 5 años. 
+•Mejoras permanentes hasta 10 años*. 
+•Compra o construcción de propiedad inmueble hasta 30 años.*
+
+*Los financiamientos para mejoras permanentes y construcción serán otorgados por el BDEPR y la CT y serán manejados por la Autoridad para el Financiamiento de la Infraestructura (AFI) u otra entidad privada con experiencia en el manejo de préstamos de construcción. Se establecerá un acuerdo entre la CT, la AFI y el BDEPR para establecer los términos para el manejo de estos financiamientos. 
+
+Gastos relacionados: 
+
+•Los gastos legales podrán ser financiados. 
+
+Tipo de financiamiento: 
+
+•Préstamos en participación en partes iguales (50%* cada uno) en pari passu con la CT y el BDEPR. La participación del BDEPR será hasta un máximo de $10,000,000. Estos financiamientos se podrán tramitar a través del Programa 504 de la Administración de Pequeños Negocios (SBA). 
+
+	*A discreción del BDEPR pudiéramos aumentar nuestra participación en exceso del 50% de ser necesario para la viabilidad del proyecto. 
+
+Colateral/Garantías: 
+
+•Se considerarán los bienes adquiridos con el financiamiento y los bienes del negocio que estén libres de gravámenes. Se tomará UCC Filing general. Además, el BDEPR, en coordinación con la CT, evaluará la disponibilidad de otras colaterales, tanto del negocio como de los garantizadores. 
+
+Aportación: 
+
+•10% al 20% del costo del proyecto, según sea determinado por las entidades que participen en el financiamiento. 
+
+Tasa de interés anual: 
+•6.50% - 10.75% 
+
+Tasa de interés será calculada a base de análisis de riesgo y crédito. La misma podrá ser fija o fluctuante. De ser fluctuante podrá variar con los cambios de la tasa de interés preferente (prime rate).
+
+Cargo por compromiso: 
+
+•1.25% en financiamientos menores de $500,000. 
+•1.50% en financiamientos de $500,000 o más. 
+
+Cargo por manejo: 
+
+•0.25% en financiamientos menores de $500,000. 
+•0.50% en financiamientos de $500,000 o más.",Jorge Martí,jmarti@bde.pr.gov,7876414300,0,{for_profit},{any},{any},"{other,_aplican_alojamiento_y_desayuno_o_bed_and_breakfast_casa_de_huspedes_o_guest_house_hotel_ecohospederas_agrohospederas_paradores_posadas}",any,,"Los financiamientos a ser evaluados que estén relacionados con el sector económico de turismo deben recibir el aval de la Compañía de Turismo (CT) antes de la evaluación del Banco de Desarrollo Económico para Puerto Rico (BDEPR). En los casos en que se soliciten financiamientos para nuevas hospederías o expansión de las existentes, deberemos recibir el endoso financiero de la CT, previo al análisis del BDEPR.",true,10%-20% costo total,2014-07-08 08:15:46.01-07,2014-09-08 07:50:11.356-07,{anything},{0},{loan},6,3
+40,Alianza para la Autogestión y el Financiamiento Microempresarial para Familias de Escasos Recursos del Programa de Rehabilitación Económica y Social (PRES) ,{anywhere_in_pr},25,2040-12-30 16:00:00-08,90 días,"Cantidad máxima: 
+•Hasta $15,000*
+
+*La ADSEF-DF se reserva el derecho de recomendar préstamos de mayor cantidad. Esta excepción no podrá exceder la cantidad de veinticinco mil dólares ($25,000.00) por cada persona natural o jurídica.
+
+
+Aportación mínima: 
+•$0.00
+
+
+Uso de fondos / Términos: 
+
+•Equipo, maquinaria, inventario y otros que permita el empleo o auto empleo y cualquier otra de acuerdo a los objetivos del PRES y previa autorización de la ADSEF-DF.
+
+
+•El BDEPR, a su discreción, tendrá la facultad de determinar y establecer los términos de repago de cada préstamo de acuerdo a la capacidad de pago de la persona participante. 
+
+
+Tasa de interés anual: 
+•3.25% (Actual)*
+*Tasa de interés preferente (prime rate) prevaleciente en el mercado al momento del cierre del préstamo.
+
+
+Cargo por compromiso:
+•1% de la cantidad aprobada.
+
+
+Cargo por manejo:
+•$0.00",Jorge Martí,jmarti@bde.pr.gov,7876414300,0,{for_profit},{any},{any},{any},any,,Diseñado para proveer alternativas de financiamiento a los participantes del Programa de Rehabilitación Económica y Social de la Administración de Desarrollo Socioeconómico de la Familia (ADSEF) según sean certificados por dicha dependencia gubernamental. ,true,0%,2014-07-07 15:31:27.123-07,2014-09-09 08:26:51.468-07,{anything},{0},"{incentive,loan}",6,3
+98,Plaza del Mercado ,{caguas},200,2024-06-29 17:00:00-07,ninguna,"Punto de venta para productos organicos, agroecológicos, comida, cafe y oficinas.  Funciona como una incubadora para desarrollar nuevos negocios.  ",María Ivette Burgos Rosario,mburgos@caguas.gov.pr,787-653-8833,0,{any},{any},{any},{other},any,,"",true,0-1000,2014-09-10 12:16:52.617-07,2014-11-06 07:00:40.2-08,"{open_location,start_business,keep_employees,relocate_business}",{0},{other},8,1
+117,Acción Empresarial,{anywhere_in_pr},0,2015-06-29 17:00:00-07,15-60 dias,"El programa Acción Empresarial tiene como fin apoyar el crecimiento profecional y empresarial de jóvenes emprendedores.
+El programa  invertirá estratégicamnete en misiones comerciales, exposiciones, convenciones, citas de negocios, campamentos de desarrollo profecional, entre otros.
+Acción Empresarial brinda hasta un maximo de $2,000 a ser rembolsados del costo de: pasaje, hotel, transpotacion, entre otros gastos de viaje, con los fines antes mencionados, de aquel joven emprendedor que desee exportar su producto, negocio o servicio al extranjero.",Luis C. Cruz Garcia,lcruz@oaj.pr.gov,787.725.8920,0,{any},{any},{any},{any},any,,"La edades oficiales para participar del Programa son entre 21 a 29 años.  El jóven debe completar toda la documentación requerida y cumplir con los Estándares de la OAJ.
+
+Para más información acceda a: http://www.oaj.pr.gov/",false,"",2014-09-11 11:00:15.447-07,2014-09-11 14:13:10.068-07,{export},"{1,2}",{reimbursement},12,106
+90,Ley 74-2010 Desarrollo Turístico,{anywhere_in_pr},1500,2043-12-31 16:00:00-08,60 días hasta 120 días,"La Ley 74, mejor conocida como la Ley de Desarrollo Turístico de 2010, ofrece los siguientes beneficios:
+A) Crédito por Inversión Turística (requiere de una inversión elegible, actividad no puede ser financiada en su totalidad.)
+B) Exención de un 90% en contribución sobre ingresos y hasta 100% si se ubican en Vieques o Culebra
+C) Exención de un 90% en toda la contribución sobre Propiedad Mueble e Inmueble.
+D) Exención sobre patentes, arbitrios y otras contribuciones municipales (Negocio Nuevo 100%) (Negocio Existente 90%)
+E) Exención de 100% sobre los arbitrios municipales de construcción.
+F) Exención de 100% en el pago de impuestos por importación de artículos e IVU. 
+
+",Maritere Colon Domínguez,Maritere.Colon@tourism.pr.gov,787-721-2400 Extensión 2403,0,{any},{any},{any},"{11,23,53,71,72,48-49}",any,{any},"La cantidad máxima del crédito estará limitada a 10% del costo total elegible del proyecto o 50% del efectivo aportado por los inversionistas, lo que sea menor.
+
+El crédito disponible se toma en dos plazos: 50% en el año en que el negocio exento obtuvo el financiamiento necesario para la construcción total del proyecto de turismo, 50% el año siguiente. 
+Todo Peticionario debe obtener el asesoramiento de la Oficina de Planificación y Desarrollo de la Compañía de Turísmo en sus aspectos físicos y operacionales. 
+
+Para más información ver: La Ley de Desarrollo Turístico la Ley 74 de 10 de julio de 2010 y el Reglamento Número 8185 del 20 de abril de 2012.",true,"",2014-09-10 08:23:15.247-07,2014-09-19 10:56:30.186-07,"{other,sertitularyuoperadordeunaactividadtursticaelegiblehotelescondohotelesparadoresagrohospedajestimeshareturismonuticoturismomdicoparquestematicosentreotros}",{0},"{incentive,loan}",14,6
+106,Ley 73-2008: Incentivos económicos para el desarrollo de Puerto Rico,{anywhere_in_pr},750,0001-12-31 16:07:02-07:52:58 BC,90-120 días,"La Ley No. 73 del 2008, conocida como la Ley de Incentivos Económicos para el Desarrollo de Puerto Rico, es el resultado de sobre seis décadas de experiencia en el desarrollo industrial. Dicho estatuto ofrece incentivos contributivos para atraer nuevas operaciones a la Isla, así como retener y estimular el desarrollo de las ya existentes. La Ley también otorga créditos contributivos por creación de empleos y por la inversión que realice la empresa en actividades de investigación y desarrollo. Las empresas pueden acceder a otros incentivos para reducir sus costos de operación y consumo energético, de suerte que sus operaciones sean eficientes y rentables.",Elizabeth Aponte,elizabeth.aponte@oeci.pr.gpv,787-765-1171,0,{any},{6_25},{any},{31-33},any,,"",false,"",2014-09-11 08:01:44.121-07,2014-09-11 08:03:16.391-07,{export},{0},"{incentive,loan}",18,8
+37,Comunidades Especiales,{anywhere_in_pr},25,2040-12-30 16:00:00-08,90 días,"Cantidad máxima: 
+•Hasta $100,000
+
+Uso de fondos: 
+
+•Capital de operaciones hasta 8 años.
+•Compra de maquinaria y equipo hasta 8 años.
+•Mejoras permanentes hasta 10 años.
+•Compra o construcción de propiedad inmueble hasta 30 años.
+
+
+Tasa de interés anual: 
+
+•3.25% fijo por los primeros 3 años (actual)*.
+*La tasa de interés se fijará a la tasa de interés preferente (prime rate) prevaleciente a la fecha del cierre.
+
+
+Aportación mínima: 
+
+•No se requiere aportación en préstamos hasta $16,000.
+•10% de aportación en préstamos de $16,001 a $100,000.
+
+
+Colateral: 
+•Bienes muebles e inmuebles financiados con el préstamo.
+
+
+Cargo por compromiso: 
+•1.25% del total del financiamiento.
+
+
+Descuento: 
+•Descuento de 0.25% del cargo por compromiso antes mencionado.
+
+Cargo por manejo: 
+•0.25% del total del financiamiento.",Jorge Martí,jmarti@bde.pr.gov,7876414300,0,{any},{any},{any},"{other,_negocios_nuevos_o_existentes}",any,,Producto de financiamiento dirigido a promover el desarrollo de microempresas en las Comunidades Especiales.,,"",2014-07-07 15:13:13.799-07,2014-09-08 08:40:32.942-07,{anything},{0},{loan},6,3
+43,Préstamo Directo,{anywhere_in_pr},25,2040-12-30 16:00:00-08,90 días,"Cantidad máxima: 
+•Hasta $10,000,000
+
+Por ciento a financiar: 
+
+•Bienes inmuebles – hasta 80% del precio total o valor de tasación, lo que resulte menor.
+•Bienes muebles – hasta 75% del costo si es nuevo o 60% del costo o del valor de tasación si es usado, lo que resulte menor. 
+•Capital de operaciones – se evaluará caso a caso.
+
+
+Uso de fondos: 
+
+•Capital de operaciones hasta 5 años.
+•Compra de maquinaria y equipo hasta 7 años.
+•Mejoras permanentes hasta 10 años.
+•Compra o construcción de propiedad hasta 30 años.
+
+Aportación mínima requerida: 
+
+•10% en negocios que lleven operando más de dos años.
+•20% en negocios nuevos o que lleven operando dos años o menos.
+
+
+Tasa de interés anual: 
+
+•6.50% - 10.75%
+Tasa de interés será calculada a base de análisis de riesgo y crédito. La misma podrá ser fija o fluctuante. De ser fluctuante podrá variar con los cambios de la tasa de interés preferente (prime rate). 
+
+Cargo por compromiso: 
+
+•1.25% en financiamientos menores de $500,000.
+•1.50% en financiamientos de $500,000 o más.
+
+
+Cargo por manejo: 
+
+•0.25% en financiamientos menores de $500,000.
+•0.50% en financiamientos de $500,000 o más.",Jorge Martí,jmarti@bde.pr.gov,7876414300,0,{any},{any},{any},"{other,financiamientoparapequeasymedianasempresaspymes}",any,{any},"Producto creado para financiar negocios dedicados a la manufactura, comercio, turismo, agricultura y servicios.",true,10% a 20%,2014-07-07 15:42:37.218-07,2014-09-09 11:41:44.616-07,{anything},{0},{incentive},6,3
+27,Mujer Empresaria,{anywhere_in_pr},25,2040-12-30 16:00:00-08,90 días,"Elegibles: 
+•Mujeres que ostenten una participación de 51% o más en la empresa.
+
+
+Cantidad máxima: 
+•Hasta  $500,000
+
+Uso de fondos: 
+•Capital operacional hasta 5 años
+•Compra de equipo y maquinaria hasta 7 años
+•Mejoras hasta 10 años
+•Compra o construcción de inmueble hasta 30 años
+
+Aportación mínima: 
+•10% del costo total del proyecto.
+
+
+Tasa de interés anual: 
+
+•6.50% - 10.75%
+Tasa de interés será calculada a base de análisis de riesgo y crédito. La misma podrá ser fija o fluctuante. De ser fluctuante podrá variar con los cambios de la tasa de interés preferente (prime rate). 
+
+Descuento: 
+
+•Descuento de 1% de la tasa de interés antes mencionada.
+
+Cargo por compromiso: 
+•1.25% del total del financiamiento.
+
+Descuento: 
+•0.50% del cargo por compromiso antes mencionado.
+
+Cargo por manejo: 
+•0.25% del total del financiamiento.",Jorge Martí,jmarti@bde.pr.gov,7876414300,0,"{for_profit,sole_proprietor}",{any},{any},{any},female,,"Producto creado para promover el establecimiento de nuevas empresas y el desarrollo de aquellas ya establecidas dirigidas por mujeres, motivando la participación de la mujer en el campo empresarial.",,"",2014-07-03 15:43:12.965-07,2014-09-08 08:49:43.995-07,{anything},{0},"{incentive,loan}",6,3
+107,Ley 27-2011 Programa de Incentivos para la Industria Fílmica,{anywhere_in_pr},0,2024-06-29 17:00:00-07,desde 6 meses hasta 10 meses,"- 40% en créditos contributivos sobre los pagos a Residentes de Puerto Rico
+- 20% en créditos contributivos sobre los pagos a No-Residentes cualificados",Carla Cardona,carla.cardona@puertoricofilm.pr.gov,787-754-6444,0,{any},{any},{any},{51},any,{any},"Para conocer los pasos a seguir para solicitar al Programa de Incentivos para la Industria Fílmica, pueden acceder el siguiente enlace: http://puertoricofilm.org/incentives/how-to-apply/.
+Formularios y Reglamentos de este programa, se encuentra en el siguiente enlace: http://puertoricofilm.org/incentives/forms-and-regulations/.",true,"Mínimo de $100,000 en gastos de producción en Puerto Rico ($50,000 en los proyectos de cortometrajes)",2014-09-11 08:39:49.397-07,2014-09-18 07:55:49.244-07,{cinematographic_production},{0},{incentive},13,71
+28,Nuevo Empresario,{anywhere_in_pr},25,2040-12-11 16:00:00-08,90 días,"Aportación mínima: 
+
+•10% del costo total del proyecto.
+
+
+
+Tasa de interés anual: 
+
+•6.50% - 10.75%
+
+Tasa de interés será calculada a base de análisis de riesgo y crédito. La misma podrá ser fija o fluctuante. De ser fluctuante podrá variar con los cambios de la tasa de interés preferente (prime rate). 
+
+Descuento: 
+
+
+•Descuento de 1% de la tasa de interés antes mencionada.
+
+
+
+Cargo por compromiso:  
+•1.25% del total del financiamiento.
+
+
+
+Descuento: 
+
+•0.50% en el cargo por compromiso antes mencionado.
+
+
+
+Cargo por manejo: 
+
+•0.25% del total del financiamiento.",Jorge Martí,jmarti@bde.pr.gov,7876414300,0,"{for_profit,sole_proprietor}",{any},{any},{any},any,{any},Producto creado para promover el establecimiento de nuevas empresas.,,10%,2014-07-07 11:21:01.838-07,2014-09-05 12:46:02.252-07,{anything},{0},{loan},6,3
+108,Manufactura de Ropa y Productos Análogos,{anywhere_in_pr},0,2020-12-30 16:00:00-08,5 a 30 días laborables,Programa e Incentivos Económicos Especiales para la Industria Puertorriqueña de Manufactura de Ropa y Productos Análogos,Zenaida Solis,zenaida.solis@pridco.pr.gov,(787) 758-4747,3,{for_profit},{6_25},{any},{31-33},any,{any},Empresa tiene que ser promovida por la Compañía de Fomento Industrial de Puerto Rico. Ley Núm. 8 del 2 de cotubre de 1986,true,variable,2014-09-11 09:06:13.919-07,2014-10-07 11:14:49.306-07,"{other,materiaprimaadquisicinymejorasedificiomaquinariayequiposarrendamientoasistenciatcnicanminaenproduccinmercadeoypromocininteresesdeprstamos}",{0},{incentive},17,57
+118,Juventud Empresarial ,{anywhere_in_pr},0,2015-06-29 17:00:00-07,30-180 días,"Conscientes de los retos a los que se enfrentan estos emprendedores, la Oficina de Asuntos de la Juventud creó el Programa de MicroEmpresas, que le ofrece capacitación, financiamiento y consultoría a jóvenes entre 21 a 29 años que les interesa iniciar una empresa o expandir la existente.
+
+A través de un selecto grupo de consultores el Programa brinda adiestramientos sobre cómo desarrollar su empresa y cómo presentar un Plan de Negocio, a demás brinda la oportunidad de obtener un financiamiento con el Banco de Desarrollo Económico para Puerto Rico, desde $500, hasta $10,000, garantizados por la Oficina de Asuntos de la Juventud, para ser utilizados en:  Compra de equipo y maquinaria, capital de operaciones y mejoras.",Luis C. Cruz Garcia,lcruz@oaj.pr.gov,787.725.8920,0,{any},{none},{0_99999},{any},any,{any},"Tener entre 21 a 29 años de edad. Participante del Programa de Microempresas de OAJ  y cumplir con otros documentos y requisitos solicitados por el Banco.
+
+Para más información accede a: http://oaj.pr.gov",false,"",2014-09-11 14:42:48.426-07,2014-09-11 14:43:20.682-07,"{open_location,working_capital,buy_equipment,start_business,improve_commercial_property}","{1,2}","{expertise,other}",12,106
+32,Proyectos Ecoturísticos,{anywhere_in_pr},0,2040-12-30 16:00:00-08,90 días,"Cantidad máxima: 
+
+•Hasta $100,000
+
+Aportación mínima requerida: 
+•$0.00
+
+Uso de fondos:
+•Capital de operaciones hasta 5 años.
+•Compra de maquinaria y equipo hasta 7 años.
+•Mejoras permanentes hasta 10 años.
+•Compra o construcción de propiedad inmueble hasta 30 años.
+
+Tasa de interés anual: 
+•5.75% fijo por los primeros 3 años (actual)*
+* La tasa de interés se fijará al 2.50% sobre la tasa de interés preferente (prime rate) prevaleciente a la fecha del cierre.",Jorge Martí,jmarti@bde.pr.gov,7876414300,0,"{for_profit,sole_proprietor}",{any},{any},"{other,tourism}",any,{any},Producto para identificar y desarrollar nuevas atracciones eco-turísticas para explotar nuestra belleza escénica que es parte de nuestro capital natural.,,"",2014-07-07 12:05:12.389-07,2014-09-08 07:14:31.056-07,{anything},{0},"{incentive,loan}",6,3
+21,Alianza - Programa de Crédito Social del Departamento de Estado y el BDEPR ,{anywhere_in_pr},25,2041-12-30 16:00:00-08,90 días,"Cantidad máxima: 
+
+•El principal no excederá la suma de $25,000 por ONG o hasta un 80% de la propuesta, asignación o donativo aprobado para la ONG, lo que sea menor.
+
+Fondos provistos por:	
+
+•El Banco de Desarrollo Económico para Puerto Rico.
+
+
+Garantía: 
+
+•Fondo de Garantía del Departamento de Estado cubriendo el 100% de la facilidad crediticia.
+
+Uso de fondos:	
+
+•Adquisición de maquinaria y equipo necesario para la operación de la ONG.
+•Capital de operaciones.
+
+Aportación mínima requerida: 
+•$0.00
+
+Tasa de interés anual: 
+
+•4.25% (actual)*.
+*El interés se fijará al 1% sobre la tasa de interés preferente (prime rate) prevaleciente a la fecha del cierre.
+
+Vencimiento:	
+
+•Un (1) año o hasta que se reciba el dinero producto de la propuesta, asignación o donativo aprobado para la ONG, lo que sea menor.
+
+Cargo inicial:
+•$25
+
+Cargo por demora:
+•$0.00
+
+Cargo por manejo:
+•$0.00 
+
+Cargo por compromiso:
+•$0.00 ",Jorge Martí,jmarti@bde.pr.gov,7876414300,0,{non_profit},{any},{any},{any},any,{any},"El Departamento de Estado, en coordinación con el BDEPR, ha configurado un programa dirigido a convertirse en la mano amiga de las Organizaciones No Gubernamentales (ONG). El mismo parte de fortalecer el llamado tercer sector, conectándolo con el gobierno y facilitando su acceso a recursos de formación, manejo de conflictos y el desarrollo de política pública. Como parte de dicha encomienda se pretende promover un Crédito Social a las ONG.",,"",2014-07-03 12:31:43.966-07,2014-09-09 11:39:03.966-07,{anything},{0},{loan},6,3
+3,Turismo,{municipality_in_pr},150,2040-12-30 16:00:00-08,30 días,Crédito comercial,Jorge Martí,jmarti@bde.pr.gov,(787) 641-4300,3,{for_profit},{26_50},{100000_499999},{tourism},male,{any},No.,false,"",2014-07-02 11:05:00.846-07,2014-07-28 15:40:21.32-07,{_construccin_de_parador},{3},{loan},6,3
+26,Contratistas Federales o Estatales,{anywhere_in_pr},25,2040-12-30 16:00:00-08,90 días,"Tasa de interés anual: 
+
+•6.50% - 10.75%
+Tasa de interés será calculada a base de análisis de riesgo y crédito. La misma podrá ser fija o fluctuante. De ser fluctuante podrá variar con los cambios de la tasa de interés preferente (prime rate). 
+
+Términos
+
+•	Línea de Crédito a renovar annual
+Cantidad máxima: 
+
+•Hasta  $10,000,000
+
+Aportación mínima requerida: 
+
+•0% - 20% del capital de operaciones.
+
+Por ciento a financiar: 
+
+•Capital de operaciones – se financiará entre un 80% a 100%.
+",Jorge Martí,jmarti@bde.pr.gov,7876414300,0,{for_profit},{any},{any},{any},any,{any},Proveer una línea de crédito a empresas establecidas que estén participando como contratistas en las subastas de programas federales o estatales.,,"",2014-07-03 15:33:26.736-07,2014-09-05 12:48:10.659-07,{working_capital},{0},{loan},6,3
+109,Preferencia Local en Compra del Gobierno del Esdado Libre Asociado de Puerto Rico,{anywhere_in_pr},0,2020-12-30 16:00:00-08,5 a 30 días laborables,Oportunidad para vender productos y servicios Gobierno del Esdado Libre Asociado de Puerto Rico,Zenaida Solis,zenaida.solis@pridco.pr.gov,(787) 758-4747,0,{for_profit},{6_25},{any},"{31-33,other}",any,{any},Empresa tiene que ser promovida por la Compañía de Fomento Industrial de Puerto Rico.,true,variable,2014-09-11 09:11:58.041-07,2014-09-11 09:59:01.086-07,"{other,ventadeproductosyserviciosalgobiernodelesdadolibreasociadodepuertorico}",{0},{incentive},17,57
+51,Franquicias Exportables,{anywhere_in_pr},0,2050-06-29 17:00:00-07,30 dias,"Usos de los fondos del incentivo económico
+
+El incentivo otorgado podrá ser utilizado para los gastos relacionados al propósito de desarrollar y ejecutar el plan de negocios de modelo de franquicias, tales como:
+
+gastos legales y financieros,
+participación en misiones comerciales,
+promoción y mercadeo,
+módulo operacional,
+otros gastos estrictamente relacionados al modelo de negocio a ser desarrollado.
+
+
+Ventajas de operar en un modelo de franquicias
+
+
+
+rápida expansión del negocio
+beneficios de una marca reconocida
+rápido posicionamiento en el mercado
+modelo de economía de escalas
+disminución en los costos relacionados al negocio
+mejor distribución de productos y servicios
+disminución de riesgo financiero y rentabilidad a largo plazo, entre otros.",Primer Peso,primerpeso@cce.pr.gov,787 294-0101,0,"{for_profit,sole_proprietor,cooperative}",{any},{any},{any},any,"{any,veteran,minority}","Se otorgará un incentivo económico de hasta un máximo de $20,000.
+",true,"",2014-07-29 12:13:23.822-07,2014-11-26 12:24:05.384-08,{open_franchise},{0},{incentive},7,7
+47,"Certificación de PYMES para Programa de Reservas de Compras ""Set Aside""",{anywhere_in_pr},0,2050-06-29 17:00:00-07,30 a 60 dias,"Beneficios
+
+Estimula y aumenta las ventas de las pequeñas y medianas empresas (PYMES) puertorriqueña, fomentando de esta forma la creación de nuevos empleos.
+
+Establece un proceso uniforme y estructurado de la distribución del presupuesto de compras de las agencias del Gobierno de Puerto Rico.
+
+Facilita la ejecución, el cumplimiento y la fiscalización del Programa con un mayor grado de eficacia.",Primer Peso,primerpeso@cce.pr.gov,787 294-0101,0,"{non_profit,for_profit,sole_proprietor}","{1_5,6_25,26_50}","{0_99999,100000_499999,500000_999999,1000000_4900000,5000000_9900000}",{any},any,"{any,student,veteran,minority}","Las empresas interesadas deberán estar certificadas como PYMES por la Compañía de Comercio y Exportación de Puerto Rico y deberán formar parte del Registro Único de Licitadores (RUL) de la Administración de Servicios Generales.
+
+	
+¿Quiénes Pueden Participar?
+
+Empresa independiente donde el 51 % de su capital está en manos de sus gerenciales.
+Debe estar incorporado o registrado para hacer negocios en Puerto Rico y que el 51 % o más de sus empleados trabajen en Puerto Rico.
+Tener menos de 50 empleados a tiempo completo sin incluir trabajadores a tiempo parcial y consultores bajo contratos.
+Ingreso bruto no puede exceder los $9.9 millones anuales.",false,"",2014-07-07 23:15:24.372-07,2014-11-26 12:22:55.272-08,"{anything,open_location,open_franchise,train_employees,working_capital,buy_equipment,buy_commercial_property,hire_employees,start_business,export,export_products,export_services,improve_commercial_property,keep_employees,relocate_business,other}",{0},{other},7,7
+89,Ley 20-2012: Para fomentar la exportación de servicios,{anywhere_in_pr},750,0001-12-31 16:07:02-07:52:58 BC,De 60 a 90 días,La Ley para Fomentar la Exportación de Servicios (Ley Núm. 20 de 2012) busca convertir a Puerto Rico en un centro internacional de servicios de exportación. Esta poderosa herramienta está disponible para las empresas que actualmente operan en Puerto Rico y para empresas foráneas que opten por establecerse en la Isla para ofrecer sus servicios globalmente desde Puerto Rico. La Ley también beneficia a las personas que ofrecen servicios de promotor para lograr que nuevas empresas proveedoras de servicios establezcan operaciones en Puerto Rico.,Lcda. Elizabeth Aponte,elizabeth.aponte@oeci.pr.gov,787-765-1171,0,{any},{1_5},{any},"{51,52,54,61,81}",any,,"",false,"",2014-09-09 16:35:54.517-07,2014-09-09 16:43:16.383-07,{export},{0},{incentive},18,8
+61,Crowdfunding ,{puertoricoandthelatinamericanmarketinandoutoftheus},0,4000-12-30 16:00:00-08,From 30 to 75 days.,"No traditional business plan needed, access to friendly capital, no equity dilution, no money has to be payed back only an offering of a reward in exchange for the money people donate, access to a full community, a news letter to help you rise money, personalise community management throwout the hole campaign, access to media contacts, you can take your money even if you don't reach your funding goal.",Guifre Tort,info@antrocket.com / astrid@antrocket.com / guifre@antrocket.com,(787) 562-3921 / (787) 922-0866 / (787) 294-5556,0,{any},{any},{any},{any},any,{any},"We encourage creativity, innovation, business development, social-economic development, environmental conscience, entrepreneurship, collaboration and solidarity. Children under 16 years of age need an written authorisation from their parents or tutor. Between the prohibited items or subject matter are: No contests, raffles, drugs, pornography, life style support, equity exchange, ventures or co-ventures. For more information on our Terms of Use please visit: http://antrocket.uservoice.com/knowledgebase/articles/214558-terms-of-use",true,(from a 7.75% up to 14% of the total recollected),2014-08-13 21:58:52.87-07,2014-08-13 22:03:03.167-07,{anything},"{1,2,3,4}",{financingthroughcrowddonations},9,9
+92,Programa de Incubación INOVA,{caguas},0,2024-09-29 17:00:00-07,3 años,"El programa de incubación de empresas permite fortalecer la creación y desarrollo de una empresa.   El programa permite fortalecer las destrezas empresariales, acceder a un network de empresas similares y programas de apoyo.",Oscar Jimenes ,ojimenez@intecopr.com,787961-2901,3,"{any,non_profit,for_profit,sole_proprietor}",{1_5},{any},{other},any,,"",false,"",2014-09-10 11:01:58.817-07,2014-11-06 11:30:56.004-08,{start_business},{0},{other},8,1
+110,Centro de Control de Calidad,{anywhere_in_pr},0,2020-12-30 16:00:00-08,5 a 30 días laborables,Mejoras en calidad; Aumento en Capacidad; Cumplimiento de requisitos de los clientes; Satisfacción al cliente,Zenaida Solis,zenaida.solis@pridco.pr.gov,(787) 758-4747,0,{for_profit},{6_25},{any},"{31-33,other}",any,{any},Empresa tiene que ser promovida por la Compañía de Fomento Industrial de Puerto Rico.,true,variable,2014-09-11 09:18:06.282-07,2014-09-11 09:25:38.109-07,"{other,procesodeevaluacindecalidadyreingenieradesarrollodenormasyprocedimientosdecalidadcapacitacinsobretcnicasyregulacionesso900012008as9100industriaaeroespacialdiseodeproductoseimagencorporativayreglamentacinparaetiquetadodealimentos}",{0},{incentive},17,7
+111,Zona Libre de Comercio Exterior,{anywhere_in_pr},0,2020-12-30 16:00:00-08,5 a 90 días laborables,"Retardar el pago de los aranceles federales, y arbitrios estatales; Cero pago de patentes municipales en las exportaciones a países foráneos; 100% de exención en el pago de impuestos en la operación; y 60% de exención en el pago de impuestos a la propiedad inmueble.",Zenaida Solis,zenaida.solis@pridco.pr.gov,(787) 758-4747,0,{for_profit},{6_25},{any},"{31-33,other}",any,,Empresa tiene que ser promovida por la Compañía de Fomento Industrial de Puerto Rico.,true,Variable,2014-09-11 09:23:50.15-07,2014-09-11 09:25:51.673-07,"{other,ahorroseconmicosretardacinoeliminacindearancelesfederalesyexportacinapasesforneoselpagodelosderechosserexento}",{0},{incentive},17,57
+53,Empleo Directo al Centro Urbano (EDCU),{anywhere_in_pr},0,2050-06-29 17:00:00-07,30 a 90 dias ,"El programa de Empleo Directo al Centro Urbano (EDCU) tiene como propósito principal estimular el desarrollo del centro urbano creando nuevos empleos a través de incentivos salariales a pequeños y medianos empresarios.
+
+ 
+
+Este incentivo aplica a la creación de nuevos empleos con los siguientes beneficios:
+
+Reembolso al patrono del 50% del salario pagado hasta un máximo de $3.62 (50% de $7.25)
+
+Incentivo vigente por un año con opción a renovación un segundo año sujeto a la retención de un 75% de los empleados contratados durante el primer año.
+
+Los negocios localizados en centros urbanos podrán obtener incentivos para un máximo de 25 empleados nuevos, a tiempo completo. Esto podría significar un ahorro de hasta $132,000 en su nómina anual.
+
+Negocios localizados fuera del centro urbano podrán obtener incentivos para un máximo de 15 empleados, a tiempo completo. Esto podría significar un ahorro de hasta $79,200 en su nómina anual.",Primer Peso,primerpeso@cce.pr.gov,787 294-0101,0,"{any,non_profit,for_profit,sole_proprietor,cooperative}",{any},{any},{any},any,"{any,student,veteran,minority}","¿Qué empresa es elegible?
+
+La empresa es elegible si:
+
+Está autorizada a realizar negocios en Puerto Rico.
+
+Es de capital nativo, identificada con la manufactura, comercio, servicios, turismo, agricultura, reciclaje, agroindustria o tecnología.
+
+Es negocio nuevo, negocio en expansión o un autoempleo (donde el dueño es el único empleado).
+
+Genera ventas brutas anuales de $5 millones o menos y cuenta con 25 empleados o menos trabajando a tiempo completo.
+
+Requiere un mínimo de 32 horas trabajadas semanalmente y el reembolso es de hasta un máximo de 40 horas trabajadas.
+
+Ofrecer a los empleados, cuyo sueldo se vea beneficiado por el incentivo salarial, los mismos beneficios y derechos que a los otros empleados de la empresa.
+
+Cumplir con las leyes, reglamentos y normas laborales y contributivas estatales y federales.
+
+No tener deuda con el gobierno.
+
+No ser parte de una franquicia o cadena, excepto las empresas que sean parte de las cadenas voluntarias.",false,"",2014-07-29 15:16:30.042-07,2014-11-26 12:23:36.986-08,"{open_location,open_franchise,train_employees,hire_employees,start_business,relocate_business}",{0},"{incentive,reimbursement}",7,7
+93,Agroinnova,{caguas},0,2024-06-29 17:00:00-07,3 años,"Puedes desarrollar nuevos productos con materia prima local para crear empleos para jovenes y llevar tu negocio a otro nivel 
+",Ana Gloria Rodríguez ,anarodz1965@gmail.com,787-961-2001,0,{any},{1_5},{0_99999},{11},any,,"",,"",2014-09-10 11:18:31.293-07,2014-11-06 11:23:54.347-08,{open_location},{0},{other},8,1
+10,Seminarios,{caguas},0,2024-06-29 17:00:00-07,Depend on when courses are provided,Elegible units can apply for tax break as well as financing through corporations allied to the Municipality.,Carmen Ivette Ramírez ,cramirez@caguas.gov.pr,7876538833,0,{any},{any},{any},{any},any,{any},Courses that instruct people to build their business plan.,false,0,2014-07-02 11:52:08.98-07,2014-11-06 07:03:23.939-08,"{open_location,open_franchise,train_employees,working_capital,hire_employees,start_business,export,keep_employees,relocate_business,other}",{0},"{incentive,expertise}",8,1
+46,Certificación de Cadenas Voluntarias,{anywhere_in_pr},10000,2050-06-29 17:00:00-07,30 a 60 dias ,"1. Exime a la Cadena del pago de patentes municipales sobre todo volumen de ventas generado a través del Programa.
+
+2. Exime a la Cadena del pago de contribución sobre el inventario o propiedad mueble. De esta manera se evita la doble tributación ya que se paga solamente como negocio individual, al ser transferido el inventario al mismo.
+
+3. Brinda la oportunidad de realizar las compras en conjunto para obtener mejores precios, mejores términos de pagos y maximizar las ganancias.
+
+4. Reduce los costos operacionales.
+
+5. Mantiene personalidad jurídica.
+
+6. Permite establecer una marca común.",Primer Peso,primerpeso@cce.pr.gov,787 294-0101,0,"{for_profit,cooperative}",{any},{any},{any},any,"{veteran,minority}","IMPORTANTE: Costo de la certificación varía por unidad y de acuerdo al volumen de ventas.
+
+Requisitos
+
+1. Ser parte de un grupo de negocios independientes que compartan un nombre común.
+2. Poseer de uno hasta cinco negocios por empresario.
+3. Similitud en los productos o servicios que ofrecen
+
+REQUISITOS REGLAMENTARIOS PARA LA CADENA VOLUNTARIA 
+
+1. Certificado de Incorporación del Departamento de Estado o copia certificada de escrituras constitutivas y evidencia de registro si es una sociedad.
+2. Certificado de ""Good Standing"" del Departamento de Estado.
+3. Copia de la tarjeta de Seguro Social Patronal.
+4. Copia del Reglamento Interno de la cadena aprobado por su Junta de Directores.
+5. Evidencia de Inscripción en el Registro de Marcas de Fábrica del Departamento de Estado, si intenta crear una marca de fábrica para el producto que vende.
+6. Carta Compromiso firmada por todos los integrantes de la cadena, demostrativa de la intención de satisfacer los derechos correspondientes que le sean requeridos, dentro de los quince días laborables siguientes a la fecha de notificación de que preliminarmente su solicitud ha sido aprobada.
+7. Cualquier otro documento o requisito que de tiempo en tiempo la CCE o la Oficina de Asuntos Municipales determine.
+
+REQUISITOS REGLAMENTARIOS PARA CADA UNIDAD DE LA CADENA VOLUNTARIA
+
+1. Copia del Permiso de Uso de la Administración de Reglamentos y Permisos (ARPE), el cual debe ser compatible con el uso actual de la unidad de la cadena.
+2. Copia de la patente municipal.
+3. Dos fotos 4 x 6 del frente del local.
+4. Copia de la tarjeta de Seguro Social Patronal
+5. Copia del título de propiedad, contrato, escritura o documento que acredite el uso autorizado o título del local
+6. Copia del Seguro de Responsabilidad Pública
+7. Certificación negativa de deuda o evidencia de plan de pago del CRIM.
+8. Certificación negativa de deuda del Seguro por Desempleo / Incapacidad del Departamento del Trabajo.
+9. Certificación negativa de deuda o evidencia de plan de pago del Departamento de Hacienda.
+10. Copia certificada de escritura constituída y evidencia de registro o certificado de incorporación del Departamento de Estado.
+11. Copia simple de la Planilla de Contribución sobre Ingresos del Negocio correspondiente a los dos últimos años, anteriores a la solicitud.
+12. Resumen sobre Operaciones sobre Negocios preparado por la CCE.
+13. Cualquier otro documento o requisito que de tiempo en tiempo la CCE o la Oficina de Asuntos Municipales determine.
+
+Los beneficios que otorga cada Ley son:
+
+Ley Núm. 103 del 17 de junio de 2000 - Exime de la contribución sobre inventario (propiedad mueble) que mantienen para transferir a sus socios y sobre la propiedad inmueble. No podrán establecer más de cuatro almacenes de distribución en Puerto Rico.
+
+Ley Núm. 104 del 17 de junio de 2000 - Exime del pago de patentes municipales al volumen de negocios generado, a través de la compra y reventa de bienes a la cadena de detallistas.",true,"",2014-07-07 16:38:54.556-07,2014-11-26 12:25:01.461-08,"{open_franchise,other}",{0},{incentive},7,7
+34,Taxis Híbridos o Eléctricos,{anywhere_in_pr},25,2040-12-30 16:00:00-08,90 días,"Cantidad maxima: 
+•Hasta $300,000
+
+Términos: 
+
+•Término máximo hasta 72 meses, dependiendo del año del vehículo.
+
+Tasa de interés anual: 
+
+•5.75% fija por los primeros 3 años (actual)*.
+•La tasa de interés se fijará al 2.50% sobre la tasa de interés preferente (prime rate) prevaleciente a la fecha del cierre.
+
+
+Cargo por compromiso: 
+•$0.00
+
+Cargo por manejo: 
+•$0.00",Jorge Martí,jmarti@bde.pr.gov,7876414300,0,"{for_profit,sole_proprietor}",{any},{any},"{other,_transportacin}",any,{any},"Este producto permitirá ampliar la flota de taxis, reemplazar vehículo por uno que represente ahorro energético y ahorro en combustible, beneficiando al usuario y fomentando el empleo.",yes,5 a 15%,2014-07-07 14:39:37.386-07,2014-09-08 09:11:42.255-07,"{anything,buy_equipment}",{0},"{incentive,loan}",6,3
+112,"Mercadeo, Promoción y Publicidad",{anywhere_in_pr},0,2020-12-30 16:00:00-08,5 a 30 días laborables,"Pareo de fondos para los costos (gastos) asociados con mercadeo (promoción y publicidad) hasta el máximo de 50% hasta $50,000.00 para empresas con un volumen de ventas de $100,000.00 o más. Para las empresas con un volumen de ventas menor a $100,000.00 el pareo de fondos será de un 50% hasta $30,000.00 ",Zenaida Solis,zenaida.solis@pridco.pr.gov,(787) 758-4747,4,{for_profit},{6_25},"{0_99999,100000_499999,1000000_4900000,5000000_9900000}","{31-33,other}",any,{any},Empresa tiene que ser promovida por la Compañía de Fomento Industrial de Puerto Rico.,true,50% del pareo de fondos,2014-09-11 09:33:09.281-07,2014-09-11 09:33:48.671-07,"{other,apoyarenlasgestionesparagenerarlasventasdelaempresa}",{0},{reimbursement},17,57
+24,Sector de Farmacias,{anywhere_in_pr},25,2041-12-30 16:00:00-08,90 días,"Cantidad máxima: 
+
+•Hasta $10,000,000
+
+
+
+Tasa de interés anual: 
+
+•2% sobre la tasa de interés preferente (prime rate) con una tasa mínima (floor) de 6.50%.
+
+
+Colateral / Garantías: 
+
+
+•Estará sujeto a la determinación del BDEPR de acuerdo a sus políticas de crédito. El financiamiento podrá estar condicionado a garantías federales o estatales o a la participación con otra entidad financiera. Los términos y condiciones del financiamiento serán ajustados según determine la agencia que provea la garantía o la entidad financiera que participe.
+",Jorge Martí,jmarti@bde.pr.gov,7876414300,0,"{for_profit,sole_proprietor}",{any},{any},"{other,farmacuticos}",any,{any},"Financiamiento dirigido a farmacéuticos licenciados que deseen establecer o comprar una farmacia que constituirá su primera operación de farmacia, como también a dueños de farmacias existentes.",,"",2014-07-03 14:45:27.764-07,2014-09-08 08:29:36.489-07,{anything},{0},{loan},6,3
+33,Dueños de Excursiones Turísticas,{anywhere_in_pr},25,2040-12-30 16:00:00-08,90 días,"•	Contribución Mínima de 10% hasta 25% 
+•	Término Máximo de 72 meses (dependiendo del año del vehículo)
+
+Interés
+
+•	2.50% sobre la tasa de interés preferencial (prime rate) a fijarse al momento del cierre.",Jorge Martí,jmarti@bde.pr.gov,7876414300,0,"{for_profit,sole_proprietor}",{any},{any},"{other,_transportacin_turstica}",any,{any},"Este producto provee financiamiento a todo empresario a quien la Compañía de Turismo le expida o le haya expedido autorización, franquicia o licencia para operar taxis, vehículos públicos o excursiones turísticas. ",,"",2014-07-07 12:19:00.156-07,2014-09-05 12:04:57.013-07,"{anything,buy_equipment}",{0},"{incentive,loan}",6,3
+23,Microempresas Oficina de Asuntos de la Junventud (OAJ),{anywhere_in_pr},25,2040-12-30 16:00:00-08,90 días,"Incentivos
+•	Interés Fijo de 8% y sujeto a determinación de OAJ
+•	No requiere contribución mínima
+•	$25 Cargo Inicial
+•	$0  Cargo por Manejo
+•	$0 Cargo por Compromiso
+
+Cantidad
+
+•	Hasta $10,000",Jorge Martí,jmarti@bde.pr.gov,7876414300,0,"{for_profit,sole_proprietor}",{any},{any},{any},any,{any},"Financiamiento para jóvenes entre 21 y 29 años que desean establecer un negocio.  
+Fondo de Garantía de la OAJ cubriendo el 100% del financiamiento.",false,"",2014-07-03 13:11:53.115-07,2014-09-05 10:23:33.287-07,{anything},"{1,2}","{incentive,loan}",6,3
+94,BADECO,{caguas},150,2024-06-29 17:00:00-07,6 ,"Se otorgan préstamos comerciales, eficiencia energética y de vivienda.  BADECO atiende negocios de la Región Centro Oriental y somos más flexible que la banca tradicional.",Adrian Muñiz Mariani,amuniz@badeco.org,787-337-8833,0,{any},{any},{any},{81},any,,"",,"",2014-09-10 11:28:21.968-07,2014-11-06 06:41:16.732-08,"{open_location,open_franchise,working_capital,buy_equipment,start_business,improve_commercial_property,keep_employees,relocate_business,other}",{0},{other},8,1
+95,Manufactura Mueble y Otros Productos Relacionados,{anywhere_in_pr},0,2020-12-30 16:00:00-08,5 a 30 días laborables,Programa e Incentivos Económicos Especiales para la Industria Puertorriqueña de Manufactura de Muebles y Otros Productos Relacionados,Zenaida Solis,zenaida.solis@pridco.pr.gov,(787) 758-4747,0,{for_profit},{6_25},{any},"{31-33,other}",any,{any},"Empresa tiene que ser promovida por la Compañía de Fomento Industrial de Puerto Rico. Ley Núm. 8 del 2 de octubre de 1986
+",true,Sujeto a solicitud de incentivo económico especial,2014-09-10 11:28:37.14-07,2014-09-11 09:26:11.086-07,"{other,materiaprimaadquisicinymejorasedificiomaquinariayequiposarrendamientoasistenciatcnicanminaenproduccinmercadeoypromocinyinteresesdeprstamos}",{0},{incentive},17,57
+62,Ley de Incentivos para la Generación y Retención de Empleos en las PYMES,{anywhere_in_pr},0,2050-06-29 17:00:00-07,30 dias,"De ser aprobado y certificado bajo este programa el solicitante podrá acogerse a los siguientes beneficios: 
+1. Proceso expédito para la concesión de permisos y certificaciones.
+2. Tasa preferencial y proceso expédito con el Banco de Desarrollo Económico (BDE)
+3. Descuentos en cursos del ICEDE
+4. Reembolso Salarial (Ley 52)
+5. Rentas preferenciales con PRIDCO y CCE
+6. Contribución sobre ingresos tasa preferenciales
+7. Exención Parcial Propiedad mueble y/o inmueble
+8. Descuento en Primas del Fondo del Seguro del Estado
+9. Exención Parcial Patentes Municipales
+10. Reservas en las Compras del Gobierno (Set Aside)
+11. Ahorros en Bono de Navidad
+",Primer Peso,primerpeso@cce.pr.gov,787-294-0101 ,0,"{any,non_profit,for_profit,sole_proprietor,cooperative}","{1_5,6_25,26_50}","{0_99999,100000_499999,500000_999999,1000000_4900000,5000000_9900000}",{any},any,"{any,student,veteran,minority}","",true,"",2014-08-15 06:32:52.622-07,2014-11-26 12:25:34.997-08,"{anything,open_location,open_franchise,train_employees,working_capital,buy_equipment,buy_commercial_property,hire_employees,start_business,export,export_products,export_services,improve_commercial_property,keep_employees,relocate_business,other}",{0},"{incentive,loan,reimbursement,expertise,financing,other}",7,7
+45,Puerto Rico Exporta,{anywhere_in_pr},0,2050-06-29 17:00:00-07,30 dias,"Este programa consta de cuatro etapas de capacitación que ayudarán al empresario a iniciar y desarrollar la actividad exportadora. Estas son las siguientes:
+
+Etapa de Diagnóstico - Determina el nivel de capacidad de exportación de la empresa.
+
+Etapa de Desarrollo de Plan de Exportación - Este plan es una herramienta esencial para lograr un crecimiento económico mediante la exportación de los productos y servicios. Además, debe ser parte del plan de negocio de la empresa.
+
+Etapa de Ejecución de Plan de Exportación - La CCE ofrece varias herramientas para realizar el plan de exportación y comenzar a exportar. Entre estos podemos mencionar: misiones comerciales, ferias internacionales, misiones individuales y plan de capacitación.
+
+Etapa de Seguimiento - Es una de las etapas más importantes en el proceso de exportación ya que es imprescindible para concretizar cualquier oportunidad de negocio. Para esto los empresarios puertorriqueños cuentan con el asesoramiento individualizado de los especialistas en comercio internacional.
+
+El inicio del plan de exportación no significa que la empresa ha finalizado Puerto Rico Exporta. El propósito de esta asistencia es fortalecer las empresas en los mercados internacionales ya que la exportación de los productos y servicios debe ser uno dinámico y de continua educación.",Primer Peso,primerpeso@cce.pr.gov,787 294-0101,0,"{any,non_profit,for_profit,sole_proprietor,cooperative}",{any},{any},{any},any,"{any,student,veteran,minority}","Puerto Rico Exporta es un programa que busca incentivar y promover la exportación de los productos y servicios de las empresas puertorriqueñas, con el propósito de que se convierta en una actividad continua y permanente que contribuya al desarrollo económico de Puerto Rico. Este Programa pretende brindar los conocimientos y herramientas básicas para obtener una formación en comercio internacional.",true,"",2014-07-07 16:03:39.673-07,2014-11-26 12:26:41.469-08,"{export,export_products,export_services}",{0},{expertise},7,2
+29,Microempresarios,{anywhere_in_pr},25,2040-12-30 16:00:00-08,90 días,"Cantidad máxima: 
+
+•Hasta $25,000.
+
+
+
+Aportación mínima: 
+•$0.00
+
+
+
+Tasa de interés anual: 
+
+•6.50% - 10.75%
+
+
+Tasa de interés será calculada a base de análisis de riesgo y crédito. La misma podrá ser fija o fluctuante. De ser fluctuante podrá variar con los cambios de la tasa de interés preferente (prime rate).
+
+
+Cargo por compromiso: 
+
+•$0.00 cargo por compromiso.
+
+
+
+Cargos por manejo: 
+
+•$50 individuos y $100 corporación.
+
+
+
+Gastos legales: 
+
+•$100 individuos y $200 corporación.
+",Jorge Martí,jmarti@bde.pr.gov,7876414300,0,"{for_profit,sole_proprietor}",{1_5},{any},{any},any,{any},Financiamiento para personas naturales o jurídicas que interesan desarrollar el autoempleo en empresas de cinco empleados o menos.,,"",2014-07-07 11:26:33.603-07,2014-09-05 12:40:16.43-07,{anything},{0},{loan},6,3
+48,Certificación de Suplidor Local para la venta a Barcos Cruceros,{anywhere_in_pr},0,2050-06-29 17:00:00-07,30 a 90 dias ,Certificación como Suplidor Local para venderle a barcos cruceros y así aumentar sus ventas.,Primer Peso,primerpeso@cce.pr.gov,787 294-0101,0,"{for_profit,sole_proprietor,cooperative}",{any},{any},"{11,any,31-33}",any,"{any,student,veteran,minority}","",false,"",2014-07-08 07:56:23.782-07,2014-11-26 12:27:10.082-08,"{anything,other}",{0},{other},7,7
+113,"Desarrollo e Investigación (""R&D"")",{anywhere_in_pr},0,2020-12-30 16:00:00-08,5 a 90 días laborables,"Un 4% fijo del impuesto corporativo para las industrias que realicen R&D como parte de sus actividades industriales; 1% fijo de impuesto corporativo en los productos manufacturados en Puerto Rico mediante el uso de tecnologías novedosas pioneras; 0% de tasa de impuestos corporativos en los productos manufacturados en Puerto Rico mediante el uso de tecnologías novedosas y pioneras que se han desarrollado en la isla.; Crédito fiscal por un monto de 50% de las inversiones efectuadas en el D&R en la isla (Este crédito fiscal puede ser transferido, vendido, utilizado contra impuesto o usado contra pago de servicios públicos); Fondos disponibles para proyectos especiales de R&D de importancia estratégica que determine la Junta de Directores de Fomento.",Zenaida Solis,zenaida.solis@pridco.pr.gov,(787) 758-4747,0,{for_profit},{6_25},{any},"{31-33,other}",any,{any},"Servicios para empresas con Decreto de Exención Contributiva bajo la LEy Núm. 73 de 2008, Ley núm. 83 de 2010 o Ley Núm. 20 de 2012.",true,Variable,2014-09-11 09:47:40.835-07,2014-09-11 09:58:22.269-07,"{other,estimularlainversinencreacindecapacidadparainnovarycomercializar}",{0},{incentive},17,57
+42,Línea de Crédito,{anywhere_in_pr},25,2040-12-30 16:00:00-08,90 days,"Cantidad máxima: 
+•Hasta  $10,000,000
+
+
+Por ciento a financiar: 
+•Capital de operaciones – se financiará entre un 80% a 100%.
+
+Término máximo: 
+•Hasta un (1) año.
+
+Aportación mínima requerida: 
+•0% - 20% del capital de operaciones.
+
+Tasa de interés anual: 
+•6.50% - 10.75%
+Tasa de interés será calculada a base de análisis de riesgo y crédito. La misma podrá ser fija o fluctuante. De ser fluctuante podrá variar con los cambios de la tasa de interés preferente (prime rate). 
+
+Colateral: 
+•Sujeto a la discreción del BDEPR de acuerdo a sus políticas de crédito.
+•Se podrá requerir colateral inmueble y mueble, incluyendo, pero no limitándose, a gravámenes mobiliarios sobre maquinaria y equipo, cesiones de contratos, cuentas por cobrar e inventario.
+•Además, se podrá requerir garantías adicionales, estatales o federales.
+
+Cargo por compromiso: 
+•1.25% en financiamientos menores de $500,000.
+•1.50% en financiamientos de $500,000 o más. 
+
+Cargo por manejo: 
+•0.25% en financiamientos menores de $500,000.
+
+•0.50% en financiamientos de $500,000 o más.
+",Jorge Martí,jmarti@bde.pr.gov,7876414300,0,{any},{any},{any},{any},any,{any},Financiamiento generalmente rotativo que cubre las necesidades operacionales recurrentes y de capital de trabajo a corto plazo. Los términos y condiciones de las líneas de crédito serán determinadas de caso a caso.,,"",2014-07-07 15:37:21.44-07,2014-09-08 07:56:55.878-07,{working_capital},{0},{loan},6,3
+30,Exportadores,{anywhere_in_pr},25,2040-12-30 16:00:00-08,90 días,"Cantidad máxima: 
+•Hasta $10,000,000
+
+Por ciento a financiar: 
+•Línea de crédito: 100% del costo del contrato u orden (excluyendo margen de ganancia).
+
+•Préstamo a término:
+
+
+- Bienes inmuebles – hasta 80% del precio total o valor de tasación, lo que resulte menor.
+
+- Bienes muebles – hasta 75% del costo si es nuevo o 60% del costo o del valor de tasación si es usado, lo que resulte menor. 
+
+- Capital de operaciones – se evaluará caso a caso.
+
+
+Aportación mínima requerida: 
+•Línea de crédito: $0.00.
+
+•Préstamo a término: Negocio nuevo 20%; Negocio existente 10%.
+
+
+Término máximo: 
+
+•Línea de crédito: 1 año.
+•Préstamo a término: Hasta 30 años.
+
+Tasa de interés anual: 
+•6.50% - 10.75%
+Tasa de interés será calculada a base de análisis de riesgo y crédito. La misma podrá ser fija o fluctuante. De ser fluctuante podrá variar con los cambios de la tasa de interés preferente (prime rate). ",Jorge Martí,jmarti@bde.pr.gov,7876414300,0,"{for_profit,sole_proprietor}",{any},{any},{any},any,{any},"Proveer líneas de crédito y financiamiento a término a empresas para exportar productos.
+
+Collateral 
+
+•	Businesses that have been in operation for five or more years; assignment of contract or accounts receivable and an assignment of payment
+•	Additional collateral will be required only when the business has been in operation for less than a year",,"",2014-07-07 11:32:04.996-07,2014-09-08 08:40:50.243-07,{export},{0},{loan},6,3
+9,Incentivos Contributivos y Gestoría,{caguas},200,2017-01-29 16:00:00-08,30 days,"The new Incentives Code provides fiscal benefits for activities developed in specific areas such as the special development zone of the Traditional Urban Center and the Special Development Corridors, among others which due to their potential for growth and their impact on the economy as a whole are considered a priority. In addition, it provides benefits to more than 21 types of eligible units or businesses.
+",Ana María Rodríguez ,arodriguez@caguas.gov.pr,7876538833,0,{any},{any},{any},"{11,42,51,54,56,61,62,48-49,other}",any,{any},Disqualifying factors: companies already established in the city that are not planning to grow.  ,false,"",2014-07-02 11:42:16.317-07,2014-11-05 05:16:46.289-08,"{open_location,start_business,export,keep_employees,relocate_business}",{0},{incentive},8,1
+50,Cursos ICEDE,{anywhere_in_pr},100,2050-06-29 17:00:00-07,7 a 14 dias,"El Instituto de Comercio Exterior y Desarrollo Empresarial (ICEDE) cuenta con una oferta variada de cursos que promueven la aplicación de conocimientos, a través de actividades educativas competitivas y actualizadas a las últimas tendencias en el mercado empresarial. De forma tal que las empresas puedan lograr un mayor rendimiento y eficiencia en sus negocios.
+
+Contamos con una oferta academica de sobre 85 cursos dirigidos a mejorar las capacidades y conocimientos de los empresarios en materias tales como: recursos humanos, tecnología, administración de empresas, comercio internacional, leyes laborales, etc.",Primer Peso,primerpeso@cce.pr.gov,787 294-0101,0,"{any,non_profit,for_profit,sole_proprietor,cooperative}",{any},{any},{any},any,"{any,student,veteran,minority}","",,"",2014-07-29 11:21:50.573-07,2014-11-26 12:27:36.223-08,{anything},{0},{expertise},7,7
+31,Cultivo en Ambiente Controlado,{anywhere_in_pr},25,2040-12-30 16:00:00-08,90 días,"Cantidad máxima: 
+•Hasta $100,000
+
+Uso de fondos: 
+•Capital de operaciones, compra de maquinaria y equipos y mejoras hasta 7 años 
+
+Aportación mínima: 
+•10% del costo total del proyecto.
+
+
+Tasa de interés anual: 
+
+•6.50% - 10.75%
+•Tasa de interés será calculada a base de análisis de riesgo y crédito. La misma podrá ser fija o fluctuante. De ser fluctuante podrá variar con los cambios de la tasa de interés preferente (prime rate).
+
+Cargo por compromiso: 
+•1.25% del total del financiamiento. 
+
+Descuento:
+•0.50% del cargo por compromiso antes mencionado.
+
+Cargo por manejo: 
+
+•0.25% del total del financiamiento.",Jorge Martí,jmarti@bde.pr.gov,7876414300,0,"{for_profit,sole_proprietor}",{any},{any},{11},any,{any},"Financiamiento dirigido a empresas agrícolas interesadas en desarrollar proyectos que signifiquen una mejora en sus procesos, protegiendo y mejorando el medio ambiente, creando conciencia empresarial sobre la importancia del cuidado del medioambiente bajo la aplicación del concepto ""producción más limpia”.",,"",2014-07-07 11:38:24.942-07,2014-09-08 08:36:00.196-07,{anything},{0},"{incentive,loan}",6,3
+114,Trasporte Terrestre y Marítimo al Exterior,{anywhere_in_pr},0,2020-12-30 16:00:00-08,5 a 90 días laborables,"reembolso de 20% de los costos de transporte de cada contenedor enviados desde Puerto Rico a cualquier puerto en el mundo, hasta un máximo $2,000.00 por envío a empresas cuyas ventas anuales no excedan de $10 millones. La cantidad máxima que se otorga es de $50,000.00 anuales por empresa y afiliadas.",Zenaida Solis,zenaida.solis@pridco.pr.gov,(787) 758-4747,0,{for_profit},{6_25},"{0_99999,100000_499999,1000000_4900000,5000000_9900000}","{31-33,other}",any,{any},Empresa tiene que ser promovida por la Compañía de Fomento Industrial de Puerto Rico.,true,variable,2014-09-11 10:04:33.978-07,2014-09-11 10:06:53.079-07,"{other,reduccindecostosenlatransportacin}",{0},"{incentive,reimbursement}",17,57
+36,Sector Creativo / Cultural,{anywhere_in_pr},25,2040-12-30 16:00:00-08,90 días,"Cantidad máxima: 
+•Hasta  $10,000,000
+
+Uso de fondos: 
+
+•Capital operacional hasta 5 años
+•Compra de equipo y maquinaria hasta 7 años
+•Mejoras hasta 10 años
+
+Tasa de interés anual: 
+•6.50% - 10.75%
+•Tasa de interés será calculada a base de análisis de riesgo y crédito. La misma podrá ser fija o fluctuante. De ser fluctuante podrá variar con los cambios de la tasa de interés preferente (prime rate). 
+
+Cargo por compromiso: 
+•1.25% en financiamientos menores de $500,000.
+•1.50% en financiamientos de $500,000 o más.
+
+Descuento: 
+•0.50% del cargo por compromiso antes mencionado en financiamientos menores de $500,000.
+
+Cargo por manejo: 
+•0.25% en financiamientos menores de $500,000.
+•0.50% en financiamientos de $500,000 o más.",Jorge Martí,jmarti@bde.pr.gov,7876414300,0,{any},{any},{any},{any},any,,"Promover y mercadear el financiamiento a aquellas personas que deseen establecer o crecer su negocio en las disciplinas del arte, incluyendo la industria del cine.",,"",2014-07-07 15:02:09.059-07,2014-09-08 09:32:16.738-07,{anything},{0},{loan},6,3
+115,"Centro de Asistencia para la Contratación Federal (""FeCC"")",{anywhere_in_pr},0,2020-12-30 16:00:00-08,5 a 90 días laborables,Asistencia en las siguientes áreas:,Zenaida Solis,zenaida.solis@pridco.pr.gov,(787) 758-4747,0,{any},{6_25},{any},"{31-33,other}",any,{any},"Asistencia en las siguientes áreas: Procedimiento para venderle al Gobierno Federal; Registro para hacer negocios con el Gobierno Federal; Certificaciones de pequeñps negocios, incluyendo 8ª HUBZone y Negocios Pequeños en Desventajas; Registros y programas para veteranos; entre otros servicios complementarios",true,variable,2014-09-11 10:39:44.922-07,2014-09-11 10:41:51.118-07,"{other,ayudaraempresasaobtenercontratosdegobiernoconeldepartamentodedefensaotrasagenciasyprincipalescontratistasfederales}",{0},{incentive},17,57
+38,Centros de Cuido para la Niñez y Centros de Personas de Edad Avanzada,{anywhere_in_pr},25,2031-12-30 16:00:00-08,90 días,"Cantidad máxima: 
+•Hasta $300,000
+
+
+Uso de fondos: 
+
+•Capital de operaciones hasta 5 años.
+•Maquinaria y equipo hasta 7 años.
+•Mejoras hasta 10 años.
+•Compra o construcción de inmueble hasta 30 años.
+
+
+Aportación mínima: 
+•10% del costo total del proyecto.
+
+
+Tasa de interés anual: 
+
+•3.25%* fijo por los primeros 5 años.
+*La tasa de interés se fijará a la tasa de interés preferente (prime rate) prevaleciente a la fecha del cierre, si la colateral cubre el 100% del riesgo. Si la colateral cubre el 50% del riesgo, se aplicará 1% sobre la tasa preferente (prime rate) y un 2% si la colateral cubre menos del 50% del riesgo.
+
+Fuente de fondos: 
+
+•Fondos provistos bajo la Ley 212 del 29 de agosto de 2000 y la Ley 265 del 9 de septiembre de 2004. 
+
+
+Cargo por compromiso: 
+•1.25% del total del financiamiento.
+
+
+Cargo por manejo: 
+•0.25% del total del financiamiento.",Jorge Martí,jmarti@bde.pr.gov,7876414300,0,{for_profit},{any},{any},{any},any,,Producto creado para contribuir a que los niños y personas de edad avanzada sean cuidados en centros que cuenten con las facilidades necesarias (Ley Núm. 212 de 29 de agosto de 2000).,true,10%,2014-07-07 15:20:53.572-07,2014-09-08 08:55:43.917-07,{anything},{0},{loan},6,3
+20,ALIANZA - AUTORIDAD DE DESPERDICIOS SÓLIDOS (ADS),{anywhere_in_pr},25,2041-12-30 16:00:00-08,90 días,"Cantidad máxima: 
+•A ser determinada por la ADS caso a caso.
+
+
+Aportación: 
+
+•10% a 20% del costo del proyecto a financiar, según las circunstancias de cada caso.
+
+
+Uso de fondos:	
+
+•Capital de operaciones hasta 5 años.
+•Maquinaria y equipo hasta 8 años.
+•Mejoras hasta 10 años.
+
+
+Tasa de interés anual:	
+•10% fijo
+
+Cargo por compromiso:	
+•Fluctuará entre 1% a 1.50% del total del financiamiento.
+
+Cargo por manejo:	
+•0.25% en financiamientos menores de $500,000.
+•0.50% en financiamientos de $500,000 o más.
+
+Cargo inicial:	
+•$25
+
+
+Colateral / Garantías: 
+
+•100% de garantía de ADS.
+•Cesión de todos los incentivos a recibir del Departamento de Hacienda.
+•Equipos a financiar con el préstamo.
+•Cualquier otra colateral que el BDEPR estime necesaria.",Jorge Martí,jmarti@bde.pr.gov,(787) 641-4300,0,"{for_profit,sole_proprietor}",{any},{any},"{other,_reciclaje}",any,{any},"Ofrecer financiamiento a empresas dedicadas al reciclaje para incentivar industrias que permitan completar el proceso de reciclaje en nuestra economía, industrias que sean innovadoras en los servicios, productos o tecnologías que utilicen y/o microempresas que promuevan el apoderamiento comunitario. En particular, se le dará prioridad a microempresas de reciclaje que, además de cumplir con los criterios base, ubiquen en las islas municipio de Vieques y Culebra.",,10% a 20%,2014-07-03 12:22:13.048-07,2014-09-08 09:57:24.921-07,{anything},{0},{loan},6,3
+22,Financiamiento para la Industria Deportiva y Organizaciones Deportivas del Departamento de Recreación y Deporte,{anywhere_in_pr},25,2041-12-30 16:00:00-08,90 días,"Amount
+•	Hasta $25,000
+
+Incentivos
+
+•	Interés Fijo de  8%
+•	No requiere aportación mínima
+•	$25 Cargo Inicial
+•	$0 Cargo por Manejo
+•	1% Cargo por Compromiso
+
+Términos
+
+•	Hasta 5 años",Jorge Martí,jmarti@bde.pr.gov,7876414300,0,"{for_profit,sole_proprietor}",{any},{any},{any},any,{any},"Financiamiento diseñado para asistir a futuros o empresarios existentes, organizaciones deportivas sin fines de lucro que establecerán un negocio o y tengan un negocio dentro de la industria deportiva. Deben estar Certificados por el Departamento de Recreación y Deportes.",false,"",2014-07-03 12:58:50.752-07,2014-09-05 10:15:12.595-07,{anything},{0},"{incentive,loan}",6,3
+39,Organizaciones Sin Fines de Lucro,{anywhere_in_pr},25,2040-12-30 16:00:00-08,90 days,"Cantidad máxima: 
+
+•Hasta  $500,000
+
+Por ciento a financiar: 
+
+•Capital de operaciones – se financiará el 80% del total del contrato, propuesta, asignación o donativo, según aplique.
+
+Tasa de interés anual: 
+•4.25% (actual)*
+
+*Cómputo se determinará a base del 1% sobre la tasa preferente variable a la fecha del cierre.
+
+Aportación mínima: 
+•20% del total del contrato, propuesta, asignación o donativo, según aplique.",Jorge Martí,jmarti@bde.pr.gov,7876414300,0,{non_profit},{any},{any},{any},any,{any},"Proveer líneas de crédito a organizaciones sin fines de lucro que tengan necesidad para trabajar propuestas aprobadas a nivel estatal, federal, organizaciones internacionales o empresa privada.",,"",2014-07-07 15:25:55.656-07,2014-09-08 06:58:38.845-07,{anything},{0},{loan},6,3
+63,Ley de Incentivos y Financiamiento para Jóvenes y Empresarios,{anywhere_in_pr},0,2050-06-29 17:00:00-07,30 a 90 dias ,"De ser aprobado y certificado bajo este programa el solicitante podrá acogerse a los siguientes beneficios: 
+1. Proceso expédito para la concesión de permisos y certificaciones. 
+2. Exención de contribución sobre ingresos para jovenes de 16 a 26 años sobre los primeros $40,000 dolares de ingreso bruto generados por concepto de salarios, servicios prestados y/o trabajo por cuenta propia. 
+3. Exención total de contribución sobre propiedad mueble a los Negocios Nuevos establecidos por jóvenes de 16 a 35 años, sobre los primeros $500,000 de ingreso bruto generados (primeros tres años).
+4. Exención total de patente municipal a los Negocios Nuevos establecidos por jóvenes de 16 a 35 años, sobre los primeros $500,000 de ingreso bruto generados (primeros tres años).
+5. Programa de financiamiento y para la Inversión de Capital de Riesgo (Venture Capital) para jóvenes empresarios.
+6.  Propiedades de PRIDCO y Autoridad de Tierras
+7. Descuento en cursos del Instituto de Comercio Exterior y Desarrollo Empresarial (ICEDE) con la Compañía de Comercio y Exportación (CCE).",Primer Peso,primerpeso@cce.pr.gov,787-294-0101 ,0,"{any,non_profit,for_profit,sole_proprietor,cooperative}",{any},"{any,0_99999,100000_499999,500000_999999,1000000_4900000,5000000_9900000,10000000_}",{any},any,"{any,student,veteran,minority}","",true,"",2014-08-29 08:45:47.731-07,2014-11-26 12:28:13.226-08,"{anything,open_location,open_franchise,train_employees,working_capital,buy_equipment,buy_commercial_property,hire_employees,start_business,export,export_products,export_services,improve_commercial_property,relocate_business}","{1,2}","{incentive,loan,expertise,financing,other}",7,7
+116,Proceso Expedito 60/40,{anywhere_in_pr},0,2024-06-29 17:00:00-07,None,"Financiamiento (préstamo) de hasta un cuarenta porciento (40%) del presupuesto de producción ajustado o hasta un máximo de un millón doscientos mil dólares ($1,200,000), lo que sea menor. El proyecto ya debe contar con el sesenta (60%) del presupuesto.",Naima Rodríguez Rivera,naima.rodriguez@puertoricofilm.pr.gov,787-754-6444,0,{any},{any},{any},{51},any,{any},La solicitud de financiamiento se encuentra disponible en el siguiente enlace: http://puertoricofilm.org/wp-content/uploads/2013/08/Solicitud-Financiamiento-Expedito-60-40.pdf.  El Reglamento del Fondo Cinematográfico que contempla este programa se encuentra a través del siguiente enlace: http://puertoricofilm.org/wp-content/uploads/2013/08/Reglamento-Ley-121-vigente.pdf. ,true,60% del presupuesto del proyecto fílmico,2014-09-11 10:45:48.671-07,2014-09-18 07:34:06.011-07,{cinematographic_production},{0},"{other,financiamiento}",13,71
+58,Crowdfunding or Financiamiento Colectivo,{anywhere_in_pr},0,4000-12-30 16:00:00-08,(from 30 to 75 days).,"No traditional business plan needed, access to friendly capital, no equity dilution, no money has to be payed back only an offering of a reward in exchange for the money people donate, access to a full community, a news letter to help you rise money, personalise community management throwout the hole campaign, access to media contacts, you can take your money even if you don't reach your funding goal.",Guifre Tort,info@antrocket.com / astrid@antrocket.com / guifre@antrocket.com,"(787) 562-3921, (787) 922-0866, (787) 294-5556",0,{any},{any},{any},{any},any,{any},"We encourage creativity, innovation, business development, social-economic development, environmental conscience, entrepreneurship, collaboration and solidarity. Children under 16 years of age need an written authorisation from their parents or tutor. Between the prohibited items or subject matter are: No contests, raffles, drugs, pornography, life style support, equity exchange, ventures or co-ventures. For more information on our Terms of Use please visit: http://antrocket.uservoice.com/knowledgebase/articles/214558-terms-of-use",true,(from a 7.75% up to 14%),2014-08-13 21:51:00.339-07,2014-08-13 21:51:00.367-07,{anything},"{1,2,3,4}",{_financing_through_crowd_donations},9,9
+97,Impacto Comercial ,{caguas},160,2024-06-29 17:00:00-07,ninguna,El Municipio desarrolla un plan económico para traer nuevas empresas promoviendo la retención y creación de empleos fomentando la inversión privada para lograr un mayor crecimiento económico en el Centro Urbano Tradicional ,Mariana Cepeda Hernández,mchernandez@caguas.gov.pr,787-653-8833,0,{any},{any},{any},{81},any,,"",,"",2014-09-10 12:05:04.55-07,2014-11-06 06:52:53.557-08,"{start_business,keep_employees,relocate_business}",{0},{other},8,1
