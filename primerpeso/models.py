@@ -214,7 +214,7 @@ class Opportunity(WhoAndWhenBase):
                                        ('any', _('Any')),
                                        ('other', _('Other')),))
     application_cost = models.IntegerField()
-    application_deadline = models.DateField()
+    application_deadline = models.DateTimeField(null=True, blank=True)
     benefit_description = models.TextField()
     agency_contact_name = models.CharField(max_length=255)
     agency_contact_phone = models.CharField(max_length=255)
