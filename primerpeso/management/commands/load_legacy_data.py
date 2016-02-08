@@ -133,3 +133,14 @@ class Command(BaseCommand):
                     agency_id=r['agencyId'],
                 )
                 opportunity.save()
+
+        models.RequirementRelationship.objects.all().delete()
+        with open(os.path.join(wd, '../../../legacy_data/opp_to_req.csv')) as f:
+            reader = csv.DictReader(f)
+            for r in reader:
+                rr =  models.RequirementRelationship(
+                    creator_id='1',
+                    opportunity_id=r['opportunityId'],
+                    requirement_id=r['requirementId'],
+                )
+                rr.save()
