@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="csrf-token"{% __pyjade_attrs attrs=[('content',(_csrf))], terse=True %}>
+    <meta name="author" content="">
+    <title>{{title|escape}} | PrimerPeso</title>
+    <link rel="stylesheet"{% __pyjade_attrs attrs=[('href',(CDN('/css/styles.css')))], terse=True %}>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  </head>
+  <body{% __pyjade_attrs attrs=[('class', ((bodyClass)))], terse=True %}>
+    <div id="wrap">{% include "partials/navigation.jade" %}{% include "partials/flash.jade" %}
+      <section class="header"><img{% __pyjade_attrs attrs=[('src',(CDN("/img/logo_pp.png")))], terse=True %}>
+        <h1 class="header-title"><strong>PrimerPeso</strong> te ayuda a crear o expandir tu negocio.
+          <h2 class="header-subtitle">Navegando los más de $300 millones de dólares disponibles en programas de Gobierno para pequeños empresarios en Puerto Rico.</h2>
+          <h2 class="header-subtitle">Estamos en BETA y apreciamos tus comentarios. Lanzaremos oficialmente en Nov 2014.</h2>
+        </h1><a href="/preguntas" class="btn">Participar del sitio beta</a>
+      </section>
+      <section class="how-it-works col-lg-12">
+        <h1 class="section-title">¿Cómo funciona PrimerPeso?</h1>
+        <div class="action-words col-lg-12">
+          <div class="col-lg-4"><img{% __pyjade_attrs attrs=[('src',(CDN("/img/answer.png")))], terse=True %}>
+            <h3>1. Responde</h3>
+            <p>10 preguntas simples sobre ti y tu negocio.</p>
+          </div>
+          <div class="col-lg-4"><img{% __pyjade_attrs attrs=[('src',(CDN("/img/filter.png")))], terse=True %}>
+            <h3>2. Filtra</h3>
+            <p>La aplicación analiza los programas disponibles de acuerdo a tus respuestas.</p>
+          </div>
+          <div class="col-lg-4"><img{% __pyjade_attrs attrs=[('src',(CDN("/img/apply.png")))], terse=True %}>
+            <h3>3. Selecciona</h3>
+            <p>Revisa tus opciones y selecciona los programas de tu interés.</p>
+          </div>
+        </div>
+      </section>
+      <section class="how-can-we-help col-lg-12">
+        <h1 class="section-title">¿Cómo te podemos ayudar?</h1>
+        <div class="options"><a href="/preguntas" class="btn help-you">Quiero crear un negocio</a><a href="/preguntas" class="btn help-you">Quiero aprender sobre los incentivos contributivos</a><a href="/preguntas" class="btn help-you">Quiero abrir un nuevo local</a><a href="/preguntas" class="btn help-you">Quiero exportar mis productos</a>
+        </div>
+      </section>
+      <section class="what-you-get col-lg-12">
+        <h1 class="section-title">¿Qué tipo de programas deseas recibir?</h1>
+        <h4>Contamos con más de 80 programas pertenecientes a agencias como CCE, PRIDCO, OAJ, ADL, BDE y muchas otras.</h4>
+        <div class="col-lg-12"><img{% __pyjade_attrs attrs=[('src',(CDN("/img/reembolsos.png")))], terse=True %} class="col-lg-4 col-md-6 col-sm-12"><img{% __pyjade_attrs attrs=[('src',(CDN("/img/creditos.png")))], terse=True %} class="col-lg-4 col-md-6 col-sm-12"><img{% __pyjade_attrs attrs=[('src',(CDN("/img/becas.png")))], terse=True %} class="col-lg-4 col-md-6 col-sm-12">
+        </div>
+        <div class="what-last col-lg-12"><img{% __pyjade_attrs attrs=[('src',(CDN("/img/incentivoscontributivos.png")))], terse=True %} class="col-lg-4 col-md-6 col-sm-12"><img{% __pyjade_attrs attrs=[('src',(CDN("/img/competencias.png")))], terse=True %} class="col-lg-4 col-md-6 col-sm-12"><img{% __pyjade_attrs attrs=[('src',(CDN("/img/talleres.png")))], terse=True %} class="col-lg-4 col-md-6 col-sm-12">
+        </div>
+      </section>
+      <section class="who-have-we-helped col-lg-12">
+        <h1 class="section-title">¿A quién hemos ayudado?</h1>
+        <div class="testimonials left"><img{% __pyjade_attrs attrs=[('src',(CDN("/img/lettuce.png")))], terse=True %}>
+          <p>"Ojalá esta aplicación hubiese existido tres años atrás cuando estaba en plena búsqueda de financiamiento"</p><a href="/preguntas" class="btn last-butt">¡Empieza ahora!</a>
+        </div>
+        <div id="footer">
+          <div>© 2014 CoquiCoders.</div>
+          <div><strong>PrimerPeso</strong> Proyecto
+ creado por<a href="http://coquicoders.org">Coqui Coders</a>
+          </div>
+          <div>Licencia bajo&nbsp;<a href="http://opensource.org/licenses/mit-license.html">MIT</a>
+          </div>
+          <div><a href="https://github.com/codeforamerica/primerpeso">GitHub Project</a> ·&nbsp;<a href="https://github.com/codeforamerica/primerpeso/issues">Issues</a>
+          </div>
+          <div class="pr-logo"><a href="http://pr.gov"><img{% __pyjade_attrs attrs=[('src',(CDN("/img/prgov.png")))], terse=True %}></a><a href="http://codeforamerica.org"><img{% __pyjade_attrs attrs=[('src',(CDN("/img/cfa-logo.png")))], terse=True %}></a>
+          </div>
+        </div>
+      </section>
+      <script type="text/javascript"{% __pyjade_attrs attrs=[('src',(CDN('/js/vendor.min.js')))], terse=True %}></script>
+      <script type="text/javascript"{% __pyjade_attrs attrs=[('src',(CDN('/js/main.js')))], terse=True %}></script>{% include "partials/analytics.jade" %}
+    </div>
+  </body>
+</html>
