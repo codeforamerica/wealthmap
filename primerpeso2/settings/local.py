@@ -15,3 +15,5 @@ DATABASES = {
         'PASSWORD': 'password',
     }
 }
+
+STATIC_ROOT = '/webapps/primerpeso2/static/'
