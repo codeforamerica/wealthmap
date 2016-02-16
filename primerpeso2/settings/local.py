@@ -9,8 +9,9 @@ SECRET_KEY = 'sq)eck#=xcu13k0%aw)11dpqbf6hd@$e5kjel*qk2i92yckn+*'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'primerpeso',
-        'USER': 'password',
+        'NAME': 'primerpeso2',
+        'USER': 'primerpeso2',
         'HOST': 'localhost',
+        'PASSWORD': 'password',
     }
 }
