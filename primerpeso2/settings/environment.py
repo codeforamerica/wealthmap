@@ -12,7 +12,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'primerpeso2',
         'USER': os.environ['DATABASE_USER'],
-        'HOST': os.environ['DATBASE_HOST',
+        'HOST': os.environ.get('DATBASE_HOST', 'localhost'),
         'PASSWORD': os.environ['DATABASE_PASSWORD'],
     }
 }
