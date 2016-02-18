@@ -1,3 +1,4 @@
+import os
 from primerpeso2.settings.base import *
 
 # SECURITY WARNING: keep the secret key used in production secret!
@@ -10,10 +11,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'primerpeso2',
-        'USER': 'primerpeso2',
+        'USER': os.environ['DATABASE_USER'],
         'HOST': 'localhost',
-        'PASSWORD': 'password',
+        'PASSWORD': os.environ['DATABASE_PASSWORD'],
     }
 }
 
-STATIC_ROOT = '/webapps/primerpeso2/static/'
+STATIC_ROOT = os.environ['STATIC_ROOT']
