@@ -1,0 +1,108 @@
+// Attributes brought in implicitly
+// See http://jade-lang.com/reference/#mixins
+
+mixin makeField(formOptions)
+  div(id=formOptions.name class="form-group col-sm-12")
+    if formOptions.widget == "textArea"
+      +textAreaField(formOptions)
+    else if _.contains(["select", "multiSelect"], formOptions.widget)
+      +choiceSelectField(formOptions)
+    else if _.contains(["ref"], formOptions.widget)
+      +choiceRefField(formOptions)
+    else if _.contains(["radio", "checkbox"], formOptions.widget)
+      +choiceField(formOptions)
+    else if formOptions.widget == "arrayTextField"
+      +arrayTextField(formOptions)
+    else if formOptions.widget == "date"
+      +dateField(formOptions)
+    else
+      +textField(formOptions)
+  if formOptions.choiceOther
+    div(id=formOptions.name + "Other" class="choiceOther form-group col-sm-12")
+      +choiceOther(formOptions)
+
+mixin choiceRefField(formOptions)
+  +fieldLabel(formOptions)
+  - var isMultiple = formOptions.multiple ? "multiple" : "";
+  div(class=formOptions.fieldClasses || "col-sm-4")
+    input(type="hidden" class="form-control " + formOptions.widget
+      name=formOptions.name
+      value = formOptions.value || ''
+      data-reftarget=(formOptions.refTarget || '')
+      data-separateby=(formOptions.separateBy || '')
+      multiple=isMultiple)
+
+
+mixin choiceSelectField(formOptions)
+  +fieldLabel(formOptions)
+  div(class=formOptions.fieldClasses || "col-sm-4")
+    select(class="form-control " + formOptions.widget
+      name=formOptions.name
+      multiple=(formOptions.widget == "multiSelect"))
+      if (formOptions.choices)
+        each choice, cVal in formOptions.choices
+          // TODO look at exploding classes
+          if _.isArray(formOptions.value)
+            if typeof(formOptions.value[0]) === 'number'
+              option(value=cVal selected=(_.contains(formOptions.value, parseInt(cVal)))) #{choice}
+            else
+              option(value=cVal selected=(_.contains(formOptions.value, cVal))) #{choice}
+          else
+            option(value=cVal selected=(formOptions.value == cVal)) #{choice}
+
+mixin choiceField(formOptions)
+  +fieldLabel(formOptions)
+  div(class=formOptions.fieldClasses || "col-sm-4")
+    each choice, cVal in formOptions.choices
+      - var checkedBox = false;
+      if (formOptions.value)
+        each val, index in formOptions.value
+          if (val == cVal)
+            - checkedBox = true
+      div(class=formOptions.widget)
+        input(type=formOptions.widget, name=formOptions.name, value=cVal checked=checkedBox)
+        label #{choice}
+
+mixin textField(formOptions)
+  +fieldLabel(formOptions)
+  div(class=formOptions.fieldClasses || "col-sm-10 col-md-6")
+    - var req = (formOptions.required == true || formOptions.allowNull == false) ? true : false
+    input(type=formOptions.widget required=req name=formOptions.name value=formOptions.value || '' class="form-control" placeholder=formOptions.placeholder)
+
+mixin dateField(formOptions)
+  +fieldLabel(formOptions)
+  div(class=formOptions.fieldClasses || "col-sm-10 col-md-6")
+    - var req = (formOptions.required == true || formOptions.allowNull == false) ? true : false
+    - var val = moment(formOptions.value, "ddd MMM DD YYYY HH:mm:ss ZZ").format("YYYY-MM-DD");
+    input(type=formOptions.widget required=req name=formOptions.name value=val || '' class="form-control" placeholder=formOptions.placeholder)
+
+mixin textAreaField(formOptions)
+  +fieldLabel(formOptions)
+  div(class=formOptions.fieldClasses || "col-sm-10 col-md-6")
+    - var req = (formOptions.required == true || formOptions.allowNull == false) ? true : false
+    textarea(class="form-control" required=req rows="3" name=formOptions.name) #{formOptions.value || ''}
+
+mixin arrayTextField(formOptions)
+  - var req = (formOptions.required == true || formOptions.allowNull == false) ? true : false
+  +fieldLabel(formOptions)
+  div(class=formOptions.fieldClasses || "col-sm-10 col-md-6")
+    button(class="array-text-field" name=formOptions.name type="button") Agregar otro
+    input(type="text" required=req name=formOptions.name+'[]' value=formOptions.value || '' class="form-control array-text-field" placeholder=formOptions.placeholder)
+
+// Helpers
+mixin choiceOther(formOptions)
+  label(for=formOptions.name class="col-sm-6 col-md-6 control-label") Otro
+  div(class="col-sm-10 col-md-6")
+    - var req = (formOptions.required == true || formOptions.allowNull == false) ? true : false
+    if formOptions.widget == 'checkbox'
+      input(type="text" name=formOptions.name value=formOptions.otherValue || '' class="form-control col-lg-6" placeholder=formOptions.placeholder)
+    else
+      input(type="text" name=formOptions.name + "Other" value=formOptions.otherValue || '' class="form-control col-lg-6" placeholder=formOptions.placeholder)
+
+mixin fieldLabel(formOptions)
+  - var fieldLabelClasses = formOptions.fieldLabelClasses || 'col-sm-6 col-md-6'
+  label(for=formOptions.name class=fieldLabelClasses + " control-label") #{formOptions.label}
+    if formOptions.required == true || formOptions.allowNull == false
+      span.required *
+    if formOptions.tooltip
+      i.fa.fa-plus-circle(data-toggle="tooltip" data-placement="right" title=formOptions.tooltip)

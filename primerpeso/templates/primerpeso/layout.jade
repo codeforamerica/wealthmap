@@ -1,0 +1,41 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    title #{title} | PrimerPeso
+    - load staticfiles
+    - load compress
+    - compress 'css'
+      link(rel='stylesheet', href='/static/primerpeso/css/styles.less'))
+    link(rel='shortcut icon', href='/favicon.ico', type='image/x-icon')
+    link(rel='icon', href='/favicon.ico', type='image/x-icon')
+  body(class=bodyClass)
+    #wrap
+      .navbar.navbar-default
+        .container
+          .navbar-header
+            button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+              span.sr-only Toggle navigation
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            a.navbar-brand(href='/')
+          .collapse.navbar-collapse
+            ul.nav.navbar-nav.navbar-right
+              - var nav_select = { 'About': 'active', 'Contact': 'inactive' }
+              li(class=nav_select[title])
+                a(href='/about') Sobre PrimerPeso
+              - var nav_select = { 'About': 'inactive', 'Contact': 'active' }
+              li(class=nav_select[title])
+                a(href='/contact') ¿Eres una agencia?
+      .container
+        block content
+
+    include primerpeso/partials/footer.jade
+    script(type='text/javascript', src=CDN('/js/vendor.min.js'))
+    script(type='text/javascript', src=CDN('/js/main.js'))
+    include primerpeso/partials/analytics.jade
