@@ -4,6 +4,7 @@ import csv
 from django.core.management.base import BaseCommand, CommandError
 from primerpeso import models
 
+
 def get_min_max(data_str):
     employees=data_str[1:-1].replace('_', ',').split(',')
     if 'any' in employees or 'none' in employees:
@@ -20,9 +21,11 @@ def get_min_max(data_str):
         employees_max = employees[-1]
     return (employees_min, employees_max)
 
+
 def to_array(data_str):
     array = data_str[1:-1].split(',')
     return array
+
 
 def age_to_range(data_str):
     """
@@ -44,8 +47,8 @@ def age_to_range(data_str):
     else:
         min_age_str = min(ages)
         max_age_str = max(ages)
-        min_dict = { '1': 16, '2': 27, '3': 36, '4': 45, '5': 55, '6': 65 }
-        max_dict = { '1': 26, '2': 35, '3': 44, '4': 54, '5': 64, '6': None }
+        min_dict = {'1': 16, '2': 27, '3': 36, '4': 45, '5': 55, '6': 65}
+        max_dict = {'1': 26, '2': 35, '3': 44, '4': 54, '5': 64, '6': None}
         min_age = min_dict[min_age_str]
         max_age = max_dict[max_age_str]
     return (min_age, max_age)
@@ -138,7 +141,7 @@ class Command(BaseCommand):
         with open(os.path.join(wd, '../../../legacy_data/opp_to_req.csv')) as f:
             reader = csv.DictReader(f)
             for r in reader:
-                rr =  models.RequirementRelationship(
+                rr = models.RequirementRelationship(
                     creator_id='1',
                     opportunity_id=r['opportunityId'],
                     requirement_id=r['requirementId'],

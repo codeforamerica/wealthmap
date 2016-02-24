@@ -65,7 +65,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
             ],
             'loaders': [
-                ('pyjade.ext.django.Loader',(
+                ('pyjade.ext.django.Loader', (
                     'django.template.loaders.filesystem.Loader',
                     'django.template.loaders.app_directories.Loader',
                 )),
