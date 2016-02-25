@@ -9,8 +9,8 @@ html
     title #{title} | PrimerPeso
     - load staticfiles
     - load compress
-    - compress 'css'
-      link(rel='stylesheet', href='/static/primerpeso/css/styles.less'))
+    - compress css
+      link(rel='stylesheet', type="text/less", href='/static/primerpeso/css/styles.less'))
     link(rel='shortcut icon', href='/favicon.ico', type='image/x-icon')
     link(rel='icon', href='/favicon.ico', type='image/x-icon')
   body(class=bodyClass)
