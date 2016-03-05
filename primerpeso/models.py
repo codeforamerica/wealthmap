@@ -305,7 +305,7 @@ class OpportunitySearch(models.Model):
     def search(self):
         opps = Opportunity.objects
         for purpose in self.purpose:
-            opps = opps.filter(purpose__contains=[purpose,])
+            opps = opps.filter(purpose__contains=[purpose, ])
         if self.investing_own_money:
             opps = opps.filter(investing_own_money=True)
         genders = ['any']
@@ -316,15 +316,14 @@ class OpportunitySearch(models.Model):
         opps = opps.filter(gender__in=genders)
         opps = opps.filter(age_min__lte=self.age).filter(age_max__gte=self.age)
         if self.entity_type != 'any':
-            opps = opps.filter(entity_types__contains=[self.entity_type,])
+            opps = opps.filter(entity_types__contains=[self.entity_type, ])
         if self.industry != 'any':
-            opps = opps.filter(industries__contains=[self.industry,])
+            opps = opps.filter(industries__contains=[self.industry, ])
         for location in self.locations:
-            opps = opps.filter(locations__contains=[location,])
+            opps = opps.filter(locations__contains=[location, ])
         opps = opps.filter(employees_min__lte=self.employees).\
-                    filter(employees_max__gte=self.employees)
+            filter(employees_max__gte=self.employees)
         return opps
-
 
     def __str__(self):
         return self.email

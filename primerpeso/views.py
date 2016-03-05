@@ -11,6 +11,7 @@ def about(request):
 
 class SearchFormView(CookieWizardView):
     template_name="primerpeso/search_form.html"
+
     def done(self, form_list, **kwargs):
         combined = {}
         for form in form_list:
@@ -19,5 +20,5 @@ class SearchFormView(CookieWizardView):
         search.save()
         query = search.search()
         return render_to_response("primerpeso/search_results.html", {
-            'title': _('Questionnaire Results'), # Preguntas
+            'title': _('Questionnaire Results'),  # Preguntas
         })
