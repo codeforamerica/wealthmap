@@ -6,11 +6,14 @@ html
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     meta(name='description', content='')
     meta(name='author', content='')
-    title #{title} | PrimerPeso
+    title
+      block title
+        #{title} | PrimerPeso
     - load staticfiles
     - load compress
     - compress css
       link(rel='stylesheet', type="text/less", href='/static/primerpeso/css/styles.less'))
+    block head
     link(rel='shortcut icon', href='/favicon.ico', type='image/x-icon')
     link(rel='icon', href='/favicon.ico', type='image/x-icon')
   body(class=bodyClass)
@@ -26,11 +29,9 @@ html
             a.navbar-brand(href='/')
           .collapse.navbar-collapse
             ul.nav.navbar-nav.navbar-right
-              - var nav_select = { 'About': 'active', 'Contact': 'inactive' }
-              li(class=nav_select[title])
+              li
                 a(href='/about') Sobre PrimerPeso
-              - var nav_select = { 'About': 'inactive', 'Contact': 'active' }
-              li(class=nav_select[title])
+              li
                 a(href='/contact') ¿Eres una agencia?
       .container
         block content
