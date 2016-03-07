@@ -1,5 +1,12 @@
 {% extends 'primerpeso/layout.jade' %}
 {% load i18n %}
 {% block content %}
-Test test
+<div>
+Test
+</div>
+{% for opp in opportunities %}
+  <div>
+    {{ opp }}
+  </div>
+{% endfor %}
 {% endblock %}

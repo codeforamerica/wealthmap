@@ -21,4 +21,5 @@ class SearchFormView(CookieWizardView):
         query = search.search()
         return render_to_response("primerpeso/search_results.html", {
             'title': _('Questionnaire Results'),  # Preguntas
+            'opportunities': query,
         })

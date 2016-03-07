@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.contrib.postgres.fields import ArrayField
 from django.db import models
+from django.db.models import Q
 from django.utils.translation import ugettext as _
 from localflavor.us.models import USStateField, USZipCodeField
 
@@ -62,7 +63,7 @@ class RequirementRelationship(WhoAndWhenBase):
         verbose_name_plural = _('Requirement Relationships')
 
 
-LOCATIONS = (('anywhere_in_pr', 'Cualquier municipio'),
+LOCATIONS = (('any', 'Cualquier municipio'),
              ('adjuntas', 'Adjuntas'),
              ('aguada', 'Aguada'),
              ('aguadilla', 'Aguadilla'),
@@ -183,7 +184,7 @@ BENEFIT_TYPES = (('incentive', 'Incentivos'),
                  ('financing', 'Financiamiento'),
                  ('other', 'Otros'),)
 
-PURPOSE = (('anything', 'Cualquiera'),
+PURPOSE = (('any', 'Cualquiera'),  # should be any
            ('open_location', 'Abrir un Nuevo Local'),
            ('open_franchise', 'Abrir una Franquicia'),
            ('train_employees', 'Adiestrar Empleados'),
@@ -304,25 +305,42 @@ class OpportunitySearch(models.Model):
 
     def search(self):
         opps = Opportunity.objects
-        for purpose in self.purpose:
-            opps = opps.filter(purpose__contains=[purpose, ])
-        if self.investing_own_money:
-            opps = opps.filter(investing_own_money=True)
+
+        def min_max_query(query, field_name, value):
+            """
+            modifies a query so if finds Opportunities which match searches.
+            """
+            min_query = {field_name +'_min__lte': value}
+            max_query = {field_name +'_max__gte': value}
+            no_max = {field_name +'_max__isnull': True}
+            return query.filter(Q(**min_query) & Q(Q(**max_query) | Q(**no_max)))
+
+        def make_contains(field_name, search_term):
+            query_str = '%s__contains' % field_name
+            return Q(**{query_str: [search_term, ]})
+
+        def multi_select(field_name, select):
+            q = make_contains(field_name, 'any')
+            for s in select:
+                q |= make_contains(field_name, s)
+            return q
+
+        opps = opps.filter(multi_select('purpose', self.purpose))
+        if not self.investing_own_money:
+            opps = opps.filter(investing_own_money=False)
         genders = ['any']
         if self.gender == 'both':
             genders.extend(['male', 'female'])
         else:
             genders.append(self.gender)
         opps = opps.filter(gender__in=genders)
-        opps = opps.filter(age_min__lte=self.age).filter(age_max__gte=self.age)
-        if self.entity_type != 'any':
-            opps = opps.filter(entity_types__contains=[self.entity_type, ])
-        if self.industry != 'any':
-            opps = opps.filter(industries__contains=[self.industry, ])
-        for location in self.locations:
-            opps = opps.filter(locations__contains=[location, ])
-        opps = opps.filter(employees_min__lte=self.employees).\
-            filter(employees_max__gte=self.employees)
+        opps = min_max_query(opps, 'age', self.age)
+        opps = opps.filter(multi_select('entity_types', [self.entity_type, ]))
+        opps = opps.filter(multi_select('industries', [self.industry, ]))
+        opps = opps.filter(multi_select('locations', self.locations))
+        opps = min_max_query(opps, 'employees', self.employees)
+        opps = opps.filter(minimum_years_in_business__lte=self.years_in_business)
+        opps = min_max_query(opps, 'annual_revenue', self.annual_revenue)
         return opps
 
     def __str__(self):

@@ -24,12 +24,23 @@ def get_min_max(data_str):
 
 def to_array(data_str):
     array = data_str[1:-1].split(',')
+    try:
+        i = array.index('anything')
+    except ValueError:
+        try:
+            i = array.index('anywhere_in_pr')
+        except ValueError:
+            pass
+        else:
+            array[i] = 'any'
+    else:
+        array[i] = 'any'
     return array
 
 
 def age_to_range(data_str):
     """
-    Currently stored usig a multiple select of these options.
+    Legacy  stored usig a multiple select of these options.
     age: {
       '0': 'Cualquier',
       '1': '16-26',
