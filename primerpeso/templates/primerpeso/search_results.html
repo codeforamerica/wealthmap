@@ -1,12 +1,1344 @@
 {% extends 'primerpeso/layout.jade' %}
 {% load i18n %}
 {% block content %}
-<div>
-Test
+<ul class="nav nav-tabs nav-justified search-tabs results-tabs" role=
+"tablist">
+  <li class="active search-tab">
+    <a href="#" id="all">Todos</a>
+  </li>
+  <li class="search-tab">
+    <a href="#" id="incentive">Incentivos</a>
+  </li>
+  <li class="search-tab">
+    <a href="#" id="expertise">Talleres</a>
+  </li>
+  <li class="search-tab">
+    <a href="#" id="reimbursement">Reembolsos</a>
+  </li>
+  <li class="search-tab">
+    <a href="#" id="loan">Créditos</a>
+  </li>
+  <li class="search-tab">
+    <a href="#" id="financing">Financiamiento</a>
+  </li>
+  <li class="search-tab">
+    <a href="#" id="other">Otros</a>
+  </li>
+</ul>
+<div class="search-intro results">
+  Escoge los programas de tu interés. Puedes agregar la cantidad que
+  desees.
 </div>
-{% for opp in opportunities %}
-  <div>
-    {{ opp }}
+<div class="opportunities-container">
+  <div class="incentive-container">
+    <div class="row row-benefit-count row-incentive">
+      <h3>6 Incentivos</h3>
+    </div>
+    <div class="row row-header row-incentive">
+      <div class="col-md-8 col-description-header">
+        <h4>Recursos</h4>
+      </div>
+      <div class="col-md-2 col-deadline-header">
+        <h4>Vencimiento</h4>
+      </div>
+      <div class="col-md-2 col-est-time-header">
+        <h4>Tiempo estimado de finalización</h4>
+      </div>
+    </div>
+    <div class="panel-group" id="accordion">
+      <div class="panel panel-default">
+        <div class="row row-incentive">
+          <div class="col-md-8 col-description col-9">
+            <a class="btn btn-small addItem" data-bname="9" data-btype=
+            "incentive" href="#9Add">agregar</a><a class="benefit-title"
+            data-parent="#accordion" data-toggle="collapse" href=
+            "#1">Incentivos contributivos y gestoría<i class=
+            "fa fa-sort-desc"></i></a>
+            <div class="panel-collapse collapse" id="1">
+              <div class="panel-body">
+                <div class="9-inner-text benefit-description">
+                  <ul class=
+                  "benefit-info-list accordion-panel-render-list">
+                    <!-- Opportunity-->
+                    <li>
+                      <h4>Descripción</h4>
+                      <div class="panel-section-inner">
+                        The new Incentives Code provides fiscal benefits
+                        for activities developed in specific areas such
+                        as the special development zone of the
+                        Traditional Urban Center and the Special
+                        Development Corridors, among others which due to
+                        their potential for growth and their impact on
+                        the economy as a whole are considered a priority.
+                        In addition, it provides benefits to more than 21
+                        types of eligible units or businesses.
+                      </div>
+                    </li>
+                    <li>
+                      <h4>Costo de Solicitud</h4>
+                      <div class="panel-section-inner">
+                        200
+                      </div>
+                    </li>
+                    <li>
+                      <h4>Informacion Adicional</h4>
+                      <div class="panel-section-inner">
+                        Disqualifying factors: companies already
+                        established in the city that are not planning to
+                        grow.
+                      </div>
+                    </li><!-- Agency-->
+                    <li>
+                      <h4>Nombre De Agencia</h4>
+                      <div class="panel-section-inner">
+                        Secretaria de Desarrollo Económico de Caguas
+                      </div>
+                    </li><!-- Requirements-->
+                    <li style="list-style: none; display: inline">
+                      <h3>Requisitos</h3>
+                      <ol>
+                        <li>
+                          <h4>Certificación Reciente de Negativa de Deuda
+                          por Todos los Conceptos del CRIM</h4>
+                          <div class="panel-section-inner">
+                            <a class="autoLinked autoLinked-url" href=
+                            "https://serviciosenlinea.gobierno.pr/crim/"
+                            target=
+                            "_blank">serviciosenlinea.gobierno.pr/crim</a>
+                          </div>
+                          <div class="panel-section-inner">
+                            $2.50
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Certificación de No Deuda del Municipio
+                          donde la empresa opera o llevará a cabo su
+                          operación</h4>
+                          <div class="panel-section-inner">
+                            <a class="autoLinked autoLinked-url" href=
+                            "http://www.crimpr.net/crimdnn" target=
+                            "_blank">crimpr.net/crimdnn</a>
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Certificaciones de Cumplimiento de la
+                          Administración Para el Sustento de Menores</h4>
+                          <div class="panel-section-inner">
+                            <a class="autoLinked autoLinked-url" href=
+                            "http://www2.pr.gov/Pages/informaciondeformulariosprgovSolicituddeCertificaci%C3%B3ndeCumplimientodeASUME.aspx"
+                            target=
+                            "_blank">www2.pr.gov/Pages/informaciondeformulariosprgovSolici..</a>
+                          </div>
+                          <div class="panel-section-inner">
+                            Sin Costo
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Certificado de “Good Standing”</h4>
+                          <div class="panel-section-inner">
+                            <a class="autoLinked autoLinked-url" href=
+                            "https://prcorpfiling.f1hst.com/" target=
+                            "_blank">prcorpfiling.f1hst.com</a>
+                          </div>
+                          <div class="panel-section-inner">
+                            $100 con fines de lucro y $10 sin fines de
+                            lucro
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Certificado de Registro del Departamento de
+                          Estado</h4>
+                          <div class="panel-section-inner">
+                            <a class="autoLinked autoLinked-url" href=
+                            "https://prcorpfiling.f1hst.com/" target=
+                            "_blank">prcorpfiling.f1hst.com</a>
+                          </div>
+                          <div class="panel-section-inner">
+                            $110 con fines de lucro y $7 sin fines de
+                            lucro
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Registro de Transacciones comerciales</h4>
+                          <div class="panel-section-inner">
+                            <a class="autoLinked autoLinked-url" href=
+                            "http://www2.pr.gov/agencias/estado/Pages/RegUCC.aspx"
+                            target=
+                            "_blank">www2.pr.gov/agencias/estado/Pages/RegUCC.aspx</a>
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Certificación de Radicación de Planillas de
+                          los últimos 5 años</h4>
+                          <div class="panel-section-inner">
+                            <a class="autoLinked autoLinked-url" href=
+                            "https://colecturia.hacienda.gobierno.pr/Portal/"
+                            target=
+                            "_blank">colecturia.hacienda.gobierno.pr/Portal</a>
+                          </div>
+                          <div class="panel-section-inner">
+                            Sin Costo
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Certificación del Registro de
+                          Comerciantes</h4>
+                          <div class="panel-section-inner">
+                            Registro - <a class=
+                            "autoLinked autoLinked-url" href=
+                            "https://ivuregistro.hacienda.gobierno.pr/RegistroComerciantes/registro1.aspx"
+                            target=
+                            "_blank">ivuregistro.hacienda.gobierno.pr/RegistroComerciantes..</a>
+                            Aplicación PICO - <a class=
+                            "autoLinked autoLinked-url" href=
+                            "https://comerciantes.hacienda.pr.gov/"
+                            target=
+                            "_blank">comerciantes.hacienda.pr.gov</a>
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Certificación Reciente de No Deuda
+                          Contributiva</h4>
+                          <div class="panel-section-inner">
+                            <a class="autoLinked autoLinked-url" href=
+                            "https://colecturia.hacienda.gobierno.pr/Portal/"
+                            target=
+                            "_blank">colecturia.hacienda.gobierno.pr/Portal</a>
+                          </div>
+                          <div class="panel-section-inner">
+                            Sin Costo
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Estados Financiero o Copia Ultima Planilla
+                          de Contribución sobre Ingresos (si aplica)</h4>
+                          <div class="panel-section-inner">
+                            <a class="autoLinked autoLinked-url" href=
+                            "https://colecturia.hacienda.gobierno.pr/Portal/"
+                            target=
+                            "_blank">colecturia.hacienda.gobierno.pr/Portal</a>
+                          </div>
+                          <div class="panel-section-inner">
+                            Sin costo
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Certificado del IVU</h4>
+                          <div class="panel-section-inner">
+                            <a class="autoLinked autoLinked-url" href=
+                            "https://comerciantes.hacienda.pr.gov/"
+                            target=
+                            "_blank">comerciantes.hacienda.pr.gov</a>
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Certificación Actualizada de No Deuda del
+                          Seguro Choferil del DTRH (si aplica)</h4>
+                          <div class="panel-section-inner">
+                            <a class="autoLinked autoLinked-url" href=
+                            "https://serviciosenlinea.gobierno.pr/dtrh/Default.aspx"
+                            target=
+                            "_blank">serviciosenlinea.gobierno.pr/dtrh/Default.aspx</a>
+                          </div>
+                          <div class="panel-section-inner">
+                            Sin Costo
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Certificación Actualizada de No Deuda del
+                          Seguro por Desempleo e Incapacidad</h4>
+                          <div class="panel-section-inner">
+                            <a class="autoLinked autoLinked-url" href=
+                            "https://serviciosenlinea.gobierno.pr/dtrh/Default.aspx"
+                            target=
+                            "_blank">serviciosenlinea.gobierno.pr/dtrh/Default.aspx</a>
+                          </div>
+                          <div class="panel-section-inner">
+                            Sin Costo
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Declaración de Volumen de Negocio</h4>
+                          <div class="panel-section-inner">
+                            Formulario de acuerdo a municipio, no hay un
+                            estandar.
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Patente Municipal Vigente</h4>
+                          <div class="panel-section-inner">
+                            Patente Municipal-Una vez tienes tu permiso
+                            de uso, debes ir al municipio en donde
+                            establecerás tu negocio para solicitar la
+                            patente municipal. Muchos municipios además
+                            del Permiso de Uso, te piden que lleves la
+                            última planilla personal radicada en
+                            Hacienda, certificación negativa de deuda de
+                            Hacienda y del CRIM. Mi recomendación, antes
+                            de ir al Municipio a solicitar patente, llama
+                            antes por teléfono, pide la división de
+                            patentes y pregunta cuáles son los documentos
+                            que debes llevar contigo para solicitar
+                            patente por primera vez. De esta manera te
+                            ahorras tiempo.
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Permiso de Uso</h4>
+                          <div class="panel-section-inner">
+                            <a class="autoLinked autoLinked-url" href=
+                            "https://www.sip.pr.gov/web/guest/ciudadano/permisos/uso/"
+                            target=
+                            "_blank">sip.pr.gov/web/guest/ciudadano/permisos/uso</a>
+                          </div>
+                          <div class="panel-section-inner">
+                            $25 - permisos de uso residenciales $100 -
+                            permiso de uso comercial
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Costo total del proyecto</h4>
+                        </li>
+                        <li>
+                          <h4>Declaración Jurada del solicitante</h4>
+                        </li>
+                        <li>
+                          <h4>Empleos a generarse y nómina anual: Durante
+                          la Construcción y Operación</h4>
+                        </li>
+                        <li>
+                          <h4>Seguro Social Patronal</h4>
+                        </li>
+                      </ol>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 col-deadline col-9">
+            <div class="9-inner-text">
+              Jan 30th 2017
+            </div>
+          </div>
+          <div class="col-md-2 col-est-time col-9">
+            <div class="9-inner-text"></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-{% endfor %}
+  <div class="expertise-container">
+    <div class="row row-benefit-count row-expertise">
+      <h3>6 Talleres</h3>
+    </div>
+    <div class="row row-header row-expertise">
+      <div class="col-md-8 col-description-header">
+        <h4>Recursos</h4>
+      </div>
+      <div class="col-md-2 col-deadline-header">
+        <h4>Vencimiento</h4>
+      </div>
+      <div class="col-md-2 col-est-time-header">
+        <h4>Tiempo estimado de finalización</h4>
+      </div>
+    </div>
+    <div class="panel-group" id="accordion">
+      <div class="panel panel-default">
+        <div class="row row-expertise">
+          <div class="col-md-8 col-description col-10">
+            <a class="btn btn-small addItem" data-bname="10" data-btype=
+            "expertise" href="#10Add">agregar</a><a class="benefit-title"
+            data-parent="#accordion" data-toggle="collapse" href=
+            "#7">Seminarios<i class="fa fa-sort-desc"></i></a>
+            <div class="panel-collapse collapse" id="7">
+              <div class="panel-body">
+                <div class="10-inner-text benefit-description">
+                  <ul class=
+                  "benefit-info-list accordion-panel-render-list">
+                    <!-- Opportunity-->
+                    <li>
+                      <h4>Descripción</h4>
+                      <div class="panel-section-inner">
+                        Elegible units can apply for tax break as well as
+                        financing through corporations allied to the
+                        Municipality.
+                      </div>
+                    </li>
+                    <li>
+                      <h4>Informacion Adicional</h4>
+                      <div class="panel-section-inner">
+                        Courses that instruct people to build their
+                        business plan.
+                      </div>
+                    </li><!-- Agency-->
+                    <li>
+                      <h4>Nombre De Agencia</h4>
+                      <div class="panel-section-inner">
+                        Secretaria de Desarrollo Económico de Caguas
+                      </div>
+                    </li><!-- Requirements-->
+                    <li style="list-style: none; display: inline">
+                      <h3>Requisitos</h3>
+                      <ol>
+                        <li>
+                          <h4>Solicitud de la agencia</h4>
+                        </li>
+                      </ol>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 col-deadline col-10">
+            <div class="10-inner-text">
+              Jun 30th 2024
+            </div>
+          </div>
+          <div class="col-md-2 col-est-time col-10">
+            <div class="10-inner-text"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="other-container">
+    <div class="row row-benefit-count row-other">
+      <h3>5 Otros</h3>
+    </div>
+    <div class="row row-header row-other">
+      <div class="col-md-8 col-description-header">
+        <h4>Recursos</h4>
+      </div>
+      <div class="col-md-2 col-deadline-header">
+        <h4>Vencimiento</h4>
+      </div>
+      <div class="col-md-2 col-est-time-header">
+        <h4>Tiempo estimado de finalización</h4>
+      </div>
+    </div>
+    <div class="panel-group" id="accordion">
+      <div class="panel panel-default">
+        <div class="row row-other">
+          <div class="col-md-8 col-description col-47">
+            <a class="btn btn-small addItem" data-bname="47" data-btype=
+            "other" href="#47Add">agregar</a><a class="benefit-title"
+            data-parent="#accordion" data-toggle="collapse" href=
+            "#13">Certificación de pymes para programa de reservas de
+            compras &quot;set aside&quot;<i class=
+            "fa fa-sort-desc"></i></a>
+            <div class="panel-collapse collapse" id="13">
+              <div class="panel-body">
+                <div class="47-inner-text benefit-description">
+                  <ul class=
+                  "benefit-info-list accordion-panel-render-list">
+                    <!-- Opportunity-->
+                    <li>
+                      <h4>Descripción</h4>
+                      <div class="panel-section-inner">
+                        Beneficios Estimula y aumenta las ventas de las
+                        pequeñas y medianas empresas (PYMES)
+                        puertorriqueña, fomentando de esta forma la
+                        creación de nuevos empleos. Establece un proceso
+                        uniforme y estructurado de la distribución del
+                        presupuesto de compras de las agencias del
+                        Gobierno de Puerto Rico. Facilita la ejecución,
+                        el cumplimiento y la fiscalización del Programa
+                        con un mayor grado de eficacia.
+                      </div>
+                    </li>
+                    <li>
+                      <h4>Informacion Adicional</h4>
+                      <div class="panel-section-inner">
+                        Las empresas interesadas deberán estar
+                        certificadas como PYMES por la Compañía de
+                        Comercio y Exportación de Puerto Rico y deberán
+                        formar parte del Registro Único de Licitadores
+                        (RUL) de la Administración de Servicios
+                        Generales. ¿Quiénes Pueden Participar? Empresa
+                        independiente donde el 51 % de su capital está en
+                        manos de sus gerenciales. Debe estar incorporado
+                        o registrado para hacer negocios en Puerto Rico y
+                        que el 51 % o más de sus empleados trabajen en
+                        Puerto Rico. Tener menos de 50 empleados a tiempo
+                        completo sin incluir trabajadores a tiempo
+                        parcial y consultores bajo contratos. Ingreso
+                        bruto no puede exceder los $9.9 millones anuales.
+                      </div>
+                    </li><!-- Agency-->
+                    <li>
+                      <h4>Nombre De Agencia</h4>
+                      <div class="panel-section-inner">
+                        Compañia de Comercio y Exportación de Puerto Rico
+                        (Dpto. Desarrollo Económico)
+                      </div>
+                    </li>
+                    <li>
+                      <h4>Sitio Web de Agencia</h4>
+                      <div class="panel-section-inner">
+                        <a class="autoLinked autoLinked-url" href=
+                        "http://www.comercioyexportacion.com" target=
+                        "_blank">comercioyexportacion.com</a>
+                      </div>
+                    </li>
+                    <li>
+                      <h4>Numero de Telefono de Agencia</h4>
+                      <div class="panel-section-inner">
+                        787-282-7753
+                      </div>
+                    </li><!-- Requirements-->
+                    <li style="list-style: none; display: inline">
+                      <h3>Requisitos</h3>
+                      <ol>
+                        <li>
+                          <h4>Certificado de Registro del Departamento de
+                          Estado</h4>
+                          <div class="panel-section-inner">
+                            <a class="autoLinked autoLinked-url" href=
+                            "https://prcorpfiling.f1hst.com/" target=
+                            "_blank">prcorpfiling.f1hst.com</a>
+                          </div>
+                          <div class="panel-section-inner">
+                            $110 con fines de lucro y $7 sin fines de
+                            lucro
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Estados Financiero o Copia Ultima Planilla
+                          de Contribución sobre Ingresos (si aplica)</h4>
+                          <div class="panel-section-inner">
+                            <a class="autoLinked autoLinked-url" href=
+                            "https://colecturia.hacienda.gobierno.pr/Portal/"
+                            target=
+                            "_blank">colecturia.hacienda.gobierno.pr/Portal</a>
+                          </div>
+                          <div class="panel-section-inner">
+                            Sin costo
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Últimas dos (2) Planillas Trimestrales del
+                          DTRH con evidencia de pago (si aplica)</h4>
+                          <div class="panel-section-inner">
+                            <a class="autoLinked autoLinked-url" href=
+                            "https://patronos.dtrh.gobierno.pr/patronos/acercade.aspx?Id=228&M=286&F=12"
+                            target=
+                            "_blank">patronos.dtrh.gobierno.pr/patronos/acercade.aspx?Id=2..</a>
+                          </div>
+                          <div class="panel-section-inner">
+                            registro
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Permiso de Uso</h4>
+                          <div class="panel-section-inner">
+                            <a class="autoLinked autoLinked-url" href=
+                            "https://www.sip.pr.gov/web/guest/ciudadano/permisos/uso/"
+                            target=
+                            "_blank">sip.pr.gov/web/guest/ciudadano/permisos/uso</a>
+                          </div>
+                          <div class="panel-section-inner">
+                            $25 - permisos de uso residenciales $100 -
+                            permiso de uso comercial
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Declaración Jurada del solicitante</h4>
+                        </li>
+                        <li>
+                          <h4>Certificación del Registro Obligatorio de
+                          Comerciantes y de Negocios de la CCE</h4>
+                        </li>
+                      </ol>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 col-deadline col-47">
+            <div class="47-inner-text">
+              Jun 30th 2050
+            </div>
+          </div>
+          <div class="col-md-2 col-est-time col-47">
+            <div class="47-inner-text"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="reimbursement-container">
+    <div class="row row-benefit-count row-reimbursement">
+      <h3>3 Reembolsos</h3>
+    </div>
+    <div class="row row-header row-reimbursement">
+      <div class="col-md-8 col-description-header">
+        <h4>Recursos</h4>
+      </div>
+      <div class="col-md-2 col-deadline-header">
+        <h4>Vencimiento</h4>
+      </div>
+      <div class="col-md-2 col-est-time-header">
+        <h4>Tiempo estimado de finalización</h4>
+      </div>
+    </div>
+    <div class="panel-group" id="accordion">
+      <div class="panel panel-default">
+        <div class="row row-reimbursement">
+          <div class="col-md-8 col-description col-53">
+            <a class="btn btn-small addItem" data-bname="53" data-btype=
+            "reimbursement" href="#53Add">agregar</a><a class=
+            "benefit-title" data-parent="#accordion" data-toggle=
+            "collapse" href="#18">Empleo directo al centro urbano
+            (edcu)<i class="fa fa-sort-desc"></i></a>
+            <div class="panel-collapse collapse" id="18">
+              <div class="panel-body">
+                <div class="53-inner-text benefit-description">
+                  <ul class=
+                  "benefit-info-list accordion-panel-render-list">
+                    <!-- Opportunity-->
+                    <li>
+                      <h4>Descripción</h4>
+                      <div class="panel-section-inner">
+                        El programa de Empleo Directo al Centro Urbano
+                        (EDCU) tiene como propósito principal estimular
+                        el desarrollo del centro urbano creando nuevos
+                        empleos a través de incentivos salariales a
+                        pequeños y medianos empresarios. Este incentivo
+                        aplica a la creación de nuevos empleos con los
+                        siguientes beneficios: Reembolso al patrono del
+                        50% del salario pagado hasta un máximo de $3.62
+                        (50% de $7.25) Incentivo vigente por un año con
+                        opción a renovación un segundo año sujeto a la
+                        retención de un 75% de los empleados contratados
+                        durante el primer año. Los negocios localizados
+                        en centros urbanos podrán obtener incentivos para
+                        un máximo de 25 empleados nuevos, a tiempo
+                        completo. Esto podría significar un ahorro de
+                        hasta $132,000 en su nómina anual. Negocios
+                        localizados fuera del centro urbano podrán
+                        obtener incentivos para un máximo de 15
+                        empleados, a tiempo completo. Esto podría
+                        significar un ahorro de hasta $79,200 en su
+                        nómina anual.
+                      </div>
+                    </li>
+                    <li>
+                      <h4>Informacion Adicional</h4>
+                      <div class="panel-section-inner">
+                        ¿Qué empresa es elegible? La empresa es elegible
+                        si: Está autorizada a realizar negocios en Puerto
+                        Rico. Es de capital nativo, identificada con la
+                        manufactura, comercio, servicios, turismo,
+                        agricultura, reciclaje, agroindustria o
+                        tecnología. Es negocio nuevo, negocio en
+                        expansión o un autoempleo (donde el dueño es el
+                        único empleado). Genera ventas brutas anuales de
+                        $5 millones o menos y cuenta con 25 empleados o
+                        menos trabajando a tiempo completo. Requiere un
+                        mínimo de 32 horas trabajadas semanalmente y el
+                        reembolso es de hasta un máximo de 40 horas
+                        trabajadas. Ofrecer a los empleados, cuyo sueldo
+                        se vea beneficiado por el incentivo salarial, los
+                        mismos beneficios y derechos que a los otros
+                        empleados de la empresa. Cumplir con las leyes,
+                        reglamentos y normas laborales y contributivas
+                        estatales y federales. No tener deuda con el
+                        gobierno. No ser parte de una franquicia o
+                        cadena, excepto las empresas que sean parte de
+                        las cadenas voluntarias.
+                      </div>
+                    </li><!-- Agency-->
+                    <li>
+                      <h4>Nombre De Agencia</h4>
+                      <div class="panel-section-inner">
+                        Compañia de Comercio y Exportación de Puerto Rico
+                        (Dpto. Desarrollo Económico)
+                      </div>
+                    </li>
+                    <li>
+                      <h4>Sitio Web de Agencia</h4>
+                      <div class="panel-section-inner">
+                        <a class="autoLinked autoLinked-url" href=
+                        "http://www.comercioyexportacion.com" target=
+                        "_blank">comercioyexportacion.com</a>
+                      </div>
+                    </li>
+                    <li>
+                      <h4>Numero de Telefono de Agencia</h4>
+                      <div class="panel-section-inner">
+                        787-282-7753
+                      </div>
+                    </li><!-- Requirements-->
+                    <li style="list-style: none; display: inline">
+                      <h3>Requisitos</h3>
+                      <ol>
+                        <li>
+                          <h4>Certificación Reciente de Negativa de Deuda
+                          por Todos los Conceptos del CRIM</h4>
+                          <div class="panel-section-inner">
+                            <a class="autoLinked autoLinked-url" href=
+                            "https://serviciosenlinea.gobierno.pr/crim/"
+                            target=
+                            "_blank">serviciosenlinea.gobierno.pr/crim</a>
+                          </div>
+                          <div class="panel-section-inner">
+                            $2.50
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Certificación Reciente Negativa Propiedad
+                          Inmueble del CRIM (con estado de cuenta) y/o
+                          Copia del Contrato de Arrendamiento</h4>
+                          <div class="panel-section-inner">
+                            <a class="autoLinked autoLinked-url" href=
+                            "https://serviciosenlinea.gobierno.pr/crim/"
+                            target=
+                            "_blank">serviciosenlinea.gobierno.pr/crim</a>
+                          </div>
+                          <div class="panel-section-inner">
+                            $2.50
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Certificaciones de Cumplimiento de la
+                          Administración Para el Sustento de Menores</h4>
+                          <div class="panel-section-inner">
+                            <a class="autoLinked autoLinked-url" href=
+                            "http://www2.pr.gov/Pages/informaciondeformulariosprgovSolicituddeCertificaci%C3%B3ndeCumplimientodeASUME.aspx"
+                            target=
+                            "_blank">www2.pr.gov/Pages/informaciondeformulariosprgovSolici..</a>
+                          </div>
+                          <div class="panel-section-inner">
+                            Sin Costo
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Certificación de No Deuda del Municipio
+                          donde la empresa opera o llevará a cabo su
+                          operación</h4>
+                          <div class="panel-section-inner">
+                            <a class="autoLinked autoLinked-url" href=
+                            "http://www.crimpr.net/crimdnn" target=
+                            "_blank">crimpr.net/crimdnn</a>
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Certificado de “Good Standing”</h4>
+                          <div class="panel-section-inner">
+                            <a class="autoLinked autoLinked-url" href=
+                            "https://prcorpfiling.f1hst.com/" target=
+                            "_blank">prcorpfiling.f1hst.com</a>
+                          </div>
+                          <div class="panel-section-inner">
+                            $100 con fines de lucro y $10 sin fines de
+                            lucro
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Certificado de Registro del Departamento de
+                          Estado</h4>
+                          <div class="panel-section-inner">
+                            <a class="autoLinked autoLinked-url" href=
+                            "https://prcorpfiling.f1hst.com/" target=
+                            "_blank">prcorpfiling.f1hst.com</a>
+                          </div>
+                          <div class="panel-section-inner">
+                            $110 con fines de lucro y $7 sin fines de
+                            lucro
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Certificación de Radicación de Planillas de
+                          los últimos 5 años</h4>
+                          <div class="panel-section-inner">
+                            <a class="autoLinked autoLinked-url" href=
+                            "https://colecturia.hacienda.gobierno.pr/Portal/"
+                            target=
+                            "_blank">colecturia.hacienda.gobierno.pr/Portal</a>
+                          </div>
+                          <div class="panel-section-inner">
+                            Sin Costo
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Certificación del Registro de
+                          Comerciantes</h4>
+                          <div class="panel-section-inner">
+                            Registro - <a class=
+                            "autoLinked autoLinked-url" href=
+                            "https://ivuregistro.hacienda.gobierno.pr/RegistroComerciantes/registro1.aspx"
+                            target=
+                            "_blank">ivuregistro.hacienda.gobierno.pr/RegistroComerciantes..</a>
+                            Aplicación PICO - <a class=
+                            "autoLinked autoLinked-url" href=
+                            "https://comerciantes.hacienda.pr.gov/"
+                            target=
+                            "_blank">comerciantes.hacienda.pr.gov</a>
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Certificación Reciente de No Deuda
+                          Contributiva</h4>
+                          <div class="panel-section-inner">
+                            <a class="autoLinked autoLinked-url" href=
+                            "https://colecturia.hacienda.gobierno.pr/Portal/"
+                            target=
+                            "_blank">colecturia.hacienda.gobierno.pr/Portal</a>
+                          </div>
+                          <div class="panel-section-inner">
+                            Sin Costo
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Certificación Actualizada de No Deuda del
+                          Seguro Choferil del DTRH (si aplica)</h4>
+                          <div class="panel-section-inner">
+                            <a class="autoLinked autoLinked-url" href=
+                            "https://serviciosenlinea.gobierno.pr/dtrh/Default.aspx"
+                            target=
+                            "_blank">serviciosenlinea.gobierno.pr/dtrh/Default.aspx</a>
+                          </div>
+                          <div class="panel-section-inner">
+                            Sin Costo
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Certificación Actualizada de No Deuda del
+                          Seguro por Desempleo e Incapacidad</h4>
+                          <div class="panel-section-inner">
+                            <a class="autoLinked autoLinked-url" href=
+                            "https://serviciosenlinea.gobierno.pr/dtrh/Default.aspx"
+                            target=
+                            "_blank">serviciosenlinea.gobierno.pr/dtrh/Default.aspx</a>
+                          </div>
+                          <div class="panel-section-inner">
+                            Sin Costo
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Licencia o Pasaporte</h4>
+                          <div class="panel-section-inner">
+                            <a class="autoLinked autoLinked-url" href=
+                            "http://www.dtop.gov.pr/serviciosenlinea/"
+                            target=
+                            "_blank">dtop.gov.pr/serviciosenlinea</a>
+                            <a class="autoLinked autoLinked-url" href=
+                            "https://es.usps.com/shop/apply-for-a-passport.htm"
+                            target=
+                            "_blank">es.usps.com/shop/apply-for-a-passport.htm</a>
+                          </div>
+                          <div class="panel-section-inner">
+                            Variable
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Patente Municipal Vigente</h4>
+                          <div class="panel-section-inner">
+                            Patente Municipal-Una vez tienes tu permiso
+                            de uso, debes ir al municipio en donde
+                            establecerás tu negocio para solicitar la
+                            patente municipal. Muchos municipios además
+                            del Permiso de Uso, te piden que lleves la
+                            última planilla personal radicada en
+                            Hacienda, certificación negativa de deuda de
+                            Hacienda y del CRIM. Mi recomendación, antes
+                            de ir al Municipio a solicitar patente, llama
+                            antes por teléfono, pide la división de
+                            patentes y pregunta cuáles son los documentos
+                            que debes llevar contigo para solicitar
+                            patente por primera vez. De esta manera te
+                            ahorras tiempo.
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Certificado del IVU</h4>
+                          <div class="panel-section-inner">
+                            <a class="autoLinked autoLinked-url" href=
+                            "https://comerciantes.hacienda.pr.gov/"
+                            target=
+                            "_blank">comerciantes.hacienda.pr.gov</a>
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Informe Anual del Departamento de Estado
+                          (ponchado)</h4>
+                          <div class="panel-section-inner">
+                            <a class="autoLinked autoLinked-url" href=
+                            "https://prcorpfiling.f1hst.com/AnnualReportStart.aspx"
+                            target=
+                            "_blank">prcorpfiling.f1hst.com/AnnualReportStart.aspx</a>
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Certificación del Registro Obligatorio de
+                          Comerciantes y de Negocios de la CCE</h4>
+                        </li>
+                      </ol>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 col-deadline col-53">
+            <div class="53-inner-text">
+              Jun 30th 2050
+            </div>
+          </div>
+          <div class="col-md-2 col-est-time col-53">
+            <div class="53-inner-text"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="loan-container">
+    <div class="row row-benefit-count row-loan">
+      <h3>7 Créditos</h3>
+    </div>
+    <div class="row row-header row-loan">
+      <div class="col-md-8 col-description-header">
+        <h4>Recursos</h4>
+      </div>
+      <div class="col-md-2 col-deadline-header">
+        <h4>Vencimiento</h4>
+      </div>
+      <div class="col-md-2 col-est-time-header">
+        <h4>Tiempo estimado de finalización</h4>
+      </div>
+    </div>
+    <div class="panel-group" id="accordion">
+      <div class="panel panel-default">
+        <div class="row row-loan">
+          <div class="col-md-8 col-description col-21">
+            <a class="btn btn-small addItem" data-bname="21" data-btype=
+            "loan" href="#21Add">agregar</a><a class="benefit-title"
+            data-parent="#accordion" data-toggle="collapse" href=
+            "#21">Alianza - programa de crédito social del departamento
+            de estado y el bdepr <i class="fa fa-sort-desc"></i></a>
+            <div class="panel-collapse collapse" id="21">
+              <div class="panel-body">
+                <div class="21-inner-text benefit-description">
+                  <ul class=
+                  "benefit-info-list accordion-panel-render-list">
+                    <!-- Opportunity-->
+                    <li>
+                      <h4>Descripción</h4>
+                      <div class="panel-section-inner">
+                        Cantidad máxima: •El principal no excederá la
+                        suma de $25,000 por ONG o hasta un 80% de la
+                        propuesta, asignación o donativo aprobado para la
+                        ONG, lo que sea menor. Fondos provistos por: •El
+                        Banco de Desarrollo Económico para Puerto Rico.
+                        Garantía: •Fondo de Garantía del Departamento de
+                        Estado cubriendo el 100% de la facilidad
+                        crediticia. Uso de fondos: •Adquisición de
+                        maquinaria y equipo necesario para la operación
+                        de la ONG. •Capital de operaciones. Aportación
+                        mínima requerida: •$0.00 Tasa de interés anual:
+                        •4.25% (actual)*. *El interés se fijará al 1%
+                        sobre la tasa de interés preferente (prime rate)
+                        prevaleciente a la fecha del cierre. Vencimiento:
+                        •Un (1) año o hasta que se reciba el dinero
+                        producto de la propuesta, asignación o donativo
+                        aprobado para la ONG, lo que sea menor. Cargo
+                        inicial: •$25 Cargo por demora: •$0.00 Cargo por
+                        manejo: •$0.00 Cargo por compromiso: •$0.00
+                      </div>
+                    </li>
+                    <li>
+                      <h4>Costo de Solicitud</h4>
+                      <div class="panel-section-inner">
+                        25
+                      </div>
+                    </li>
+                    <li>
+                      <h4>Informacion Adicional</h4>
+                      <div class="panel-section-inner">
+                        El Departamento de Estado, en coordinación con el
+                        BDEPR, ha configurado un programa dirigido a
+                        convertirse en la mano amiga de las
+                        Organizaciones No Gubernamentales (ONG). El mismo
+                        parte de fortalecer el llamado tercer sector,
+                        conectándolo con el gobierno y facilitando su
+                        acceso a recursos de formación, manejo de
+                        conflictos y el desarrollo de política pública.
+                        Como parte de dicha encomienda se pretende
+                        promover un Crédito Social a las ONG.
+                      </div>
+                    </li><!-- Agency-->
+                    <li>
+                      <h4>Nombre De Agencia</h4>
+                      <div class="panel-section-inner">
+                        Banco de Desarrollo Económico (Dpto. Desarrollo
+                        Económico)
+                      </div>
+                    </li>
+                    <li>
+                      <h4>Sitio Web de Agencia</h4>
+                      <div class="panel-section-inner">
+                        <a class="autoLinked autoLinked-url" href=
+                        "http://www.bde.pr.gov" target=
+                        "_blank">bde.pr.gov</a>
+                      </div>
+                    </li>
+                    <li>
+                      <h4>Numero de Telefono de Agencia</h4>
+                      <div class="panel-section-inner">
+                        781-0772
+                      </div>
+                    </li><!-- Requirements-->
+                    <li style="list-style: none; display: inline">
+                      <h3>Requisitos</h3>
+                      <ol></ol>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 col-deadline col-21">
+            <div class="21-inner-text">
+              Dec 31st 2041
+            </div>
+          </div>
+          <div class="col-md-2 col-est-time col-21">
+            <div class="21-inner-text"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="financing-container">
+    <div class="row row-benefit-count row-financing">
+      <h3>2 financiamiento</h3>
+    </div>
+    <div class="row row-header row-financing">
+      <div class="col-md-8 col-description-header">
+        <h4>Recursos</h4>
+      </div>
+      <div class="col-md-2 col-deadline-header">
+        <h4>Vencimiento</h4>
+      </div>
+      <div class="col-md-2 col-est-time-header">
+        <h4>Tiempo estimado de finalización</h4>
+      </div>
+    </div>
+    <div class="panel-group" id="accordion">
+      <div class="panel panel-default">
+        <div class="row row-financing">
+          <div class="col-md-8 col-description col-62">
+            <a class="btn btn-small addItem" data-bname="62" data-btype=
+            "financing" href="#62Add">agregar</a><a class="benefit-title"
+            data-parent="#accordion" data-toggle="collapse" href=
+            "#28">Ley de incentivos para la generación y retención de
+            empleos en las pymes<i class="fa fa-sort-desc"></i></a>
+            <div class="panel-collapse collapse" id="28">
+              <div class="panel-body">
+                <div class="62-inner-text benefit-description">
+                  <ul class=
+                  "benefit-info-list accordion-panel-render-list">
+                    <!-- Opportunity-->
+                    <li>
+                      <h4>Descripción</h4>
+                      <div class="panel-section-inner">
+                        De ser aprobado y certificado bajo este programa
+                        el solicitante podrá acogerse a los siguientes
+                        beneficios: 1. Proceso expédito para la concesión
+                        de permisos y certificaciones. 2. Tasa
+                        preferencial y proceso expédito con el Banco de
+                        Desarrollo Económico (BDE) 3. Descuentos en
+                        cursos del ICEDE 4. Reembolso Salarial (Ley 52)
+                        5. Rentas preferenciales con PRIDCO y CCE 6.
+                        Contribución sobre ingresos tasa preferenciales
+                        7. Exención Parcial Propiedad mueble y/o inmueble
+                        8. Descuento en Primas del Fondo del Seguro del
+                        Estado 9. Exención Parcial Patentes Municipales
+                        10. Reservas en las Compras del Gobierno (Set
+                        Aside) 11. Ahorros en Bono de Navidad
+                      </div>
+                    </li><!-- Agency-->
+                    <li>
+                      <h4>Nombre De Agencia</h4>
+                      <div class="panel-section-inner">
+                        Compañia de Comercio y Exportación de Puerto Rico
+                        (Dpto. Desarrollo Económico)
+                      </div>
+                    </li>
+                    <li>
+                      <h4>Sitio Web de Agencia</h4>
+                      <div class="panel-section-inner">
+                        <a class="autoLinked autoLinked-url" href=
+                        "http://www.comercioyexportacion.com" target=
+                        "_blank">comercioyexportacion.com</a>
+                      </div>
+                    </li>
+                    <li>
+                      <h4>Numero de Telefono de Agencia</h4>
+                      <div class="panel-section-inner">
+                        787-282-7753
+                      </div>
+                    </li><!-- Requirements-->
+                    <li style="list-style: none; display: inline">
+                      <h3>Requisitos</h3>
+                      <ol>
+                        <li>
+                          <h4>Resolución Corporativa autorizando a la
+                          persona a firmar el contrato</h4>
+                          <div class="panel-section-inner">
+                            Formulario <a class=
+                            "autoLinked autoLinked-url" href=
+                            "http://www.comercioyexportacion.com/images/Hoja_de_requisitos_de_MC_rev_mar_2014.pdf"
+                            target=
+                            "_blank">comercioyexportacion.com/images/Hoja_de_requisitos_de..</a>
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Certificaciones de Cumplimiento de la
+                          Administración Para el Sustento de Menores</h4>
+                          <div class="panel-section-inner">
+                            <a class="autoLinked autoLinked-url" href=
+                            "http://www2.pr.gov/Pages/informaciondeformulariosprgovSolicituddeCertificaci%C3%B3ndeCumplimientodeASUME.aspx"
+                            target=
+                            "_blank">www2.pr.gov/Pages/informaciondeformulariosprgovSolici..</a>
+                          </div>
+                          <div class="panel-section-inner">
+                            Sin Costo
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Certificación de No Deuda del Municipio
+                          donde la empresa opera o llevará a cabo su
+                          operación</h4>
+                          <div class="panel-section-inner">
+                            <a class="autoLinked autoLinked-url" href=
+                            "http://www.crimpr.net/crimdnn" target=
+                            "_blank">crimpr.net/crimdnn</a>
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Certificado de “Good Standing”</h4>
+                          <div class="panel-section-inner">
+                            <a class="autoLinked autoLinked-url" href=
+                            "https://prcorpfiling.f1hst.com/" target=
+                            "_blank">prcorpfiling.f1hst.com</a>
+                          </div>
+                          <div class="panel-section-inner">
+                            $100 con fines de lucro y $10 sin fines de
+                            lucro
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Certificado de Registro del Departamento de
+                          Estado</h4>
+                          <div class="panel-section-inner">
+                            <a class="autoLinked autoLinked-url" href=
+                            "https://prcorpfiling.f1hst.com/" target=
+                            "_blank">prcorpfiling.f1hst.com</a>
+                          </div>
+                          <div class="panel-section-inner">
+                            $110 con fines de lucro y $7 sin fines de
+                            lucro
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Registro de Transacciones comerciales</h4>
+                          <div class="panel-section-inner">
+                            <a class="autoLinked autoLinked-url" href=
+                            "http://www2.pr.gov/agencias/estado/Pages/RegUCC.aspx"
+                            target=
+                            "_blank">www2.pr.gov/agencias/estado/Pages/RegUCC.aspx</a>
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Certificación de Radicación de Planillas de
+                          los últimos 5 años</h4>
+                          <div class="panel-section-inner">
+                            <a class="autoLinked autoLinked-url" href=
+                            "https://colecturia.hacienda.gobierno.pr/Portal/"
+                            target=
+                            "_blank">colecturia.hacienda.gobierno.pr/Portal</a>
+                          </div>
+                          <div class="panel-section-inner">
+                            Sin Costo
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Certificación del Registro de
+                          Comerciantes</h4>
+                          <div class="panel-section-inner">
+                            Registro - <a class=
+                            "autoLinked autoLinked-url" href=
+                            "https://ivuregistro.hacienda.gobierno.pr/RegistroComerciantes/registro1.aspx"
+                            target=
+                            "_blank">ivuregistro.hacienda.gobierno.pr/RegistroComerciantes..</a>
+                            Aplicación PICO - <a class=
+                            "autoLinked autoLinked-url" href=
+                            "https://comerciantes.hacienda.pr.gov/"
+                            target=
+                            "_blank">comerciantes.hacienda.pr.gov</a>
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Certificación Reciente de No Deuda
+                          Contributiva</h4>
+                          <div class="panel-section-inner">
+                            <a class="autoLinked autoLinked-url" href=
+                            "https://colecturia.hacienda.gobierno.pr/Portal/"
+                            target=
+                            "_blank">colecturia.hacienda.gobierno.pr/Portal</a>
+                          </div>
+                          <div class="panel-section-inner">
+                            Sin Costo
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Estados Financiero o Copia Ultima Planilla
+                          de Contribución sobre Ingresos (si aplica)</h4>
+                          <div class="panel-section-inner">
+                            <a class="autoLinked autoLinked-url" href=
+                            "https://colecturia.hacienda.gobierno.pr/Portal/"
+                            target=
+                            "_blank">colecturia.hacienda.gobierno.pr/Portal</a>
+                          </div>
+                          <div class="panel-section-inner">
+                            Sin costo
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Certificación Actualizada de No Deuda del
+                          Seguro Choferil del DTRH (si aplica)</h4>
+                          <div class="panel-section-inner">
+                            <a class="autoLinked autoLinked-url" href=
+                            "https://serviciosenlinea.gobierno.pr/dtrh/Default.aspx"
+                            target=
+                            "_blank">serviciosenlinea.gobierno.pr/dtrh/Default.aspx</a>
+                          </div>
+                          <div class="panel-section-inner">
+                            Sin Costo
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Certificación Actualizada de No Deuda del
+                          Seguro por Desempleo e Incapacidad</h4>
+                          <div class="panel-section-inner">
+                            <a class="autoLinked autoLinked-url" href=
+                            "https://serviciosenlinea.gobierno.pr/dtrh/Default.aspx"
+                            target=
+                            "_blank">serviciosenlinea.gobierno.pr/dtrh/Default.aspx</a>
+                          </div>
+                          <div class="panel-section-inner">
+                            Sin Costo
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Últimas dos (2) Planillas Trimestrales del
+                          DTRH con evidencia de pago (si aplica)</h4>
+                          <div class="panel-section-inner">
+                            <a class="autoLinked autoLinked-url" href=
+                            "https://patronos.dtrh.gobierno.pr/patronos/acercade.aspx?Id=228&M=286&F=12"
+                            target=
+                            "_blank">patronos.dtrh.gobierno.pr/patronos/acercade.aspx?Id=2..</a>
+                          </div>
+                          <div class="panel-section-inner">
+                            registro
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Licencia o Pasaporte</h4>
+                          <div class="panel-section-inner">
+                            <a class="autoLinked autoLinked-url" href=
+                            "http://www.dtop.gov.pr/serviciosenlinea/"
+                            target=
+                            "_blank">dtop.gov.pr/serviciosenlinea</a>
+                            <a class="autoLinked autoLinked-url" href=
+                            "https://es.usps.com/shop/apply-for-a-passport.htm"
+                            target=
+                            "_blank">es.usps.com/shop/apply-for-a-passport.htm</a>
+                          </div>
+                          <div class="panel-section-inner">
+                            Variable
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Patente Municipal Vigente</h4>
+                          <div class="panel-section-inner">
+                            Patente Municipal-Una vez tienes tu permiso
+                            de uso, debes ir al municipio en donde
+                            establecerás tu negocio para solicitar la
+                            patente municipal. Muchos municipios además
+                            del Permiso de Uso, te piden que lleves la
+                            última planilla personal radicada en
+                            Hacienda, certificación negativa de deuda de
+                            Hacienda y del CRIM. Mi recomendación, antes
+                            de ir al Municipio a solicitar patente, llama
+                            antes por teléfono, pide la división de
+                            patentes y pregunta cuáles son los documentos
+                            que debes llevar contigo para solicitar
+                            patente por primera vez. De esta manera te
+                            ahorras tiempo.
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Permiso de Uso</h4>
+                          <div class="panel-section-inner">
+                            <a class="autoLinked autoLinked-url" href=
+                            "https://www.sip.pr.gov/web/guest/ciudadano/permisos/uso/"
+                            target=
+                            "_blank">sip.pr.gov/web/guest/ciudadano/permisos/uso</a>
+                          </div>
+                          <div class="panel-section-inner">
+                            $25 - permisos de uso residenciales $100 -
+                            permiso de uso comercial
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Permiso Especial (Salud, EPA, DRNA,
+                          Instituto de Cultura, etc.)</h4>
+                          <div class="panel-section-inner">
+                            <a class="autoLinked autoLinked-url" href=
+                            "https://www.sip.pr.gov/web/guest/ciudadano/recomendaciones-certificaciones/incendios"
+                            target=
+                            "_blank">sip.pr.gov/web/guest/ciudadano/recomendaciones-certif..</a>
+                            <a class="autoLinked autoLinked-url" href=
+                            "https://www.sip.pr.gov/web/guest/ciudadano/recomendaciones-certificaciones/salud"
+                            target=
+                            "_blank">sip.pr.gov/web/guest/ciudadano/recomendaciones-certif..</a>
+                            <a class="autoLinked autoLinked-url" href=
+                            "https://www.sip.pr.gov/web/guest/ciudadano/documentos-ambientales"
+                            target=
+                            "_blank">sip.pr.gov/web/guest/ciudadano/documentos-ambientales</a>
+                          </div>
+                          <div class="panel-section-inner">
+                            Prevención de Incendios - entre $50 y $100
+                            (dependiendo de la cantidad de pies cuadrados
+                            del área de construcción) Salud - $35
+                          </div>
+                        </li>
+                        <li>
+                          <h4>Solicitud de la agencia</h4>
+                        </li>
+                      </ol>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 col-deadline col-62">
+            <div class="62-inner-text">
+              Jun 30th 2050
+            </div>
+          </div>
+          <div class="col-md-2 col-est-time col-62">
+            <div class="62-inner-text"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}

@@ -4,6 +4,18 @@ from primerpeso import models
 from primerpeso.widgets import ArrayFieldSelectMultiple
 
 
+class OpportunitySearchForm(forms.ModelForm):
+    class Meta:
+        fields = '__all__'
+        model = models.OpportunitySearch
+        widgets = {
+            "purpose": ArrayFieldSelectMultiple(
+                choices=models.PURPOSE, attrs={'class': 'chosen'}),
+            "locations": ArrayFieldSelectMultiple(
+                choices=models.LOCATIONS, attrs={'class': 'chosen'}),
+        }
+
+
 class PurposeSearchForm(forms.ModelForm):
 
     class Meta:
