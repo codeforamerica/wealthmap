@@ -8,13 +8,29 @@ class AddCreator(admin.ModelAdmin):
 
     def get_form(self, request, *args, **kwargs):
         form = super(AddCreator, self).get_form(request, *args, **kwargs)
-        form.base_fields['creator'].initial = request.user
+        if 'creator' in form.base_fields:  # not present in OpportunitySearch
+            form.base_fields['creator'].initial = request.user
         return form
 
 
 @admin.register(models.Opportunity)
 class OpportunityAdmin(AddCreator):
     form = forms.OpportunityForm
+
+
+@admin.register(models.OpportunitySearch)
+class OpportunitySearchAdmin(AddCreator):
+
+    def has_add_permission(self, request, obj=None):
+        return False
+
+    def has_change_permission(self, request, obj=None):
+        if request.method not in ('GET', 'HEAD'):
+            return False
+        return super(OpportunitySearchAdmin, self).has_change_permission(request, obj)
+
+    def has_delete_permission(self, request, obj=None):
+        return False
 
 
 @admin.register(models.Requirement)
