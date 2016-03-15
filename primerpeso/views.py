@@ -1,9 +1,11 @@
 import urllib
 from django.shortcuts import render, redirect
 from formtools.wizard.views import CookieWizardView
+from django.views.generic.detail import DetailView
 from django.utils.translation import ugettext as _
 from django.core.urlresolvers import reverse
 from django.shortcuts import render_to_response
+from django.shortcuts import get_object_or_404
 from . import models, forms
 
 
@@ -20,7 +22,7 @@ class SearchFormView(CookieWizardView):
             combined.update(form.cleaned_data)
         search = models.OpportunitySearch(**combined)
         search.save()
-        url = reverse('search-results', args=[search.pk,])
+        url = reverse('search-results', args=[search.pk, ])
         return redirect(url)
 
 
@@ -33,3 +35,7 @@ def search_results(request, pk):
         return render_to_response("primerpeso/search_results.html", {
             'title': _('Questionnaire Results'),  # Preguntas
         })
+
+
+class OpportunityDetailView(DetailView):
+    model = models.Opportunity

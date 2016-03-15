@@ -273,14 +273,12 @@ class OpportunitySearch(models.Model):
     """
     created_at = models.DateTimeField(auto_now_add=True, verbose_name=_('created at'))
     updated_at = models.DateTimeField(auto_now=True, verbose_name=_('updated at'))
-
     email = models.EmailField(verbose_name=_('What is your email?'))
     purpose = ArrayField(
         models.CharField(max_length=255, choices=PURPOSE),
         default=list, verbose_name=_('How would you use the incentive?'),
     )
     investing_own_money = models.BooleanField(verbose_name=_('Will you invest personal money?'))
-
     gender = models.CharField(max_length=6,
                               choices=(('male', _('Male')),
                                        ('female', _('Female')),
@@ -288,17 +286,13 @@ class OpportunitySearch(models.Model):
                                        ('other', _('Other')),),
                               verbose_name=_("What are the owner's genders?"),
                               )
-    age = models.IntegerField(verbose_name=_('What is the age of the owners?'))
-
     entity_type = models.CharField(max_length=255, choices=ENTITY_TYPES, verbose_name=_('What is the business structure?'))
     industry = models.CharField(max_length=255, choices=INDUSTRIES, verbose_name=_('What industry is your business?'))
-
     locations = ArrayField(
         models.CharField(max_length=255, choices=LOCATIONS),
         default=list,
         verbose_name=_('Where is your business located?'),
     )
-
     employees = models.IntegerField(verbose_name=_('How many full time employees do you have?'))
     years_in_business = models.IntegerField(verbose_name=_('How many years have you been in business?'))
     annual_revenue = models.IntegerField(verbose_name=_('What is your annual revenue?'))
@@ -334,7 +328,6 @@ class OpportunitySearch(models.Model):
         else:
             genders.append(self.gender)
         opps = opps.filter(gender__in=genders)
-        opps = min_max_query(opps, 'age', self.age)
         opps = opps.filter(multi_select('entity_types', [self.entity_type, ]))
         opps = opps.filter(multi_select('industries', [self.industry, ]))
         opps = opps.filter(multi_select('locations', self.locations))
