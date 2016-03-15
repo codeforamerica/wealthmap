@@ -12,5 +12,6 @@ urlpatterns = [
         forms.SizeSearchForm,
     ]), name='search-form',
     ),
+    url(r'^opportunities/(?P<pk>[0-9]+)/$', views.OpportunityDetailView.as_view(), name='opportunity-detail'),
     url(r'^results/([0-9]+)/$', views.search_results, name='search-results'),
 ]
