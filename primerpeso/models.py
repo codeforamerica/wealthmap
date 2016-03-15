@@ -225,7 +225,7 @@ class Opportunity(WhoAndWhenBase):
     investing_own_money = models.BooleanField(verbose_name=_('investing own money'))
     money_invested = models.CharField(max_length=255, verbose_name=_('money invested'))
     agency = models.ForeignKey(Agency, verbose_name=_('agency'))
-    requirement = models.ManyToManyField(Requirement, through=RequirementRelationship, verbose_name=_('requirement'))
+    requirements = models.ManyToManyField(Requirement, through=RequirementRelationship, verbose_name=_('requirements'))
     age_min = models.IntegerField(verbose_name=_('minimum age'))
     age_max = models.IntegerField(null=True, blank=True, verbose_name=_('maximum age'))
     employees_min = models.IntegerField(verbose_name=_('minimum employees'))
