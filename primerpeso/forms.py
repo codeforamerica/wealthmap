@@ -31,7 +31,7 @@ class AboutSearchForm(forms.ModelForm):
 
     class Meta:
         model = models.OpportunitySearch
-        fields = ['gender', 'age']
+        fields = ['gender', ]
 
 
 class IndustrySearchForm(forms.ModelForm):

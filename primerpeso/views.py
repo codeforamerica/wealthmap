@@ -20,7 +20,7 @@ class SearchFormView(CookieWizardView):
             combined.update(form.cleaned_data)
         search = models.OpportunitySearch(**combined)
         search.save()
-        url = reverse('search-results', args=[search.pk,])
+        url = reverse('search-results', args=[search.pk, ])
         return redirect(url)
 
 
