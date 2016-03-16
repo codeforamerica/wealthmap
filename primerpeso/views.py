@@ -10,7 +10,11 @@ from . import models, forms
 
 
 def about(request):
-    return render(request, "primerpeso/about.jade", {'title': 'About'})
+    return render(request, "primerpeso/about.jade", {'title': _('About')})
+
+
+def home(request):
+    return render(request, "primerpeso/about.jade", {'title': _('Home')})
 
 
 class SearchFormView(CookieWizardView):
@@ -32,8 +36,10 @@ def search_results(request, pk):
     except models.OpportunitySearch.DoesNotExist:
         return redirect(reverse('search-form'))
     else:
+        segments = search.segment_search()
         return render_to_response("primerpeso/search_results.html", {
             'title': _('Questionnaire Results'),  # Preguntas
+            'segments': segments,
         })
 
 
