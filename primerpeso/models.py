@@ -182,12 +182,15 @@ INDUSTRIES = (('any', 'Cualquiera'),
               ('52', '52 - Finanzas y Seguros'),
               ('53', '53 - Bienes Raíces, Alquiler y Arrendamiento'),
               ('54', '54 - Servicios profesionales, científicos y técnicos'),
-              ('56', '56 - Administración y apoyo, central de desechos y servicios de reparación'),
+              ('56', '56 - Administración y apoyo, central de desechos y '
+                     'servicios de reparación'),
               ('61', '61 - Servicios educativos'),
               ('62', '62 - Cuidados de salud y asistencia social'),
               ('71', '71 - Artes, Entretenimiento y Recreación'),
-              ('72', '72 - Alojamiento, Servicios de Alimentos y Lugares para Beber'),
-              ('81', '81 - Otros Servicios (exceptuando la administración pública)'),
+              ('72', '72 - Alojamiento, Servicios de Alimentos '
+                     'y Lugares para Beber'),
+              ('81', '81 - Otros Servicios (exceptuando la administración'
+                     'pública)'),
               ('92', '92 - Administración Pública'),
               ('other', 'Otra'),)
 

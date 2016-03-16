@@ -6,7 +6,7 @@ class ArrayFieldSelectMultiple(forms.SelectMultiple):
     """This is a Form Widget for use with a Postgres ArrayField. It implements
     a multi-select interface that can be given a set of `choices`.
 
-    You can provide a `delimiter` keyword argument to specify the delimeter used.
+    You can provide a `delimiter` kwarg to specify the delimeter used.
     """
 
     def __init__(self, *args, **kwargs):
@@ -17,7 +17,7 @@ class ArrayFieldSelectMultiple(forms.SelectMultiple):
     def render_options(self, choices, value):
         # value *should* be a list, but it might be a delimited string.
         if isinstance(
-                value, str):  # python 2 users may need to use basestring instead of str
+                value, str):
             value = value.split(self.delimiter)
         return super(ArrayFieldSelectMultiple,
                      self).render_options(choices, value)

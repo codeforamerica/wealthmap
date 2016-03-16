@@ -92,7 +92,8 @@ class Command(BaseCommand):
                 agency_instance.save()
 
         models.Requirement.objects.all().delete()
-        with open(os.path.join(wd, '../../../legacy_data/requirement.csv')) as f:
+        req_file = '../../../legacy_data/requirement.csv'
+        with open(os.path.join(wd, req_file)) as f:
             reader = csv.DictReader(f)
             for r in reader:
                 requirement = models.Requirement(
@@ -107,7 +108,8 @@ class Command(BaseCommand):
                 requirement.save()
 
         models.Opportunity.objects.all().delete()
-        with open(os.path.join(wd, '../../../legacy_data/opportunity.csv')) as f:
+        opp_file = '../../../legacy_data/opportunity.csv'
+        with open(os.path.join(wd, opp_file)) as f:
             reader = csv.DictReader(f)
             for r in reader:
                 (employees_min, employees_max) = get_min_max(
@@ -118,18 +120,20 @@ class Command(BaseCommand):
                 if 'BC' in application_deadline:
                     application_deadline = None
 
-                # substitute values that don't meet the model's specified benefit_types (see models.py)
+                # substitute values that don't meet the model's specified types
                 benefit_types = to_array(r['benefitType'])
 
                 # TODO: refactor as function, below
                 try:
-                    index = benefit_types.index('financingthroughcrowddonations')
+                    index = benefit_types.index(
+                        'financingthroughcrowddonations')
                 except ValueError:
                     pass
                 else:
                     benefit_types[index] = 'financing'
                 try:
-                    index = benefit_types.index('_financing_through_crowd_donations')
+                    index = benefit_types.index(
+                        '_financing_through_crowd_donations')
                 except ValueError:
                     pass
                 else:
@@ -168,7 +172,8 @@ class Command(BaseCommand):
                 opportunity.save()
 
         models.RequirementRelationship.objects.all().delete()
-        with open(os.path.join(wd, '../../../legacy_data/opp_to_req.csv')) as f:
+        opp_to_req_file = '../../../legacy_data/opp_to_req.csv'
+        with open(os.path.join(wd, opp_to_req_file)) as f:
             reader = csv.DictReader(f)
             for r in reader:
                 rr = models.RequirementRelationship(
