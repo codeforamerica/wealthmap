@@ -14,7 +14,7 @@ def about(request):
 
 
 def home(request):
-    return render(request, "primerpeso/about.jade", {'title': _('Home')})
+    return render(request, "primerpeso/home.jade", {'title': _('Home')})
 
 
 class SearchFormView(CookieWizardView):
