@@ -117,6 +117,24 @@ class Command(BaseCommand):
                 application_deadline = r['applicationDeadline']
                 if 'BC' in application_deadline:
                     application_deadline = None
+
+                # substitute values that don't meet the model's specified benefit_types (see models.py)
+                benefit_types = to_array(r['benefitType'])
+
+                # TODO: refactor as function, below
+                try:
+                    index = benefit_types.index('financingthroughcrowddonations')
+                except ValueError:
+                    pass
+                else:
+                    benefit_types[index] = 'financing'
+                try:
+                    index = benefit_types.index('_financing_through_crowd_donations')
+                except ValueError:
+                    pass
+                else:
+                    benefit_types[index] = 'financing'
+
                 opportunity = models.Opportunity(
                     id=r['id'],
                     creator_id=1,
@@ -144,7 +162,7 @@ class Command(BaseCommand):
                     employees_max=employees_max,
                     annual_revenue_min=revenue_min,
                     annual_revenue_max=revenue_max,
-                    benefit_types=to_array(r['benefitType']),
+                    benefit_types=benefit_types,
                     agency_id=r['agencyId'],
                 )
                 opportunity.save()
