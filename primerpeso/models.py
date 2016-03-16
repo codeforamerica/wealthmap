@@ -390,7 +390,16 @@ class OpportunitySearch(models.Model):
         opps = opps.filter(
             minimum_years_in_business__lte=self.years_in_business)
         opps = min_max_query(opps, 'annual_revenue', self.annual_revenue)
+        opps = opps.order_by('title')
         return opps
+
+    def segment_search(self):
+        results = self.search()
+        opps_by_type = {key: []for (key, value) in BENEFIT_TYPES}
+        for result in results:
+            for benefit_type in result.benefit_types:
+                opps_by_type[benefit_type].append(result)
+        return opps_by_type
 
     def __str__(self):
         return self.email
