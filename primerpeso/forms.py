@@ -5,6 +5,7 @@ from primerpeso.widgets import ArrayFieldSelectMultiple
 
 
 class OpportunitySearchForm(forms.ModelForm):
+
     class Meta:
         fields = '__all__'
         model = models.OpportunitySearch

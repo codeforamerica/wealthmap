@@ -10,9 +10,13 @@ class WhoAndWhenBase(models.Model):
     """An abstract base class which manages created at and updated at as well as
     who created it.
     """
-    created_at = models.DateTimeField(auto_now_add=True, verbose_name=_('created_at'))
-    updated_at = models.DateTimeField(auto_now=True, verbose_name=_('updated_at'))
-    creator = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name=_('creator'))
+    created_at = models.DateTimeField(
+        auto_now_add=True, verbose_name=_('created_at'))
+    updated_at = models.DateTimeField(
+        auto_now=True, verbose_name=_('updated_at'))
+    creator = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        verbose_name=_('creator'))
 
     class Meta:
         abstract = True
@@ -22,13 +26,22 @@ class Agency(WhoAndWhenBase):
     """A government or NGO organization which manages ``Opportunities``.
     """
     id = models.IntegerField(primary_key=True, verbose_name=_('id'))
-    name = models.CharField(max_length=255, unique=True, verbose_name=_('name'))
+    name = models.CharField(
+        max_length=255,
+        unique=True,
+        verbose_name=_('name'))
     mission = models.TextField(blank=True, verbose_name=_('mission'))
-    phone = models.CharField(blank=True, max_length=255, verbose_name=_('phone'))
+    phone = models.CharField(
+        blank=True,
+        max_length=255,
+        verbose_name=_('phone'))
     fax = models.CharField(blank=True, max_length=255, verbose_name=_('fax'))
     email = models.EmailField(blank=True, verbose_name=_('email'))
     address = models.TextField(blank=True, verbose_name=_('address'))
-    municipality = models.CharField(blank=True, max_length=255, verbose_name=_('municipality'))
+    municipality = models.CharField(
+        blank=True,
+        max_length=255,
+        verbose_name=_('municipality'))
     state = USStateField(blank=True)
     postal_code = USZipCodeField(blank=True)  # zip is a global function
     web = models.URLField(max_length=255, blank=True, verbose_name=_('web'))
@@ -43,9 +56,15 @@ class Requirement(WhoAndWhenBase):
     a different step to utilitizing it.
     """
     id = models.IntegerField(primary_key=True, verbose_name=_('id'))
-    name = models.CharField(max_length=255, unique=True, verbose_name=_('name'))
+    name = models.CharField(
+        max_length=255,
+        unique=True,
+        verbose_name=_('name'))
     description = models.TextField(blank=True, verbose_name=_('description'))
-    provider = models.CharField(blank=True, max_length=255, verbose_name=_('provider'))
+    provider = models.CharField(
+        blank=True,
+        max_length=255,
+        verbose_name=_('provider'))
     link = models.TextField(blank=True, verbose_name=_('link'))
     cost = models.TextField(blank=True, verbose_name=_('cost'))
 
@@ -55,7 +74,8 @@ class Requirement(WhoAndWhenBase):
 
 
 class RequirementRelationship(WhoAndWhenBase):
-    opportunity = models.ForeignKey('Opportunity', verbose_name=_('opportunity'))
+    opportunity = models.ForeignKey(
+        'Opportunity', verbose_name=_('opportunity'))
     requirement = models.ForeignKey(Requirement, verbose_name=_('requirement'))
 
     class Meta:
@@ -208,31 +228,53 @@ class Opportunity(WhoAndWhenBase):
     to Puerto Rico.
     """
     id = models.IntegerField(primary_key=True, verbose_name=_('id'))
-    title = models.CharField(max_length=255, unique=True, verbose_name=_('title'))
+    title = models.CharField(
+        max_length=255,
+        unique=True,
+        verbose_name=_('title'))
     gender = models.CharField(max_length=6,
                               choices=(('male', _('Male')),
                                        ('female', _('Female')),
                                        ('any', _('Any')),
                                        ('other', _('Other')),))
     application_cost = models.IntegerField(verbose_name=_('application cost'))
-    application_deadline = models.DateTimeField(null=True, blank=True, verbose_name=_('application deadline'))
-    benefit_description = models.TextField(verbose_name=_('benefit description'))
-    agency_contact_name = models.CharField(max_length=255, verbose_name=_('agency contact name'))
-    agency_contact_phone = models.CharField(max_length=255, verbose_name=_('agency contact phone'))
-    agency_contact_email = models.EmailField(verbose_name=_('agency contact email'))
-    minimum_years_in_business = models.IntegerField(verbose_name=_('minimum years in business'))
-    additional_information = models.TextField(verbose_name=_('additional information'))
-    investing_own_money = models.BooleanField(verbose_name=_('investing own money'))
-    money_invested = models.CharField(max_length=255, verbose_name=_('money invested'))
+    application_deadline = models.DateTimeField(
+        null=True, blank=True, verbose_name=_('application deadline'))
+    benefit_description = models.TextField(
+        verbose_name=_('benefit description'))
+    agency_contact_name = models.CharField(
+        max_length=255, verbose_name=_('agency contact name'))
+    agency_contact_phone = models.CharField(
+        max_length=255, verbose_name=_('agency contact phone'))
+    agency_contact_email = models.EmailField(
+        verbose_name=_('agency contact email'))
+    minimum_years_in_business = models.IntegerField(
+        verbose_name=_('minimum years in business'))
+    additional_information = models.TextField(
+        verbose_name=_('additional information'))
+    investing_own_money = models.BooleanField(
+        verbose_name=_('investing own money'))
+    money_invested = models.CharField(
+        max_length=255, verbose_name=_('money invested'))
     agency = models.ForeignKey(Agency, verbose_name=_('agency'))
-    requirements = models.ManyToManyField(Requirement, through=RequirementRelationship, verbose_name=_('requirements'))
+    requirements = models.ManyToManyField(
+        Requirement,
+        through=RequirementRelationship,
+        verbose_name=_('requirements'))
     age_min = models.IntegerField(verbose_name=_('minimum age'))
-    age_max = models.IntegerField(null=True, blank=True, verbose_name=_('maximum age'))
+    age_max = models.IntegerField(
+        null=True,
+        blank=True,
+        verbose_name=_('maximum age'))
     employees_min = models.IntegerField(verbose_name=_('minimum employees'))
-    employees_max = models.IntegerField(null=True, blank=True, verbose_name=_('maximum employees'))
-    annual_revenue_min = models.IntegerField(verbose_name=_('minimum annual revenue'))
-    annual_revenue_max = models.IntegerField(null=True, blank=True, verbose_name=_('maximum annual revenue'))
-    average_application_time = models.CharField(max_length=255, blank=True, verbose_name=_('average application time'))
+    employees_max = models.IntegerField(
+        null=True, blank=True, verbose_name=_('maximum employees'))
+    annual_revenue_min = models.IntegerField(
+        verbose_name=_('minimum annual revenue'))
+    annual_revenue_max = models.IntegerField(
+        null=True, blank=True, verbose_name=_('maximum annual revenue'))
+    average_application_time = models.CharField(
+        max_length=255, blank=True, verbose_name=_('average application time'))
     locations = ArrayField(
         models.CharField(max_length=255, choices=LOCATIONS),
         default=list,
@@ -271,14 +313,17 @@ class OpportunitySearch(models.Model):
     """A government sponsored incentive/grant/tax break for businessses local
     to Puerto Rico.
     """
-    created_at = models.DateTimeField(auto_now_add=True, verbose_name=_('created at'))
-    updated_at = models.DateTimeField(auto_now=True, verbose_name=_('updated at'))
+    created_at = models.DateTimeField(
+        auto_now_add=True, verbose_name=_('created at'))
+    updated_at = models.DateTimeField(
+        auto_now=True, verbose_name=_('updated at'))
     email = models.EmailField(verbose_name=_('What is your email?'))
     purpose = ArrayField(
         models.CharField(max_length=255, choices=PURPOSE),
         default=list, verbose_name=_('How would you use the incentive?'),
     )
-    investing_own_money = models.BooleanField(verbose_name=_('Will you invest personal money?'))
+    investing_own_money = models.BooleanField(
+        verbose_name=_('Will you invest personal money?'))
     gender = models.CharField(max_length=6,
                               choices=(('male', _('Male')),
                                        ('female', _('Female')),
@@ -286,16 +331,25 @@ class OpportunitySearch(models.Model):
                                        ('other', _('Other')),),
                               verbose_name=_("What are the owner's genders?"),
                               )
-    entity_type = models.CharField(max_length=255, choices=ENTITY_TYPES, verbose_name=_('What is the business structure?'))
-    industry = models.CharField(max_length=255, choices=INDUSTRIES, verbose_name=_('What industry is your business?'))
+    entity_type = models.CharField(
+        max_length=255,
+        choices=ENTITY_TYPES,
+        verbose_name=_('What is the business structure?'))
+    industry = models.CharField(
+        max_length=255,
+        choices=INDUSTRIES,
+        verbose_name=_('What industry is your business?'))
     locations = ArrayField(
         models.CharField(max_length=255, choices=LOCATIONS),
         default=list,
         verbose_name=_('Where is your business located?'),
     )
-    employees = models.IntegerField(verbose_name=_('How many full time employees do you have?'))
-    years_in_business = models.IntegerField(verbose_name=_('How many years have you been in business?'))
-    annual_revenue = models.IntegerField(verbose_name=_('What is your annual revenue?'))
+    employees = models.IntegerField(verbose_name=_(
+        'How many full time employees do you have?'))
+    years_in_business = models.IntegerField(
+        verbose_name=_('How many years have you been in business?'))
+    annual_revenue = models.IntegerField(
+        verbose_name=_('What is your annual revenue?'))
 
     def search(self):
         opps = Opportunity.objects
@@ -304,10 +358,11 @@ class OpportunitySearch(models.Model):
             """
             modifies a query so if finds Opportunities which match searches.
             """
-            min_query = {field_name +'_min__lte': value}
-            max_query = {field_name +'_max__gte': value}
-            no_max = {field_name +'_max__isnull': True}
-            return query.filter(Q(**min_query) & Q(Q(**max_query) | Q(**no_max)))
+            min_query = {field_name + '_min__lte': value}
+            max_query = {field_name + '_max__gte': value}
+            no_max = {field_name + '_max__isnull': True}
+            return query.filter(
+                Q(**min_query) & Q(Q(**max_query) | Q(**no_max)))
 
         def make_contains(field_name, search_term):
             query_str = '%s__contains' % field_name
@@ -332,7 +387,8 @@ class OpportunitySearch(models.Model):
         opps = opps.filter(multi_select('industries', [self.industry, ]))
         opps = opps.filter(multi_select('locations', self.locations))
         opps = min_max_query(opps, 'employees', self.employees)
-        opps = opps.filter(minimum_years_in_business__lte=self.years_in_business)
+        opps = opps.filter(
+            minimum_years_in_business__lte=self.years_in_business)
         opps = min_max_query(opps, 'annual_revenue', self.annual_revenue)
         return opps
 

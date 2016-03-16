@@ -6,7 +6,7 @@ from primerpeso import models
 
 
 def get_min_max(data_str):
-    employees=data_str[1:-1].replace('_', ',').split(',')
+    employees = data_str[1:-1].replace('_', ',').split(',')
     if 'any' in employees or 'none' in employees:
         employees = employees[0]
         employees_min = 0
@@ -51,8 +51,8 @@ def age_to_range(data_str):
       '6': '65+',
     },
     """
-    ages=data_str[1:-1].split(',')
-    if len(ages)==1 and ages[0]=='0':
+    ages = data_str[1:-1].split(',')
+    if len(ages) == 1 and ages[0] == '0':
         min_age = 16
         max_age = None
     else:
@@ -110,12 +110,13 @@ class Command(BaseCommand):
         with open(os.path.join(wd, '../../../legacy_data/opportunity.csv')) as f:
             reader = csv.DictReader(f)
             for r in reader:
-                (employees_min, employees_max) = get_min_max(r['currentEmployeesRequired'])
+                (employees_min, employees_max) = get_min_max(
+                    r['currentEmployeesRequired'])
                 (revenue_min, revenue_max) = get_min_max(r['annualRevenue'])
                 (age_min, age_max) = age_to_range(r['age'])
-                application_deadline=r['applicationDeadline']
+                application_deadline = r['applicationDeadline']
                 if 'BC' in application_deadline:
-                    application_deadline=None
+                    application_deadline = None
                 opportunity = models.Opportunity(
                     id=r['id'],
                     creator_id=1,

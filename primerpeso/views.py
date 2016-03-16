@@ -14,7 +14,7 @@ def about(request):
 
 
 class SearchFormView(CookieWizardView):
-    template_name="primerpeso/search_form.html"
+    template_name = "primerpeso/search_form.html"
 
     def done(self, form_list, **kwargs):
         combined = {}

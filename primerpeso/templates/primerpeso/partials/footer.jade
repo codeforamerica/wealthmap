@@ -14,7 +14,8 @@
       |  ·&nbsp;
       a(href='https://github.com/codeforamerica/primerpeso/issues') Issues
     div.pr-logo
+      -load staticfiles
       a(href='http://pr.gov')
-        img(src=CDN("/img/prgov.png"))
+        img(src="{% static 'primerpeso/img/prgov.png' %}")
       a(href='http://codeforamerica.org')
-        img(src=CDN("/img/cfa-logo.png"))
+        img(src="{% static 'primerpeso/img/cfa-logo.png' %}")
