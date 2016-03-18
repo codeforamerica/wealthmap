@@ -36,10 +36,10 @@ def search_results(request, pk):
     except models.OpportunitySearch.DoesNotExist:
         return redirect(reverse('search-form'))
     else:
-        segments = search.segment_search()
+        segmented_opps = list(search.segment_search().items())
         return render_to_response("primerpeso/search_results.html", {
             'title': _('Questionnaire Results'),  # Preguntas
-            'segments': segments,
+            'segmented_opps': segmented_opps,
         })
 
 
