@@ -163,11 +163,15 @@ LOCATIONS = (('any', 'Cualquier municipio'),
              ('yabucoa', 'Yabucoa'),
              ('yauco', 'Yauco'))
 
+LOCATIONS_SEARCH = LOCATIONS[1:]
+
 ENTITY_TYPES = (('any', 'Cualquier'),
                 ('non_profit', 'Organización sin fines de lucro'),
                 ('for_profit', 'Corporación o Asociación con fines de lucro '),
                 ('sole_proprietor', 'Individuo (DBA-HNC)'),
                 ('cooperative', 'Cooperativa'),)
+
+ENTITY_TYPES_SEARCH = ENTITY_TYPES[1:]
 
 INDUSTRIES = (('any', 'Cualquiera'),
               ('11', '11 - Agricultura, Silvicultura, Caza y Pesca'),
@@ -194,10 +198,14 @@ INDUSTRIES = (('any', 'Cualquiera'),
               ('92', '92 - Administración Pública'),
               ('other', 'Otra'),)
 
+INDUSTRIES_SEARCH = INDUSTRIES[1:]
+
 DEMOGRAPHICS = (('any', 'cualquiera'),
                 ('student', 'estudiante'),
                 ('veteran', 'veterano'),
                 ('minority', 'minoría'),)
+
+DEMOGRAPHICS_SEARCH = DEMOGRAPHICS[1:]
 
 BENEFIT_TYPES = (('incentive', 'Incentivos'),
                  ('loan', 'Créditos'),
@@ -225,6 +233,7 @@ PURPOSE = (('any', 'Cualquiera'),  # should be any
            ('relocate_business', 'Reubicar un Negocio'),
            ('other', 'Otro (Por favor especifíca el propósito)'),)
 
+PURPOSE_SEARCH = PURPOSE[1:]
 
 class Opportunity(WhoAndWhenBase):
     """A government sponsored incentive/grant/tax break for businessses local
@@ -320,9 +329,8 @@ class OpportunitySearch(models.Model):
         auto_now_add=True, verbose_name=_('created at'))
     updated_at = models.DateTimeField(
         auto_now=True, verbose_name=_('updated at'))
-    email = models.EmailField(verbose_name=_('What is your email?'))
     purpose = ArrayField(
-        models.CharField(max_length=255, choices=PURPOSE),
+        models.CharField(max_length=255, choices=PURPOSE_SEARCH),
         default=list, verbose_name=_('How would you use the incentive?'),
     )
     investing_own_money = models.BooleanField(
@@ -336,14 +344,14 @@ class OpportunitySearch(models.Model):
                               )
     entity_type = models.CharField(
         max_length=255,
-        choices=ENTITY_TYPES,
+        choices=ENTITY_TYPES_SEARCH,
         verbose_name=_('What is the business structure?'))
     industry = models.CharField(
         max_length=255,
-        choices=INDUSTRIES,
+        choices=INDUSTRIES_SEARCH,
         verbose_name=_('What industry is your business?'))
     locations = ArrayField(
-        models.CharField(max_length=255, choices=LOCATIONS),
+        models.CharField(max_length=255, choices=LOCATIONS_SEARCH),
         default=list,
         verbose_name=_('Where is your business located?'),
     )

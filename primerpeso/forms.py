@@ -11,9 +11,9 @@ class OpportunitySearchForm(forms.ModelForm):
         model = models.OpportunitySearch
         widgets = {
             "purpose": ArrayFieldSelectMultiple(
-                choices=models.PURPOSE, attrs={'class': 'chosen'}),
+                choices=models.PURPOSE_SEARCH, attrs={'class': 'chosen'}),
             "locations": ArrayFieldSelectMultiple(
-                choices=models.LOCATIONS, attrs={'class': 'chosen'}),
+                choices=models.LOCATIONS_SEARCH, attrs={'class': 'chosen'}),
         }
 
 
@@ -21,10 +21,10 @@ class PurposeSearchForm(forms.ModelForm):
 
     class Meta:
         model = models.OpportunitySearch
-        fields = ['email', 'purpose', 'investing_own_money']
+        fields = ['purpose', 'investing_own_money']
         widgets = {
             "purpose": ArrayFieldSelectMultiple(
-                choices=models.PURPOSE, attrs={'class': 'chosen'}),
+                choices=models.PURPOSE_SEARCH, attrs={'class': 'chosen'}),
         }
 
 

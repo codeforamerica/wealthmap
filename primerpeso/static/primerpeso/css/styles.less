@@ -221,74 +221,15 @@ section {
   }
 }
 
-// Wizard
-// -------------------------
+// Search Form
 
-.wizard .content {
-  background-color: white;
-  min-height: inherit;
-  .body {
-    position: relative !important;
-    padding: 1.5% 0;
-    .control-label {}
-  }
-  .form-group {
-    padding-left: 0px;
-  }
+label.control-label {
+  clear: left;
+  color: #128d75;
 }
 
-.body .control-label { //leaving this out here because when nested,
-  font-size: 24px;  //there's a delay in loading the style.
-  color: @navy;
-}
-
-.wizard {
-  .actions a {
-    background-color: @dark-green;
-    padding: 15px 35px;
-    &:hover {
-      background-color: @dark-navy;
-      padding: 15px 35px;
-    }
-  }
-  .actions {
-    text-align: left;
-    margin-left: 1%;
-    .disabled a {
-      padding: 15px 35px;
-    }
-  }
-}
-
-.wizard .steps {
-  margin-top: 23px;
-  ul li {
-    width: auto;
-    font-size: 19px;
-  }
-  a, a:hover {
-    margin: 0 0.5em 1.2em;
-  }
-  .current a {
-    background-color: @dark-green;
-    &:hover {
-      background-color: @dark-navy;
-    }
-  }
-  .done a {
-    background-color: @green;
-    &:hover {
-      background-color: @dark-navy;
-    }
-  }
-}
-
-.mandatory {
-  margin: 10px 0px 0px 20px;
-}
-
-.has-error .radio label {
-  color: black !important;
+div.wizard-buttons {
+  clear: left;
 }
 
 // Search Results
@@ -485,28 +426,6 @@ section {
 
 .control-label {
   font-size: 150%;
-}
-
-// Admin
-// -------------------------
-
-#new .btn {
-  margin: 0px;
-}
-
-td {
-  width: 20%;
-  :first-child :last-child {
-    width: 25%;
-  }
-}
-
-.admin thead {
-  font-size: 135%;
-}
-
-.table-condensed > tbody > tr > td{
-  padding: 20px 10px 15px;
 }
 
 // Last Step/More Info Confirmation
