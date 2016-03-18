@@ -12,3 +12,6 @@ DATABASES = {
         'NAME': 'primerpeso2',
     }
 }
+
+COMPRESS_ENABLE = True
+COMPRESS_ROOT = '/tmp/'
