@@ -30,6 +30,7 @@ class PurposeSearchForm(forms.ModelForm):
             "investing_own_money": forms.RadioSelect(choices=models.YES_NO)
         }
 
+
 class AboutSearchForm(forms.ModelForm):
 
     class Meta:

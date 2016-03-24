@@ -237,6 +237,7 @@ PURPOSE = (('any', 'Cualquiera'),  # should be any
 
 PURPOSE_SEARCH = PURPOSE[1:]
 
+
 class Opportunity(WhoAndWhenBase):
     """A government sponsored incentive/grant/tax break for businessses local
     to Puerto Rico.
@@ -336,11 +337,12 @@ class OpportunitySearch(models.Model):
         default=list, verbose_name=_('How would you use the incentive?'),
     )
     investing_own_money = models.BooleanField(
-        verbose_name=_('Will the CEOs be investing money from their own pockets?'),
+        verbose_name=_(
+            'Will the CEOs be investing money from their own pockets?'),
         choices=YES_NO,
         blank=False,
         default="Unspecified"
-        )
+    )
     gender = models.CharField(max_length=6,
                               choices=(('male', _('Male')),
                                        ('female', _('Female')),
@@ -366,7 +368,8 @@ class OpportunitySearch(models.Model):
     years_in_business = models.IntegerField(
         verbose_name=_('How many years have you been in business?'))
     annual_revenue = models.IntegerField(
-        verbose_name=_('What is the gross revenue for your fiscal calendar year?'))
+        verbose_name=_(
+            'What is the gross revenue for your fiscal calendar year?'))
 
     def search(self):
         opps = Opportunity.objects
