@@ -11,9 +11,9 @@ class WhoAndWhenBase(models.Model):
     who created it.
     """
     created_at = models.DateTimeField(
-        auto_now_add=True, verbose_name=_('created at'))
+        auto_now_add=True, verbose_name=_('Made On'))
     updated_at = models.DateTimeField(
-        auto_now=True, verbose_name=_('updated at'))
+        auto_now=True, verbose_name=_('Last Modified'))
     creator = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         verbose_name=_('creator'))
@@ -268,9 +268,9 @@ class Opportunity(WhoAndWhenBase):
     additional_information = models.TextField(
         verbose_name=_('additional information'))
     investing_own_money = models.BooleanField(
-        verbose_name=_('investing own money'))
+        verbose_name=_('requires investment of personal money'))
     money_invested = models.CharField(
-        max_length=255, verbose_name=_('money invested'))
+        max_length=255, verbose_name=_('amount of money invested'))
     agency = models.ForeignKey(Agency, verbose_name=_('agency'))
     requirements = models.ManyToManyField(
         Requirement,
@@ -329,9 +329,7 @@ class OpportunitySearch(models.Model):
     to Puerto Rico.
     """
     created_at = models.DateTimeField(
-        auto_now_add=True, verbose_name=_('created at'))
-    updated_at = models.DateTimeField(
-        auto_now=True, verbose_name=_('updated at'))
+        auto_now_add=True, verbose_name=_('Search Date and Time'))
     purpose = ArrayField(
         models.CharField(max_length=255, choices=PURPOSE_SEARCH),
         default=list, verbose_name=_('How would you use the incentive?'),
