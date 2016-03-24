@@ -2,7 +2,7 @@ from django import forms
 from django.utils.datastructures import MultiValueDict
 
 
-class ArrayFieldSelectMultiple(forms.SelectMultiple):
+class ArrayFieldSelectMultiple(forms.CheckboxSelectMultiple):
     """This is a Form Widget for use with a Postgres ArrayField. It implements
     a multi-select interface that can be given a set of `choices`.
 

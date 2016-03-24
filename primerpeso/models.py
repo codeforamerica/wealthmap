@@ -11,9 +11,9 @@ class WhoAndWhenBase(models.Model):
     who created it.
     """
     created_at = models.DateTimeField(
-        auto_now_add=True, verbose_name=_('created_at'))
+        auto_now_add=True, verbose_name=_('created at'))
     updated_at = models.DateTimeField(
-        auto_now=True, verbose_name=_('updated_at'))
+        auto_now=True, verbose_name=_('updated at'))
     creator = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         verbose_name=_('creator'))
@@ -82,6 +82,8 @@ class RequirementRelationship(WhoAndWhenBase):
         verbose_name = _('Requirement Relationship')
         verbose_name_plural = _('Requirement Relationships')
 
+YES_NO = ((False, _('No')),
+          (True, _('Yes')))
 
 LOCATIONS = (('any', 'Cualquier municipio'),
              ('adjuntas', 'Adjuntas'),
@@ -334,7 +336,11 @@ class OpportunitySearch(models.Model):
         default=list, verbose_name=_('How would you use the incentive?'),
     )
     investing_own_money = models.BooleanField(
-        verbose_name=_('Will you invest personal money?'))
+        verbose_name=_('Will the CEOs be investing money from their own pockets?'),
+        choices=YES_NO,
+        blank=False,
+        default="Unspecified"
+        )
     gender = models.CharField(max_length=6,
                               choices=(('male', _('Male')),
                                        ('female', _('Female')),
@@ -353,14 +359,14 @@ class OpportunitySearch(models.Model):
     locations = ArrayField(
         models.CharField(max_length=255, choices=LOCATIONS_SEARCH),
         default=list,
-        verbose_name=_('Where is your business located?'),
+        verbose_name=_('Where are the physical locations of your businesses?'),
     )
     employees = models.IntegerField(verbose_name=_(
         'How many full time employees do you have?'))
     years_in_business = models.IntegerField(
         verbose_name=_('How many years have you been in business?'))
     annual_revenue = models.IntegerField(
-        verbose_name=_('What is your annual revenue?'))
+        verbose_name=_('What is the gross revenue for your fiscal calendar year?'))
 
     def search(self):
         opps = Opportunity.objects

@@ -1,6 +1,6 @@
 from django import forms
 from primerpeso import models
-
+from django.utils.translation import ugettext as _
 from primerpeso.widgets import ArrayFieldSelectMultiple
 
 
@@ -21,12 +21,14 @@ class PurposeSearchForm(forms.ModelForm):
 
     class Meta:
         model = models.OpportunitySearch
+
         fields = ['purpose', 'investing_own_money']
+
         widgets = {
             "purpose": ArrayFieldSelectMultiple(
                 choices=models.PURPOSE_SEARCH, attrs={'class': 'chosen'}),
+            "investing_own_money": forms.RadioSelect(choices=models.YES_NO)
         }
-
 
 class AboutSearchForm(forms.ModelForm):
 
