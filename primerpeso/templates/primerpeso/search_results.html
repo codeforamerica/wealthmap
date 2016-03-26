@@ -8,7 +8,7 @@
     </li>
     {% for segment in segmented_opps %}
       <li class="search-tab">
-        <a href="#" id="{{segment.0}}">{{ segment.0 }}</a>
+        <a href="#" id="{{segment.0}}">{{ segment.1.name }}</a>
       </li>
     {% endfor %}
   </ul>
@@ -20,7 +20,7 @@
     <div class="opportunities-container">
       <div class="incentive-container">
         <div class="row row-benefit-count row-incentive">
-          <h3>{{ segment.0 }}</h3>
+          <h3>{{ segment.1.name }}</h3>
         </div>
         <div class="row row-header row-incentive">
           <div class="col-md-8 col-description-header">
@@ -33,7 +33,7 @@
             <h4>Tiempo estimado de finalización</h4>
           </div>
         </div>
-        {% for opportunity in segment.1 %}
+        {% for opportunity in segment.1.opps %}
           <div class="panel-group" id="accordion">
             <div class="panel panel-default">
               <div class="row row-incentive">
@@ -41,7 +41,7 @@
                   <a class="btn btn-small addItem" data-bname="9" data-btype=
                   "incentive" href="#9Add">agregar</a><a class="benefit-title"
                   data-parent="#accordion" data-toggle="collapse" href=
-                  "#1">Incentivos contributivos y gestoría<i class=
+                  "#1">{{ opportunity.title }}<i class=
                   "fa fa-sort-desc"></i></a>
                   <div class="panel-collapse" id="1">
                     <div class="panel-body">

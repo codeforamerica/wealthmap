@@ -413,10 +413,10 @@ class OpportunitySearch(models.Model):
 
     def segment_search(self):
         results = self.search()
-        opps_by_type = {key: []for (key, value) in BENEFIT_TYPES}
+        opps_by_type = {key: {'name': value, 'opps': []} for (key, value) in BENEFIT_TYPES}
         for result in results:
             for benefit_type in result.benefit_types:
-                opps_by_type[benefit_type].append(result)
+                opps_by_type[benefit_type]['opps'].append(result)
         return opps_by_type
 
     def __str__(self):
