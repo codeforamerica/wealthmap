@@ -8,8 +8,8 @@ from localflavor.us.models import PhoneNumberField
 
 
 class WhoAndWhenBase(models.Model):
-    """An abstract base class which manages created at and updated at as well as
-    who created it.
+    """An abstract base class which manages created at and updated at as well
+    as who created it.
     """
     created_at = models.DateTimeField(
         auto_now_add=True, verbose_name=_('Made On'))
