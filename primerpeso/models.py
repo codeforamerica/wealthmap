@@ -46,6 +46,9 @@ class Agency(WhoAndWhenBase):
     postal_code = USZipCodeField(blank=True)  # zip is a global function
     web = models.URLField(max_length=255, blank=True, verbose_name=_('web'))
 
+    def __str__(self):
+        return self.name
+
     class Meta:
         verbose_name = _('Agency')
         verbose_name_plural = _('Agencies')
@@ -68,6 +71,9 @@ class Requirement(WhoAndWhenBase):
     link = models.TextField(blank=True, verbose_name=_('link'))
     cost = models.TextField(blank=True, verbose_name=_('cost'))
 
+    def __str__(self):
+        return self.name
+
     class Meta:
         verbose_name = _('Requirement')
         verbose_name_plural = _('Requirements')
@@ -77,6 +83,9 @@ class RequirementRelationship(WhoAndWhenBase):
     opportunity = models.ForeignKey(
         'Opportunity', verbose_name=_('opportunity'))
     requirement = models.ForeignKey(Requirement, verbose_name=_('requirement'))
+
+    def __str__(self):
+        return self.requirement.name
 
     class Meta:
         verbose_name = _('Requirement Relationship')
@@ -413,14 +422,15 @@ class OpportunitySearch(models.Model):
 
     def segment_search(self):
         results = self.search()
-        opps_by_type = {key: {'name': value, 'opps': []} for (key, value) in BENEFIT_TYPES}
+        opps_by_type = {
+            key: {'name': value, 'opps': []} for (key, value) in BENEFIT_TYPES}
         for result in results:
             for benefit_type in result.benefit_types:
                 opps_by_type[benefit_type]['opps'].append(result)
         return opps_by_type
 
     def __str__(self):
-        return self.email
+        return 'Search: %s' % self.pk
 
     class Meta:
         verbose_name = _('Opportunity Search')
