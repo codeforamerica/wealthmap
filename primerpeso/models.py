@@ -349,7 +349,7 @@ class OpportunitySearch(models.Model):
             'Will the CEOs be investing money from their own pockets?'),
         choices=YES_NO,
         blank=False,
-        default="Unspecified"
+        default=False,
     )
     gender = models.CharField(max_length=6,
                               choices=(('male', _('Male')),
