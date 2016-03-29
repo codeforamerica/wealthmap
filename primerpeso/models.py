@@ -335,8 +335,8 @@ class Opportunity(WhoAndWhenBase):
 
 
 class OpportunitySearch(models.Model):
-    """A government sponsored incentive/grant/tax break for businessses local
-    to Puerto Rico.
+    """Is created everytime a new search is run and contains all
+    the search options.
     """
     created_at = models.DateTimeField(
         auto_now_add=True, verbose_name=_('Search Date and Time'))
@@ -439,8 +439,8 @@ class OpportunitySearch(models.Model):
 
 
 class Contact(models.Model):
-    """A government sponsored incentive/grant/tax break for businessses local
-    to Puerto Rico.
+    """The contact information added to a search so that Agengies
+    get an email.
     """
     created_at = models.DateTimeField(
         auto_now_add=True, verbose_name=_('Contact Date and Time'))
