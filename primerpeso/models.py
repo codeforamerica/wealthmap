@@ -4,6 +4,7 @@ from django.db import models
 from django.db.models import Q
 from django.utils.translation import ugettext as _
 from localflavor.us.models import USStateField, USZipCodeField
+from localflavor.us.models import PhoneNumberField
 
 
 class WhoAndWhenBase(models.Model):
@@ -435,3 +436,40 @@ class OpportunitySearch(models.Model):
     class Meta:
         verbose_name = _('Opportunity Search')
         verbose_name_plural = _('Opportunity Searches')
+
+
+class Contact(models.Model):
+    """A government sponsored incentive/grant/tax break for businessses local
+    to Puerto Rico.
+    """
+    created_at = models.DateTimeField(
+        auto_now_add=True, verbose_name=_('Contact Date and Time'))
+    full_name = models.CharField(max_length=255,
+                            verbose_name=_('Full Name'))
+    phone_number = PhoneNumberField(verbose_name=_('Phone Number'))
+    email = models.EmailField(verbose_name=_('Email'))
+    address = models.CharField(max_length=255,
+                            verbose_name=_('Postal Address'))
+    city = models.CharField(max_length=255,
+                            verbose_name=_('City / Town'))
+    state = USStateField(verbose_name=_('State or Province'))
+    postal_code = USZipCodeField(verbose_name=_('Postal Code'))
+    incorportated = models.BooleanField(
+                            verbose_name=_('Are You Incorporated?1'))
+    company = models.CharField(max_length=255,
+                            verbose_name=_('Legal Company Name'))
+    company_municipality = models.CharField(max_length=255,
+                            verbose_name=_('Company Municipality'))
+    company_state = USStateField(verbose_name=_('Company State or Province'))
+    company_postal_code = USZipCodeField(verbose_name=_('Company Postal Code'))
+    search = models.ForeignKey(OpportunitySearch,
+                            verbose_name=_('Related Search'))
+    opportunities = models.ManyToManyField(Opportunity,
+                            verbose_name=_('Related Opportunities'))
+
+    def __str__(self):
+        return self.full_name
+
+    class Meta:
+        verbose_name = _('Search Contact')
+        verbose_name_plural = _('Search Contacts')

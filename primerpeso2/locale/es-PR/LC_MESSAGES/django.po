@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-24 20:51+0000\n"
+"POT-Creation-Date: 2016-03-29 22:38+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,264 +17,332 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: primerpeso/models.py:14
+#: primerpeso/models.py:15
 msgid "Made On"
 msgstr ""
 
-#: primerpeso/models.py:16
+#: primerpeso/models.py:17
 msgid "Last Modified"
 msgstr ""
 
-#: primerpeso/models.py:19
+#: primerpeso/models.py:20
 msgid "creator"
 msgstr ""
 
-#: primerpeso/models.py:28 primerpeso/models.py:58 primerpeso/models.py:245
+#: primerpeso/models.py:29 primerpeso/models.py:62 primerpeso/models.py:255
 msgid "id"
 msgstr ""
 
-#: primerpeso/models.py:32 primerpeso/models.py:62
+#: primerpeso/models.py:33 primerpeso/models.py:66
 msgid "name"
 msgstr ""
 
-#: primerpeso/models.py:33
+#: primerpeso/models.py:34
 msgid "mission"
 msgstr ""
 
-#: primerpeso/models.py:37
+#: primerpeso/models.py:38
 msgid "phone"
 msgstr ""
 
-#: primerpeso/models.py:38
+#: primerpeso/models.py:39
 msgid "fax"
 msgstr ""
 
-#: primerpeso/models.py:39
+#: primerpeso/models.py:40
 msgid "email"
 msgstr ""
 
-#: primerpeso/models.py:40
+#: primerpeso/models.py:41
 msgid "address"
 msgstr ""
 
-#: primerpeso/models.py:44
+#: primerpeso/models.py:45
 msgid "municipality"
 msgstr ""
 
-#: primerpeso/models.py:47
+#: primerpeso/models.py:48
 msgid "web"
 msgstr ""
 
-#: primerpeso/models.py:50
+#: primerpeso/models.py:54
 msgid "Agency"
 msgstr ""
 
-#: primerpeso/models.py:51
+#: primerpeso/models.py:55
 msgid "Agencies"
 msgstr ""
 
-#: primerpeso/models.py:63
+#: primerpeso/models.py:67
 msgid "description"
 msgstr ""
 
-#: primerpeso/models.py:67
+#: primerpeso/models.py:71
 msgid "provider"
 msgstr ""
 
-#: primerpeso/models.py:68
+#: primerpeso/models.py:72
 msgid "link"
 msgstr ""
 
-#: primerpeso/models.py:69
+#: primerpeso/models.py:73
 msgid "cost"
 msgstr ""
 
-#: primerpeso/models.py:72
+#: primerpeso/models.py:79
 msgid "Requirement"
 msgstr ""
 
-#: primerpeso/models.py:73
+#: primerpeso/models.py:80
 msgid "Requirements"
 msgstr ""
 
-#: primerpeso/models.py:78
+#: primerpeso/models.py:85
 msgid "opportunity"
 msgstr ""
 
-#: primerpeso/models.py:79
+#: primerpeso/models.py:86
 msgid "requirement"
 msgstr ""
 
-#: primerpeso/models.py:82
+#: primerpeso/models.py:92
 msgid "Requirement Relationship"
 msgstr ""
 
-#: primerpeso/models.py:83
+#: primerpeso/models.py:93
 msgid "Requirement Relationships"
 msgstr ""
 
-#: primerpeso/models.py:85
+#: primerpeso/models.py:95
 msgid "No"
 msgstr ""
 
-#: primerpeso/models.py:86
+#: primerpeso/models.py:96
 msgid "Yes"
 msgstr ""
 
-#: primerpeso/models.py:249
+#: primerpeso/models.py:259
 msgid "title"
 msgstr ""
 
-#: primerpeso/models.py:251 primerpeso/models.py:345
+#: primerpeso/models.py:261 primerpeso/models.py:355
 msgid "Male"
 msgstr ""
 
-#: primerpeso/models.py:252 primerpeso/models.py:346
+#: primerpeso/models.py:262 primerpeso/models.py:356
 msgid "Female"
 msgstr ""
 
-#: primerpeso/models.py:253
+#: primerpeso/models.py:263
 msgid "Any"
 msgstr ""
 
-#: primerpeso/models.py:254 primerpeso/models.py:348
+#: primerpeso/models.py:264 primerpeso/models.py:358
 msgid "Other"
 msgstr ""
 
-#: primerpeso/models.py:255
+#: primerpeso/models.py:265
 msgid "application cost"
 msgstr ""
 
-#: primerpeso/models.py:257
+#: primerpeso/models.py:267
 msgid "application deadline"
 msgstr ""
 
-#: primerpeso/models.py:259
+#: primerpeso/models.py:269
 msgid "benefit description"
 msgstr ""
 
-#: primerpeso/models.py:261
+#: primerpeso/models.py:271
 msgid "agency contact name"
 msgstr ""
 
-#: primerpeso/models.py:263
+#: primerpeso/models.py:273
 msgid "agency contact phone"
 msgstr ""
 
-#: primerpeso/models.py:265
+#: primerpeso/models.py:275
 msgid "agency contact email"
 msgstr ""
 
-#: primerpeso/models.py:267
+#: primerpeso/models.py:277
 msgid "minimum years in business"
 msgstr ""
 
-#: primerpeso/models.py:269
+#: primerpeso/models.py:279
 msgid "additional information"
 msgstr ""
 
-#: primerpeso/models.py:271
+#: primerpeso/models.py:281
 msgid "requires investment of personal money"
 msgstr ""
 
-#: primerpeso/models.py:273
+#: primerpeso/models.py:283
 msgid "amount of money invested"
 msgstr ""
 
-#: primerpeso/models.py:274
+#: primerpeso/models.py:284
 msgid "agency"
 msgstr ""
 
-#: primerpeso/models.py:278
+#: primerpeso/models.py:288
 msgid "requirements"
 msgstr ""
 
-#: primerpeso/models.py:279
+#: primerpeso/models.py:289
 msgid "minimum age"
 msgstr ""
 
-#: primerpeso/models.py:283
+#: primerpeso/models.py:293
 msgid "maximum age"
 msgstr ""
 
-#: primerpeso/models.py:284
+#: primerpeso/models.py:294
 msgid "minimum employees"
 msgstr ""
 
-#: primerpeso/models.py:286
+#: primerpeso/models.py:296
 msgid "maximum employees"
 msgstr ""
 
-#: primerpeso/models.py:288
+#: primerpeso/models.py:298
 msgid "minimum annual revenue"
 msgstr ""
 
-#: primerpeso/models.py:290
+#: primerpeso/models.py:300
 msgid "maximum annual revenue"
 msgstr ""
 
-#: primerpeso/models.py:292
+#: primerpeso/models.py:302
 msgid "average application time"
 msgstr ""
 
-#: primerpeso/models.py:323
+#: primerpeso/models.py:333
 msgid "Opportunity"
 msgstr ""
 
-#: primerpeso/models.py:324
+#: primerpeso/models.py:334
 msgid "Opportunities"
 msgstr ""
 
-#: primerpeso/models.py:332
+#: primerpeso/models.py:342
 msgid "Search Date and Time"
 msgstr ""
 
-#: primerpeso/models.py:335
+#: primerpeso/models.py:345
 msgid "How would you use the incentive?"
 msgstr ""
 
-#: primerpeso/models.py:339
+#: primerpeso/models.py:349
 msgid "Will the CEOs be investing money from their own pockets?"
 msgstr ""
 
-#: primerpeso/models.py:347
+#: primerpeso/models.py:357
 msgid "Both"
 msgstr ""
 
-#: primerpeso/models.py:349
+#: primerpeso/models.py:359
 msgid "What are the owner's genders?"
 msgstr ""
 
-#: primerpeso/models.py:354
+#: primerpeso/models.py:364
 msgid "What is the business structure?"
 msgstr ""
 
-#: primerpeso/models.py:358
+#: primerpeso/models.py:368
 msgid "What industry is your business?"
 msgstr ""
 
-#: primerpeso/models.py:362
+#: primerpeso/models.py:372
 msgid "Where are the physical locations of your businesses?"
 msgstr ""
 
-#: primerpeso/models.py:365
+#: primerpeso/models.py:375
 msgid "How many full time employees do you have?"
 msgstr ""
 
-#: primerpeso/models.py:367
+#: primerpeso/models.py:377
 msgid "How many years have you been in business?"
 msgstr ""
 
-#: primerpeso/models.py:370
+#: primerpeso/models.py:380
 msgid "What is the gross revenue for your fiscal calendar year?"
 msgstr ""
 
-#: primerpeso/models.py:426
+#: primerpeso/models.py:437
 msgid "Opportunity Search"
 msgstr ""
 
-#: primerpeso/models.py:427
+#: primerpeso/models.py:438
 msgid "Opportunity Searches"
+msgstr ""
+
+#: primerpeso/models.py:446
+msgid "Contact Date and Time"
+msgstr ""
+
+#: primerpeso/models.py:448
+msgid "Full Name"
+msgstr ""
+
+#: primerpeso/models.py:449
+msgid "Phone Number"
+msgstr ""
+
+#: primerpeso/models.py:450
+msgid "Email"
+msgstr ""
+
+#: primerpeso/models.py:452
+msgid "Postal Address"
+msgstr ""
+
+#: primerpeso/models.py:454
+msgid "City / Town"
+msgstr ""
+
+#: primerpeso/models.py:455
+msgid "State or Province"
+msgstr ""
+
+#: primerpeso/models.py:456
+msgid "Postal Code"
+msgstr ""
+
+#: primerpeso/models.py:458
+msgid "Are You Incorporated?1"
+msgstr ""
+
+#: primerpeso/models.py:460
+msgid "Legal Company Name"
+msgstr ""
+
+#: primerpeso/models.py:462
+msgid "Company Municipality"
+msgstr ""
+
+#: primerpeso/models.py:463
+msgid "Company State or Province"
+msgstr ""
+
+#: primerpeso/models.py:464
+msgid "Company Postal Code"
+msgstr ""
+
+#: primerpeso/models.py:466
+msgid "Related Search"
+msgstr ""
+
+#: primerpeso/models.py:468
+msgid "Related Opportunities"
+msgstr ""
+
+#: primerpeso/models.py:474
+msgid "Search Contact"
+msgstr ""
+
+#: primerpeso/models.py:475
+msgid "Search Contacts"
 msgstr ""
 
 #: primerpeso/templates/primerpeso/search_form.html:4
