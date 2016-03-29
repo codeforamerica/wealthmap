@@ -4,6 +4,13 @@ from django.utils.translation import ugettext as _
 from primerpeso.widgets import ArrayFieldSelectMultiple
 
 
+class ContactForm(forms.ModelForm):
+
+    class Meta:
+        exclude = []
+        model = models.Contact
+
+
 class OpportunitySearchForm(forms.ModelForm):
 
     class Meta:
@@ -18,6 +25,11 @@ class OpportunitySearchForm(forms.ModelForm):
 
 
 class PurposeSearchForm(forms.ModelForm):
+
+    def __init__(self, *args, **kwargs):
+        super(PurposeSearchForm, self).__init__(*args, **kwargs)
+        self.fields['investing_own_money'].required = True
+
 
     class Meta:
         model = models.OpportunitySearch
