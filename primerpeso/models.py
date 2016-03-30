@@ -454,7 +454,7 @@ class Contact(models.Model):
                             verbose_name=_('City / Town'))
     state = USStateField(verbose_name=_('State or Province'))
     postal_code = USZipCodeField(verbose_name=_('Postal Code'))
-    incorportated = models.BooleanField(
+    incorporated = models.BooleanField(
                             verbose_name=_('Are You Incorporated?1'))
     company = models.CharField(max_length=255,
                             verbose_name=_('Legal Company Name'))

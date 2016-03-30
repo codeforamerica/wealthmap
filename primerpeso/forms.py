@@ -4,10 +4,26 @@ from django.utils.translation import ugettext as _
 from primerpeso.widgets import ArrayFieldSelectMultiple
 
 
-class ContactForm(forms.ModelForm):
+class PersonsalContactForm(forms.ModelForm):
+
+    def __init__(self, *args, **kwargs):
+        super(PurposeSearchForm, self).__init__(*args, **kwargs)
+        self.fields['incorporated'].required = True
 
     class Meta:
-        exclude = []
+        exclude = ['full_name', 'phone_number', 'email', 'address', 'city',
+                   'state', 'postal_code', 'incorporated', ]
+        model = models.Contact
+        widgets = {
+            "incorporated": forms.RadioSelect(choices=models.YES_NO)
+        }
+
+
+class BusinessContactForm(forms.ModelForm):
+
+    class Meta:
+        exclude = ['company', 'company_municipality', 'company_state',
+                   'company_postal_code', ]
         model = models.Contact
 
 
