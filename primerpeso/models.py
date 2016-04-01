@@ -445,27 +445,35 @@ class Contact(models.Model):
     created_at = models.DateTimeField(
         auto_now_add=True, verbose_name=_('Contact Date and Time'))
     full_name = models.CharField(max_length=255,
-                            verbose_name=_('Full Name'))
+                                 verbose_name=_('Full Name'))
     phone_number = PhoneNumberField(verbose_name=_('Phone Number'))
     email = models.EmailField(verbose_name=_('Email'))
     address = models.CharField(max_length=255,
-                            verbose_name=_('Postal Address'))
+                               verbose_name=_('Postal Address'))
     city = models.CharField(max_length=255,
                             verbose_name=_('City / Town'))
     state = USStateField(verbose_name=_('State or Province'))
     postal_code = USZipCodeField(verbose_name=_('Postal Code'))
     incorporated = models.BooleanField(
-                            verbose_name=_('Are You Incorporated?1'))
+        verbose_name=_('Are You Incorporated?1'),
+        choices=YES_NO,
+        blank=False,
+        default=False,
+    )
     company = models.CharField(max_length=255,
-                            verbose_name=_('Legal Company Name'))
-    company_municipality = models.CharField(max_length=255,
-                            verbose_name=_('Company Municipality'))
+                               verbose_name=_('Legal Company Name'))
+    company_municipality = models.CharField(
+                            max_length=255,
+                            verbose_name=_('Company Municipality')
+                        )
     company_state = USStateField(verbose_name=_('Company State or Province'))
     company_postal_code = USZipCodeField(verbose_name=_('Company Postal Code'))
     search = models.ForeignKey(OpportunitySearch,
-                            verbose_name=_('Related Search'))
-    opportunities = models.ManyToManyField(Opportunity,
-                            verbose_name=_('Related Opportunities'))
+                               verbose_name=_('Related Search'))
+    opportunities = models.ManyToManyField(
+                                Opportunity,
+                                verbose_name=_('Related Opportunities')
+                                )
 
     def __str__(self):
         return self.full_name

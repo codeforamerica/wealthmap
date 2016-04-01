@@ -30,6 +30,23 @@ class SearchFormView(CookieWizardView):
         return redirect(url)
 
 
+class ContactFormView(CookieWizardView):
+    template_name = "primerpeso/contact_form.html"
+
+    def dispatch(self, request, *args, **kwargs):
+        self.search = get_object_or_404(models.OpportunitySearch, pk=args[0])
+        return super(ContactFormView, self).dispatch(request, *args, **kwargs)
+
+    def done(self, form_list, **kwargs):
+        combined = {}
+        for form in form_list:
+            combined.update(form.cleaned_data)
+        contact = models.Contact(**combined)
+        contact.search = self.search
+        contact.save()
+        return redirect(url)
+
+
 def search_results(request, pk):
     try:
         search = models.OpportunitySearch.objects.get(pk=pk)

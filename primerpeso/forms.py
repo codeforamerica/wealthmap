@@ -4,15 +4,15 @@ from django.utils.translation import ugettext as _
 from primerpeso.widgets import ArrayFieldSelectMultiple
 
 
-class PersonsalContactForm(forms.ModelForm):
+class PersonalContactForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
-        super(PurposeSearchForm, self).__init__(*args, **kwargs)
+        super(PersonalContactForm, self).__init__(*args, **kwargs)
         self.fields['incorporated'].required = True
 
     class Meta:
-        exclude = ['full_name', 'phone_number', 'email', 'address', 'city',
-                   'state', 'postal_code', 'incorporated', ]
+        fields = ['full_name', 'phone_number', 'email', 'address', 'city',
+                  'state', 'postal_code', 'incorporated', ]
         model = models.Contact
         widgets = {
             "incorporated": forms.RadioSelect(choices=models.YES_NO)
@@ -22,8 +22,8 @@ class PersonsalContactForm(forms.ModelForm):
 class BusinessContactForm(forms.ModelForm):
 
     class Meta:
-        exclude = ['company', 'company_municipality', 'company_state',
-                   'company_postal_code', ]
+        fields = ['company', 'company_municipality', 'company_state',
+                  'company_postal_code', ]
         model = models.Contact
 
 
@@ -45,7 +45,6 @@ class PurposeSearchForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(PurposeSearchForm, self).__init__(*args, **kwargs)
         self.fields['investing_own_money'].required = True
-
 
     class Meta:
         model = models.OpportunitySearch
