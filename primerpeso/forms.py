@@ -91,11 +91,11 @@ class SizeSearchForm(forms.ModelForm):
 
 
 class OpportunityForm(forms.ModelForm):
-
     class Meta:
         model = models.Opportunity
         exclude = []
         widgets = {
+            "creator": forms.HiddenInput(),
             "locations": ArrayFieldSelectMultiple(
                 choices=models.LOCATIONS, attrs={'class': 'chosen'}),
             "entity_types": ArrayFieldSelectMultiple(

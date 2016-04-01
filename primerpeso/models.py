@@ -377,7 +377,7 @@ class OpportunitySearch(models.Model):
         verbose_name=_('How many years have you been in business?'))
     annual_revenue = models.IntegerField(
         verbose_name=_(
-            'What is the gross revenue for your fiscal calendar year?'))
+            'What was the gross revenue for your last fiscal calendar year?'))
 
     def search(self):
         opps = Opportunity.objects
@@ -455,13 +455,13 @@ class Contact(models.Model):
     state = USStateField(verbose_name=_('State or Province'))
     postal_code = USZipCodeField(verbose_name=_('Postal Code'))
     incorporated = models.BooleanField(
-        verbose_name=_('Are You Incorporated?1'),
+        verbose_name=_('Are You Incorporated?'),
         choices=YES_NO,
         blank=False,
         default=False,
     )
     company = models.CharField(max_length=255,
-                               verbose_name=_('Legal Company Name'))
+                               verbose_name=_('Legal Business Name'))
     company_municipality = models.CharField(
                             max_length=255,
                             verbose_name=_('Company Municipality')
