@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-29 22:38+0000\n"
+"POT-Creation-Date: 2016-04-01 22:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,352 +19,355 @@ msgstr ""
 
 #: primerpeso/models.py:15
 msgid "Made On"
-msgstr ""
+msgstr "Se hizo en"
 
 #: primerpeso/models.py:17
 msgid "Last Modified"
-msgstr ""
+msgstr "se modificó"
 
 #: primerpeso/models.py:20
 msgid "creator"
-msgstr ""
+msgstr "creador"
 
 #: primerpeso/models.py:29 primerpeso/models.py:62 primerpeso/models.py:255
 msgid "id"
-msgstr ""
+msgstr "identificación"
 
 #: primerpeso/models.py:33 primerpeso/models.py:66
 msgid "name"
-msgstr ""
+msgstr "nombre"
 
 #: primerpeso/models.py:34
 msgid "mission"
-msgstr ""
+msgstr "la misión"
 
 #: primerpeso/models.py:38
 msgid "phone"
-msgstr ""
+msgstr "número de teléfono"
 
 #: primerpeso/models.py:39
 msgid "fax"
-msgstr ""
+msgstr "número de fax"
 
 #: primerpeso/models.py:40
 msgid "email"
-msgstr ""
+msgstr "email"
 
 #: primerpeso/models.py:41
 msgid "address"
-msgstr ""
+msgstr "dirección"
 
 #: primerpeso/models.py:45
 msgid "municipality"
-msgstr ""
+msgstr "municipio"
 
 #: primerpeso/models.py:48
 msgid "web"
-msgstr ""
+msgstr "web"
 
 #: primerpeso/models.py:54
 msgid "Agency"
-msgstr ""
+msgstr "Agencia"
 
 #: primerpeso/models.py:55
 msgid "Agencies"
-msgstr ""
+msgstr "Agencias"
 
 #: primerpeso/models.py:67
 msgid "description"
-msgstr ""
+msgstr "descripción"
 
 #: primerpeso/models.py:71
 msgid "provider"
-msgstr ""
+msgstr "proveedor"
 
 #: primerpeso/models.py:72
 msgid "link"
-msgstr ""
+msgstr "enlace"
 
 #: primerpeso/models.py:73
 msgid "cost"
-msgstr ""
+msgstr "costo"
 
 #: primerpeso/models.py:79
 msgid "Requirement"
-msgstr ""
+msgstr "Requisito"
 
 #: primerpeso/models.py:80
 msgid "Requirements"
-msgstr ""
+msgstr "Requisitos"
 
 #: primerpeso/models.py:85
 msgid "opportunity"
-msgstr ""
+msgstr "oportunidad"
 
 #: primerpeso/models.py:86
 msgid "requirement"
-msgstr ""
+msgstr "requisito"
 
 #: primerpeso/models.py:92
 msgid "Requirement Relationship"
-msgstr ""
+msgstr "Relación Requisito"
 
 #: primerpeso/models.py:93
 msgid "Requirement Relationships"
-msgstr ""
+msgstr "Relaciones Requisito"
 
 #: primerpeso/models.py:95
 msgid "No"
-msgstr ""
+msgstr "No"
 
 #: primerpeso/models.py:96
 msgid "Yes"
-msgstr ""
+msgstr "Sí"
 
 #: primerpeso/models.py:259
 msgid "title"
-msgstr ""
+msgstr "titulo"
 
 #: primerpeso/models.py:261 primerpeso/models.py:355
 msgid "Male"
-msgstr ""
+msgstr "Hombre"
 
 #: primerpeso/models.py:262 primerpeso/models.py:356
 msgid "Female"
-msgstr ""
+msgstr "Mujer"
 
 #: primerpeso/models.py:263
 msgid "Any"
-msgstr ""
+msgstr "Cualquiera"
 
 #: primerpeso/models.py:264 primerpeso/models.py:358
 msgid "Other"
-msgstr ""
+msgstr "Otro"
 
 #: primerpeso/models.py:265
 msgid "application cost"
-msgstr ""
+msgstr "costo de la aplicación"
 
 #: primerpeso/models.py:267
 msgid "application deadline"
-msgstr ""
+msgstr "plazo de solicitud"
 
 #: primerpeso/models.py:269
 msgid "benefit description"
-msgstr ""
+msgstr "descripción de beneficios"
 
 #: primerpeso/models.py:271
 msgid "agency contact name"
-msgstr ""
+msgstr "nombre de contacto de la agencia"
 
 #: primerpeso/models.py:273
 msgid "agency contact phone"
-msgstr ""
+msgstr "número de contacto de la agencia"
 
 #: primerpeso/models.py:275
 msgid "agency contact email"
-msgstr ""
+msgstr "email de contacto del organismo"
 
 #: primerpeso/models.py:277
 msgid "minimum years in business"
-msgstr ""
+msgstr "años como mínimo en los negocios"
 
 #: primerpeso/models.py:279
 msgid "additional information"
-msgstr ""
+msgstr "información adicional"
 
 #: primerpeso/models.py:281
 msgid "requires investment of personal money"
-msgstr ""
+msgstr "requiere una inversión de dinero personal"
 
 #: primerpeso/models.py:283
 msgid "amount of money invested"
-msgstr ""
+msgstr "cantidad de dinero invertido"
 
 #: primerpeso/models.py:284
 msgid "agency"
-msgstr ""
+msgstr "agencia"
 
 #: primerpeso/models.py:288
 msgid "requirements"
-msgstr ""
+msgstr "requisitos"
 
 #: primerpeso/models.py:289
 msgid "minimum age"
-msgstr ""
+msgstr "edad mínima"
 
 #: primerpeso/models.py:293
 msgid "maximum age"
-msgstr ""
+msgstr "edad máxima"
 
 #: primerpeso/models.py:294
 msgid "minimum employees"
-msgstr ""
+msgstr "empleados mínima"
 
 #: primerpeso/models.py:296
 msgid "maximum employees"
-msgstr ""
+msgstr "empleados máximos"
 
 #: primerpeso/models.py:298
 msgid "minimum annual revenue"
-msgstr ""
+msgstr "los ingresos mínima anuales"
 
 #: primerpeso/models.py:300
 msgid "maximum annual revenue"
-msgstr ""
+msgstr "los ingresos máximos anuales"
 
 #: primerpeso/models.py:302
 msgid "average application time"
-msgstr ""
+msgstr "tiempo medio de aplicación"
 
 #: primerpeso/models.py:333
 msgid "Opportunity"
-msgstr ""
+msgstr "Oportunidad"
 
 #: primerpeso/models.py:334
 msgid "Opportunities"
-msgstr ""
+msgstr "Oportunidades"
 
 #: primerpeso/models.py:342
 msgid "Search Date and Time"
-msgstr ""
+msgstr "Búsqueda de Fecha y Hora"
 
 #: primerpeso/models.py:345
 msgid "How would you use the incentive?"
-msgstr ""
+msgstr "¿Cómo utilizaría el incentivo?"
 
 #: primerpeso/models.py:349
 msgid "Will the CEOs be investing money from their own pockets?"
-msgstr ""
+msgstr "¿Los CEOs estar invirtiendo su propio dinero?"
 
 #: primerpeso/models.py:357
 msgid "Both"
-msgstr ""
+msgstr "Ambos"
 
 #: primerpeso/models.py:359
 msgid "What are the owner's genders?"
-msgstr ""
+msgstr "¿Cuáles son los géneros de los propietarios?"
 
 #: primerpeso/models.py:364
 msgid "What is the business structure?"
-msgstr ""
+msgstr "¿Cuál es la estructura de negocio?"
 
 #: primerpeso/models.py:368
 msgid "What industry is your business?"
-msgstr ""
+msgstr "¿Lo que la industria ofrece servicios su negocio?"
 
 #: primerpeso/models.py:372
 msgid "Where are the physical locations of your businesses?"
-msgstr ""
+msgstr "¿Dónde está la ubicación física de su negocio?"
 
 #: primerpeso/models.py:375
 msgid "How many full time employees do you have?"
-msgstr ""
+msgstr "¿Cuántos empleados a tiempo completo tiene usted?"
 
 #: primerpeso/models.py:377
 msgid "How many years have you been in business?"
-msgstr ""
+msgstr "¿Cuántos años ha estado en el negocio?"
 
 #: primerpeso/models.py:380
-msgid "What is the gross revenue for your fiscal calendar year?"
-msgstr ""
+msgid "What was the gross revenue for your last fiscal calendar year?"
+msgstr "¿Cuál fue el ingreso bruto para su último año calendario fiscal?"
 
 #: primerpeso/models.py:437
 msgid "Opportunity Search"
-msgstr ""
+msgstr "Búsqueda de Oportunidades"
 
 #: primerpeso/models.py:438
 msgid "Opportunity Searches"
-msgstr ""
+msgstr "Búsquedas de Oportunidades"
 
 #: primerpeso/models.py:446
 msgid "Contact Date and Time"
-msgstr ""
+msgstr "Fecha y hora de contacto"
 
 #: primerpeso/models.py:448
 msgid "Full Name"
-msgstr ""
+msgstr "Nombre y apellido"
 
 #: primerpeso/models.py:449
 msgid "Phone Number"
-msgstr ""
+msgstr "número de teléfono"
 
 #: primerpeso/models.py:450
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: primerpeso/models.py:452
 msgid "Postal Address"
-msgstr ""
+msgstr "direccion postal"
 
 #: primerpeso/models.py:454
 msgid "City / Town"
-msgstr ""
+msgstr "Ciudad / Pueblo"
 
 #: primerpeso/models.py:455
 msgid "State or Province"
-msgstr ""
+msgstr "Estado o Provincia"
 
 #: primerpeso/models.py:456
 msgid "Postal Code"
-msgstr ""
+msgstr "Código Postal"
 
 #: primerpeso/models.py:458
-msgid "Are You Incorporated?1"
-msgstr ""
-
-#: primerpeso/models.py:460
-msgid "Legal Company Name"
-msgstr ""
-
-#: primerpeso/models.py:462
-msgid "Company Municipality"
-msgstr ""
-
-#: primerpeso/models.py:463
-msgid "Company State or Province"
-msgstr ""
+msgid "Are You Incorporated?"
+msgstr "Se incorpora a su negocio??"
 
 #: primerpeso/models.py:464
+msgid "Legal Business Name"
+msgstr "Nombre legal de su negocio"
+
+#: primerpeso/models.py:467
+msgid "Company Municipality"
+msgstr "Empresa municipio"
+
+#: primerpeso/models.py:469
+msgid "Company State or Province"
+msgstr "Estado o provincia de su empresa"
+
+#: primerpeso/models.py:470
 msgid "Company Postal Code"
-msgstr ""
+msgstr "el código postal de la empresa"
 
-#: primerpeso/models.py:466
+#: primerpeso/models.py:472
 msgid "Related Search"
-msgstr ""
-
-#: primerpeso/models.py:468
-msgid "Related Opportunities"
-msgstr ""
-
-#: primerpeso/models.py:474
-msgid "Search Contact"
-msgstr ""
+msgstr "La Búsqueda Relacionada"
 
 #: primerpeso/models.py:475
-msgid "Search Contacts"
-msgstr ""
+msgid "Related Opportunities"
+msgstr "Oportunidades Relacionados"
 
+#: primerpeso/models.py:482
+msgid "Search Contact"
+msgstr "Contacto de la búsqueda"
+
+#: primerpeso/models.py:483
+msgid "Search Contacts"
+msgstr "Contactos de la búsqueda"
+
+#: primerpeso/templates/primerpeso/contact_form.html:4
 #: primerpeso/templates/primerpeso/search_form.html:4
 msgid "Questionnaire"
-msgstr ""
+msgstr "Cuestionario"
 
+#: primerpeso/templates/primerpeso/contact_form.html:26
 #: primerpeso/templates/primerpeso/search_form.html:26
 msgid "Go Back"
-msgstr ""
+msgstr "Volver"
 
+#: primerpeso/templates/primerpeso/contact_form.html:28
 #: primerpeso/templates/primerpeso/search_form.html:28
 msgid "Next"
-msgstr ""
+msgstr "Siguiente"
 
 #: primerpeso/views.py:13
 msgid "About"
-msgstr ""
+msgstr "Sobre"
 
 #: primerpeso/views.py:17
 msgid "Home"
-msgstr ""
+msgstr "Página Principal"
 
-#: primerpeso/views.py:41
+#: primerpeso/views.py:58
 msgid "Questionnaire Results"
-msgstr ""
+msgstr "Resultados del Cuestionario"
