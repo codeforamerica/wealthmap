@@ -90,6 +90,30 @@ class SizeSearchForm(forms.ModelForm):
         fields = ['employees', 'years_in_business', 'annual_revenue']
 
 
+class AgencyForm(forms.ModelForm):
+
+    class Meta:
+        widgets = {
+            "creator": forms.HiddenInput(),
+        }
+
+
+class RequirementRelationshipForm(forms.ModelForm):
+
+    class Meta:
+        widgets = {
+            "creator": forms.HiddenInput(),
+        }
+
+
+class RequirementForm(forms.ModelForm):
+
+    class Meta:
+        widgets = {
+            "creator": forms.HiddenInput(),
+        }
+
+
 class OpportunityForm(forms.ModelForm):
     class Meta:
         model = models.Opportunity

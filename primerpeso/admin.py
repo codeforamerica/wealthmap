@@ -2,7 +2,7 @@ from django.contrib import admin
 from primerpeso import models, forms
 
 
-class AddCreator(admin.ModelAdmin):
+class AddCreatorMixin:
     """Subclass of ``ModelAdmin``s which adds the user to the creator field.
     """
 
@@ -12,9 +12,34 @@ class AddCreator(admin.ModelAdmin):
         return form
 
 
+class AddCreator(admin.ModelAdmin, AddCreatorMixin):
+    pass
+
+
+class AddCreatorInline(admin.StackedInline, AddCreatorMixin):
+    pass
+
+
+class RequirementInlineAdmin(AddCreatorInline):
+    form = forms.RequirementForm
+    model = models.Requirement
+
+
+class RequirementRelationshipAdmin(AddCreatorInline):
+    form = forms.RequirementRelationshipForm
+    model = models.RequirementRelationship
+    extra = 1
+    inlines = (RequirementInlineAdmin, )
+
 @admin.register(models.Opportunity)
 class OpportunityAdmin(AddCreator):
     form = forms.OpportunityForm
+    inlines = (RequirementRelationshipAdmin, )
+
+
+@admin.register(models.Requirement)
+class RequirementAdmin(AddCreator):
+    form = forms.RequirementForm
 
 
 @admin.register(models.OpportunitySearch)
@@ -33,11 +58,6 @@ class OpportunitySearchAdmin(admin.ModelAdmin):
         return False
 
 
-@admin.register(models.Requirement)
-class RequirementAdmin(AddCreator):
-    pass
-
-
 @admin.register(models.Agency)
 class AgencyAdmin(AddCreator):
-    pass
+    form = forms.RequirementForm
