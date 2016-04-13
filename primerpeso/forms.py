@@ -4,6 +4,11 @@ from django.utils.translation import ugettext as _
 from primerpeso.widgets import ArrayFieldSelectMultiple
 
 
+class OpportunityListForm(forms.Form):
+    opportunities = forms.ModelMultipleChoiceField(
+                    queryset=models.Opportunity.objects.all())
+
+
 class PersonalContactForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
@@ -115,6 +120,7 @@ class RequirementForm(forms.ModelForm):
 
 
 class OpportunityForm(forms.ModelForm):
+
     class Meta:
         model = models.Opportunity
         exclude = []

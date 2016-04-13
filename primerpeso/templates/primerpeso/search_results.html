@@ -8,7 +8,7 @@
     </li>
     {% for segment in segmented_opps %}
       <li class="search-tab">
-        <a href="#" id="{{segment.0}}">{{ segment.1.name }}</a>
+        <a href="#" id="{{ segment.0 }}">{{ segment.1.name }}</a>
       </li>
     {% endfor %}
   </ul>
@@ -16,6 +16,8 @@
     Escoge los programas de tu interés. Puedes agregar la cantidad que
     desees.
   </div>
+  <form method="post">
+  {% csrf_token %}
   {% for segment in segmented_opps %}
     <div class="opportunities-container">
       <div class="incentive-container">
@@ -38,8 +40,11 @@
             <div class="panel panel-default">
               <div class="row row-incentive">
                 <div class="col-md-8 col-description col-9">
-                  <a class="btn btn-small addItem" data-bname="9" data-btype=
-                  "incentive" href="#9Add">agregar</a><a class="benefit-title"
+									<input name="opportunities" value="{{ opportunity.pk }}"
+									class="btn btn-small addItem" data-toggle="toggle"
+									data-on="{% trans 'Remove' %}" data-off="{% trans 'Add' %}"
+									type="checkbox">
+                  <a class="benefit-title"
                   data-parent="#accordion" data-toggle="collapse" href=
                   "#1">{{ opportunity.title }}<i class=
                   "fa fa-sort-desc"></i></a>
@@ -123,4 +128,6 @@
       </div>
     </div>
   {% endfor %}
+  <input type="submit" value="{% trans 'Send' %}" />
+  </form>
 {% endblock %}

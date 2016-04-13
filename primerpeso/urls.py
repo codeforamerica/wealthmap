@@ -5,6 +5,7 @@ from . import forms
 urlpatterns = [
     url(r'^$', views.home, name='home'),
     url(r'^about/$', views.about),
+    url(r'^gracias/$', views.thanks),
     url(r'^oportunidad/(?P<pk>[0-9]+)/$',
         views.OpportunityDetailView.as_view(),
         name='opportunity-detail'),

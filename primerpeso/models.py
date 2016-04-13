@@ -463,17 +463,17 @@ class Contact(models.Model):
     company = models.CharField(max_length=255,
                                verbose_name=_('Legal Business Name'))
     company_municipality = models.CharField(
-                            max_length=255,
-                            verbose_name=_('Company Municipality')
-                        )
+        max_length=255,
+        verbose_name=_('Company Municipality')
+    )
     company_state = USStateField(verbose_name=_('Company State or Province'))
     company_postal_code = USZipCodeField(verbose_name=_('Company Postal Code'))
     search = models.ForeignKey(OpportunitySearch,
                                verbose_name=_('Related Search'))
     opportunities = models.ManyToManyField(
-                                Opportunity,
-                                verbose_name=_('Related Opportunities')
-                                )
+        Opportunity,
+        verbose_name=_('Related Opportunities')
+    )
 
     def __str__(self):
         return self.full_name

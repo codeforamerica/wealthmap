@@ -31,6 +31,7 @@ class RequirementRelationshipAdmin(AddCreatorInline):
     extra = 1
     inlines = (RequirementInlineAdmin, )
 
+
 @admin.register(models.Opportunity)
 class OpportunityAdmin(AddCreator):
     form = forms.OpportunityForm

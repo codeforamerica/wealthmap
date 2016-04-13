@@ -13,6 +13,7 @@ html
     - load compress
     - compress css
       link(rel='stylesheet', type="text/less", href='/static/primerpeso/css/styles.less'))
+      link(rel='stylesheet', type="text/less", href='/static/primerpeso/css/lib/bootstrap-switch.css'))
     block head
     link(rel='shortcut icon', href='/favicon.ico', type='image/x-icon')
     link(rel='icon', href='/favicon.ico', type='image/x-icon')
@@ -35,6 +36,8 @@ html
                 a(href='/contact') ¿Eres una agencia?
       .container
         block content
-
+    script(src="https://code.jquery.com/jquery-2.1.4.min.js", integrity="sha384-R4/ztc4ZlRqWjqIuvf6RX5yb/v90qNGx6fS48N0tRxiGkqveZETq72KgDVJCp2TC", crossorigin="anonymous")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js", integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS", crossorigin="anonymous")
+    script(src="{% static 'primerpeso/js/lib/bootstrap-switch.js' %}")
     include primerpeso/partials/footer.jade
     include primerpeso/partials/analytics.jade
