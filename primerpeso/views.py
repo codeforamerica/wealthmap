@@ -65,7 +65,7 @@ def search_results(request, pk):
             qs = request.POST.copy()
             del qs['csrfmiddlewaretoken']
             url = '%s?%s' % (reverse('contact-form', args=[search.pk, ]),
-                    qs.urlencode())
+                             qs.urlencode())
             return redirect(url)
     segmented_opps = list(search.segment_search().items())
     return render_to_response("primerpeso/search_results.html", {
