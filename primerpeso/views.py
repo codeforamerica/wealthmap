@@ -41,6 +41,13 @@ class ContactFormView(CookieWizardView):
 
     def dispatch(self, request, *args, **kwargs):
         self.search = get_object_or_404(models.OpportunitySearch, pk=args[0])
+        form = forms.OpportunityListForm(request.GET)
+        if form.is_valid():
+            self.opportunities = form.cleaned_data['opportunities']
+        else:
+            raise Exception(
+                "%s is an invalid set of opportunity ids." % request.GET)
+
         return super(ContactFormView, self).dispatch(request, *args, **kwargs)
 
     def done(self, form_list, **kwargs):
@@ -50,6 +57,8 @@ class ContactFormView(CookieWizardView):
         contact = models.Contact(**combined)
         contact.search = self.search
         contact.save()
+        for opp in self.opportunities:
+            contact.opportunities.add(opp)
         url = reverse('thanks')
         return redirect(url)
 

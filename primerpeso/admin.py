@@ -62,3 +62,5 @@ class OpportunitySearchAdmin(admin.ModelAdmin):
 @admin.register(models.Agency)
 class AgencyAdmin(AddCreator):
     form = forms.RequirementForm
+
+admin.site.register(models.Contact)
