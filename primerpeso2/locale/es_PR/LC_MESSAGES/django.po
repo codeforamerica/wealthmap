@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-13 22:06+0000\n"
+"POT-Creation-Date: 2016-05-18 22:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -360,17 +360,19 @@ msgstr "Volver"
 msgid "Next"
 msgstr "Siguiente"
 
-#: primerpeso/templates/primerpeso/search_results.html:45
+#: primerpeso/templates/primerpeso/search_results.html:46
 msgid "Remove"
-msgstr ""
+msgstr "Ritrar"
 
-#: primerpeso/templates/primerpeso/search_results.html:45
+#: primerpeso/templates/primerpeso/search_results.html:46
 msgid "Add"
-msgstr ""
+msgstr "Añadir"
 
-#: primerpeso/templates/primerpeso/search_results.html:131
-msgid "Send"
-msgstr ""
+#: primerpeso/templates/primerpeso/search_results.html:68
+#, fuzzy
+#| msgid "agency contact email"
+msgid "Send Contact Emails"
+msgstr "Email de Contacto del Organismo"
 
 #: primerpeso/views.py:14
 msgid "About"
@@ -382,8 +384,8 @@ msgstr "Página Principal"
 
 #: primerpeso/views.py:23
 msgid "Sent Email Confirmation"
-msgstr ""
+msgstr "Email de Contacto del Organismo"
 
-#: primerpeso/views.py:72
+#: primerpeso/views.py:81
 msgid "Questionnaire Results"
 msgstr "Resultados del Cuestionario"
