@@ -1,0 +1,5 @@
+include LICENSE
+include README.rst
+recursive-include wealthmap/static *
+recursive-include wealthmap/templates *
+recursive-include wealthmap/locale *

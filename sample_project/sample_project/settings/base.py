@@ -34,7 +34,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'compressor',
     'bootstrapform',
     'wealthmap',
 ]
@@ -127,7 +126,6 @@ LOCALE_PATHS = ('./sample_project/locale',)
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'compressor.finders.CompressorFinder',
 )
 
 COMPRESS_PRECOMPILERS = (
