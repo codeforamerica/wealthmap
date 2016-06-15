@@ -1,0 +1,31 @@
+{% extends 'wealthmap/layout.jade' %}
+{% load i18n %}
+{% load bootstrap %}
+{% block title %}{% trans "Questionnaire" %}{% endblock %}
+
+{% block head %}
+{{ wizard.form.media }}
+{% endblock %}
+
+{% block content %}
+<p>Step {{ wizard.steps.step1 }} of {{ wizard.steps.count }}</p>
+<form action="" method="post">{% csrf_token %}
+<div>
+{{ wizard.management_form }}
+{% if wizard.form.forms %}
+    {{ wizard.form.management_form }}
+    {% for form in wizard.form.forms %}
+        {{ form|bootstrap_horizontal }}
+    {% endfor %}
+{% else %}
+    {{ wizard.form|bootstrap_horizontal }}
+{% endif %}
+</div>
+<div class="wizard-buttons">
+{% if wizard.steps.prev %}
+<button class=btn name="wizard_goto_step" type="submit" value="{{ wizard.steps.prev }}">{% trans "Go Back" %}</button>
+{% endif %}
+<input class=btn type="submit" value="{% trans "Next" %}"/>
+</div>
+</form>
+{% endblock %}

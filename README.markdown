@@ -1,8 +1,8 @@
-#Primer Peso 2
+# WealthMap
 
-Primer Peso is a django project for the Puerto Rican government to allow local businesses to find and explore opportunities.
+WealthMap is a django project for the Puerto Rican government to allow local businesses to find and explore opportunities.
 
-##Install Instructions
+## Install Instructions
 
 Requires Postgres and Django be installed.  This project is developed and tested with Python 3.5 and Django 1.9.
 
@@ -14,7 +14,7 @@ Copy the local_settings file and update the settings to fit your machine.
 
 Create a database for the application by first logging into postgres (`psql`) then running:
 
-  CREATE DATABASE primerpeso2;
+  CREATE DATABASE sample_project;
 
 Test that Django is working and pointed at your database(migrations not yet created).
 

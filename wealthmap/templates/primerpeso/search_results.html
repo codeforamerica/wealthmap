@@ -1,0 +1,75 @@
+{% extends 'wealthmap/layout.jade' %}
+{% load i18n %}
+{% load staticfiles %}
+{% block content %}
+  <ul class="nav nav-tabs nav-justified search-tabs results-tabs" role=
+  "tablist">
+    <li class="active search-tab">
+      <a href="#" id="all">Todos</a>
+    </li>
+    {% for segment in segmented_opps %}
+      <li class="search-tab">
+        <a href="#" id="{{ segment.0 }}">{{ segment.1.name }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+  <div class="search-intro results">
+    Escoge los programas de tu interés. Puedes agregar la cantidad que
+    desees.
+  </div>
+  <form method="post">
+  {% csrf_token %}
+  {% for segment in segmented_opps %}
+    <div class="opportunities-container">
+      <div class="incentive-container">
+        <div class="row row-benefit-count row-incentive">
+          <h3>{{ segment.1.name }}</h3>
+        </div>
+        <div class="row row-header row-incentive">
+          <div class="col-md-8 col-description-header">
+            <h4>Recursos</h4>
+          </div>
+          <div class="col-md-2 col-deadline-header">
+            <h4>Vencimiento</h4>
+          </div>
+          <div class="col-md-2 col-est-time-header">
+            <h4>Tiempo estimado de finalización</h4>
+          </div>
+        </div>
+          <div class="panel-group" id="accordion">
+          {% for opportunity in segment.1.opps %}
+            <div class="panel panel-default">
+              <div class="row row-incentive">
+                <div class="col-md-8 col-description col-9">
+                  <div class="add-btn" ><input name="opportunities" value="{{ opportunity.pk }}"
+									class="btn btn-small addItem" data-toggle="toggle"
+									data-on-text="{% trans 'Remove' %}" data-off-text="{% trans 'Add' %}"
+                  type="checkbox"></div>
+                  <div class="results-title"><a class="benefit-title" href=
+                  "{% url 'opportunity-detail' opportunity.pk  %}">{{ opportunity.title }}</a></div>
+                </div>
+                <div class="col-md-2 col-deadline col-9">
+                  <div class="9-inner-text">
+                    {{ opportunity.application_deadline }}
+                  </div>
+                </div>
+                <div class="col-md-2 col-est-time col-9">
+                  <div class="9-inner-text">
+                    {{ opportunity.average_application_time }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+  <input class="btn" type="submit" value="{% trans 'Send Contact Emails' %}" />
+  </form>
+{% endblock %}
+{% block footer %}
+  <script>
+    $("[name='opportunities']").bootstrapSwitch();
+  </script>
+{% endblock %}

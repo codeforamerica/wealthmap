@@ -1,0 +1,391 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-18 22:06+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: wealthmap/models.py:15
+msgid "Made On"
+msgstr "Se hizo en"
+
+#: wealthmap/models.py:17
+msgid "Last Modified"
+msgstr "se modificó"
+
+#: wealthmap/models.py:20
+msgid "creator"
+msgstr "creador"
+
+#: wealthmap/models.py:29 wealthmap/models.py:62 wealthmap/models.py:255
+msgid "id"
+msgstr "identificación"
+
+#: wealthmap/models.py:33 wealthmap/models.py:66
+msgid "name"
+msgstr "nombre"
+
+#: wealthmap/models.py:34
+msgid "mission"
+msgstr "la misión"
+
+#: wealthmap/models.py:38
+msgid "phone"
+msgstr "número de teléfono"
+
+#: wealthmap/models.py:39
+msgid "fax"
+msgstr "número de fax"
+
+#: wealthmap/models.py:40
+msgid "email"
+msgstr "email"
+
+#: wealthmap/models.py:41
+msgid "address"
+msgstr "dirección"
+
+#: wealthmap/models.py:45
+msgid "municipality"
+msgstr "municipio"
+
+#: wealthmap/models.py:48
+msgid "web"
+msgstr "web"
+
+#: wealthmap/models.py:54
+msgid "Agency"
+msgstr "Agencia"
+
+#: wealthmap/models.py:55
+msgid "Agencies"
+msgstr "Agencias"
+
+#: wealthmap/models.py:67
+msgid "description"
+msgstr "descripción"
+
+#: wealthmap/models.py:71
+msgid "provider"
+msgstr "proveedor"
+
+#: wealthmap/models.py:72
+msgid "link"
+msgstr "enlace"
+
+#: wealthmap/models.py:73
+msgid "cost"
+msgstr "costo"
+
+#: wealthmap/models.py:79
+msgid "Requirement"
+msgstr "Requisito"
+
+#: wealthmap/models.py:80
+msgid "Requirements"
+msgstr "Requisitos"
+
+#: wealthmap/models.py:85
+msgid "opportunity"
+msgstr "oportunidad"
+
+#: wealthmap/models.py:86
+msgid "requirement"
+msgstr "requisito"
+
+#: wealthmap/models.py:92
+msgid "Requirement Relationship"
+msgstr "Relación Requisito"
+
+#: wealthmap/models.py:93
+msgid "Requirement Relationships"
+msgstr "Relaciones Requisito"
+
+#: wealthmap/models.py:95
+msgid "No"
+msgstr "No"
+
+#: wealthmap/models.py:96
+msgid "Yes"
+msgstr "Sí"
+
+#: wealthmap/models.py:259
+msgid "title"
+msgstr "titulo"
+
+#: wealthmap/models.py:261 wealthmap/models.py:355
+msgid "Male"
+msgstr "Hombre"
+
+#: wealthmap/models.py:262 wealthmap/models.py:356
+msgid "Female"
+msgstr "Mujer"
+
+#: wealthmap/models.py:263
+msgid "Any"
+msgstr "Cualquiera"
+
+#: wealthmap/models.py:264 wealthmap/models.py:358
+msgid "Other"
+msgstr "Otro"
+
+#: wealthmap/models.py:265
+msgid "application cost"
+msgstr "costo de la aplicación"
+
+#: wealthmap/models.py:267
+msgid "application deadline"
+msgstr "plazo de solicitud"
+
+#: wealthmap/models.py:269
+msgid "benefit description"
+msgstr "descripción de beneficios"
+
+#: wealthmap/models.py:271
+msgid "agency contact name"
+msgstr "nombre de contacto de la agencia"
+
+#: wealthmap/models.py:273
+msgid "agency contact phone"
+msgstr "número de contacto de la agencia"
+
+#: wealthmap/models.py:275
+msgid "agency contact email"
+msgstr "email de contacto del organismo"
+
+#: wealthmap/models.py:277
+msgid "minimum years in business"
+msgstr "años como mínimo en los negocios"
+
+#: wealthmap/models.py:279
+msgid "additional information"
+msgstr "información adicional"
+
+#: wealthmap/models.py:281
+msgid "requires investment of personal money"
+msgstr "requiere una inversión de dinero personal"
+
+#: wealthmap/models.py:283
+msgid "amount of money invested"
+msgstr "cantidad de dinero invertido"
+
+#: wealthmap/models.py:284
+msgid "agency"
+msgstr "agencia"
+
+#: wealthmap/models.py:288
+msgid "requirements"
+msgstr "requisitos"
+
+#: wealthmap/models.py:289
+msgid "minimum age"
+msgstr "edad mínima"
+
+#: wealthmap/models.py:293
+msgid "maximum age"
+msgstr "edad máxima"
+
+#: wealthmap/models.py:294
+msgid "minimum employees"
+msgstr "empleados mínima"
+
+#: wealthmap/models.py:296
+msgid "maximum employees"
+msgstr "empleados máximos"
+
+#: wealthmap/models.py:298
+msgid "minimum annual revenue"
+msgstr "los ingresos mínima anuales"
+
+#: wealthmap/models.py:300
+msgid "maximum annual revenue"
+msgstr "los ingresos máximos anuales"
+
+#: wealthmap/models.py:302
+msgid "average application time"
+msgstr "tiempo medio de aplicación"
+
+#: wealthmap/models.py:333
+msgid "Opportunity"
+msgstr "Oportunidad"
+
+#: wealthmap/models.py:334
+msgid "Opportunities"
+msgstr "Oportunidades"
+
+#: wealthmap/models.py:342
+msgid "Search Date and Time"
+msgstr "Búsqueda de Fecha y Hora"
+
+#: wealthmap/models.py:345
+msgid "How would you use the incentive?"
+msgstr "¿Cómo utilizaría el incentivo?"
+
+#: wealthmap/models.py:349
+msgid "Will the CEOs be investing money from their own pockets?"
+msgstr "¿Los CEOs estar invirtiendo su propio dinero?"
+
+#: wealthmap/models.py:357
+msgid "Both"
+msgstr "Ambos"
+
+#: wealthmap/models.py:359
+msgid "What are the owner's genders?"
+msgstr "¿Cuáles son los géneros de los propietarios?"
+
+#: wealthmap/models.py:364
+msgid "What is the business structure?"
+msgstr "¿Cuál es la estructura de negocio?"
+
+#: wealthmap/models.py:368
+msgid "What industry is your business?"
+msgstr "¿Lo que la industria ofrece servicios su negocio?"
+
+#: wealthmap/models.py:372
+msgid "Where are the physical locations of your businesses?"
+msgstr "¿Dónde está la ubicación física de su negocio?"
+
+#: wealthmap/models.py:375
+msgid "How many full time employees do you have?"
+msgstr "¿Cuántos empleados a tiempo completo tiene usted?"
+
+#: wealthmap/models.py:377
+msgid "How many years have you been in business?"
+msgstr "¿Cuántos años ha estado en el negocio?"
+
+#: wealthmap/models.py:380
+msgid "What was the gross revenue for your last fiscal calendar year?"
+msgstr "¿Cuál fue el ingreso bruto para su último año calendario fiscal?"
+
+#: wealthmap/models.py:437
+msgid "Opportunity Search"
+msgstr "Búsqueda de Oportunidades"
+
+#: wealthmap/models.py:438
+msgid "Opportunity Searches"
+msgstr "Búsquedas de Oportunidades"
+
+#: wealthmap/models.py:446
+msgid "Contact Date and Time"
+msgstr "Fecha y hora de contacto"
+
+#: wealthmap/models.py:448
+msgid "Full Name"
+msgstr "Nombre y apellido"
+
+#: wealthmap/models.py:449
+msgid "Phone Number"
+msgstr "número de teléfono"
+
+#: wealthmap/models.py:450
+msgid "Email"
+msgstr "Email"
+
+#: wealthmap/models.py:452
+msgid "Postal Address"
+msgstr "direccion postal"
+
+#: wealthmap/models.py:454
+msgid "City / Town"
+msgstr "Ciudad / Pueblo"
+
+#: wealthmap/models.py:455
+msgid "State or Province"
+msgstr "Estado o Provincia"
+
+#: wealthmap/models.py:456
+msgid "Postal Code"
+msgstr "Código Postal"
+
+#: wealthmap/models.py:458
+msgid "Are You Incorporated?"
+msgstr "Se incorpora a su negocio??"
+
+#: wealthmap/models.py:464
+msgid "Legal Business Name"
+msgstr "Nombre legal de su negocio"
+
+#: wealthmap/models.py:467
+msgid "Company Municipality"
+msgstr "Empresa municipio"
+
+#: wealthmap/models.py:469
+msgid "Company State or Province"
+msgstr "Estado o provincia de su empresa"
+
+#: wealthmap/models.py:470
+msgid "Company Postal Code"
+msgstr "el código postal de la empresa"
+
+#: wealthmap/models.py:472
+msgid "Related Search"
+msgstr "La Búsqueda Relacionada"
+
+#: wealthmap/models.py:475
+msgid "Related Opportunities"
+msgstr "Oportunidades Relacionados"
+
+#: wealthmap/models.py:482
+msgid "Search Contact"
+msgstr "Contacto de la búsqueda"
+
+#: wealthmap/models.py:483
+msgid "Search Contacts"
+msgstr "Contactos de la búsqueda"
+
+#: wealthmap/templates/wealthmap/contact_form.html:4
+#: wealthmap/templates/wealthmap/search_form.html:4
+msgid "Questionnaire"
+msgstr "Cuestionario"
+
+#: wealthmap/templates/wealthmap/contact_form.html:26
+#: wealthmap/templates/wealthmap/search_form.html:26
+msgid "Go Back"
+msgstr "Volver"
+
+#: wealthmap/templates/wealthmap/contact_form.html:28
+#: wealthmap/templates/wealthmap/search_form.html:28
+msgid "Next"
+msgstr "Siguiente"
+
+#: wealthmap/templates/wealthmap/search_results.html:46
+msgid "Remove"
+msgstr "Ritrar"
+
+#: wealthmap/templates/wealthmap/search_results.html:46
+msgid "Add"
+msgstr "Añadir"
+
+#: wealthmap/templates/wealthmap/search_results.html:68
+#, fuzzy
+#| msgid "agency contact email"
+msgid "Send Contact Emails"
+msgstr "Email de Contacto del Organismo"
+
+#: wealthmap/views.py:14
+msgid "About"
+msgstr "Sobre"
+
+#: wealthmap/views.py:18
+msgid "Home"
+msgstr "Página Principal"
+
+#: wealthmap/views.py:23
+msgid "Sent Email Confirmation"
+msgstr "Email de Contacto del Organismo"
+
+#: wealthmap/views.py:81
+msgid "Questionnaire Results"
+msgstr "Resultados del Cuestionario"

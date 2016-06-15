@@ -1,0 +1,21 @@
+#footer
+  .container.text-center
+    div © 2014 CoquiCoders.
+    div
+      strong WealthMap
+      |  Proyecto
+      |  Creado por
+      a(href='http://coquicoders.org')  Coqui Coders
+    div
+      | Code licensed bajo&nbsp;
+      a(href='http://opensource.org/licenses/mit-license.html') Licencia de MIT
+    div
+      a(href='https://github.com/codeforamerica/sample_project') GitHub Project
+      |  ·&nbsp;
+      a(href='https://github.com/codeforamerica/sample_project/issues') Issues
+    div.pr-logo
+      -load staticfiles
+      a(href='http://pr.gov')
+        img(src="{% static 'wealthmap/img/prgov.png' %}")
+      a(href='http://codeforamerica.org')
+        img(src="{% static 'wealthmap/img/cfa-logo.png' %}")
