@@ -15,3 +15,5 @@ DATABASES = {
 
 COMPRESS_ENABLE = True
 COMPRESS_ROOT = '/tmp/'
+
+DEBUG = True
