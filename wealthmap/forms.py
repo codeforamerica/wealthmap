@@ -6,32 +6,9 @@ from wealthmap.widgets import ArrayFieldSelectMultiple
 
 class OpportunityListForm(forms.Form):
     opportunities = forms.ModelMultipleChoiceField(
-                    queryset=models.Opportunity.objects.all())
+        queryset=models.Opportunity.objects.all())
 
-
-class PersonalContactForm(forms.ModelForm):
-
-    def __init__(self, *args, **kwargs):
-        super(PersonalContactForm, self).__init__(*args, **kwargs)
-        self.fields['incorporated'].required = True
-
-    class Meta:
-        fields = ['full_name', 'phone_number', 'email', 'address', 'city',
-                  'state', 'postal_code', 'incorporated', ]
-        model = models.Contact
-        widgets = {
-            "incorporated": forms.RadioSelect(choices=models.YES_NO)
-        }
-
-
-class BusinessContactForm(forms.ModelForm):
-
-    class Meta:
-        fields = ['company', 'company_municipality', 'company_state',
-                  'company_postal_code', ]
-        model = models.Contact
-
-
+'''
 class OpportunitySearchForm(forms.ModelForm):
 
     class Meta:
@@ -93,31 +70,7 @@ class SizeSearchForm(forms.ModelForm):
     class Meta:
         model = models.OpportunitySearch
         fields = ['employees', 'years_in_business', 'annual_revenue']
-
-
-class AgencyForm(forms.ModelForm):
-
-    class Meta:
-        widgets = {
-            "creator": forms.HiddenInput(),
-        }
-
-
-class RequirementRelationshipForm(forms.ModelForm):
-
-    class Meta:
-        widgets = {
-            "creator": forms.HiddenInput(),
-        }
-
-
-class RequirementForm(forms.ModelForm):
-
-    class Meta:
-        widgets = {
-            "creator": forms.HiddenInput(),
-        }
-
+'''
 
 class OpportunityForm(forms.ModelForm):
 
@@ -126,23 +79,4 @@ class OpportunityForm(forms.ModelForm):
         exclude = []
         widgets = {
             "creator": forms.HiddenInput(),
-            "locations": ArrayFieldSelectMultiple(
-                choices=models.LOCATIONS, attrs={'class': 'chosen'}),
-            "entity_types": ArrayFieldSelectMultiple(
-                choices=models.ENTITY_TYPES, attrs={'class': 'chosen'}),
-            "industries": ArrayFieldSelectMultiple(
-                choices=models.INDUSTRIES, attrs={'class': 'chosen'}),
-            "demographics": ArrayFieldSelectMultiple(
-                choices=models.DEMOGRAPHICS, attrs={'class': 'chosen'}),
-            "benefit_types": ArrayFieldSelectMultiple(
-                choices=models.BENEFIT_TYPES, attrs={'class': 'chosen'}),
-            "purpose": ArrayFieldSelectMultiple(
-                choices=models.PURPOSE, attrs={'class': 'chosen'}),
         }
-"""
-    class Media:
-        css = {
-            "all": ("chosen/chosen.min.css", )
-        }
-        js = ("js/jquery.min.js", "chosen/chosen.jquery.min.js")
-"""

@@ -128,5 +128,7 @@ REST_FRAMEWORK = {
     # or allow read-only access for unauthenticated users.
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ]
+    ],
+    # Adds extra info to the OPTIONS call based on the model schema
+    'DEFAULT_METADATA_CLASS': 'rest_framework.metadata.SimpleMetadata',
 }
