@@ -88,6 +88,13 @@ class Opportunity(WhoAndWhenBase):
         verbose_name_plural = _('Opportunities')
 
 
+class ExampleOpportunity(Opportunity):
+
+    """Subclassed Opportunity model used as an example
+    and for writing test cases."""
+    description = models.TextField()
+
+
 '''
 class OpportunitySearch(models.Model):
     """Is created every time a new search is run and contains all
