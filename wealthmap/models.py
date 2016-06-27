@@ -35,14 +35,22 @@ class Industry(WhoAndWhenBase):
     order = models.PositiveSmallIntegerField(
         default=0, blank=False, null=False)
 
+    def __str__(self):
+        return self.name
+
     class Meta(object):
         ordering = ('order',)
+        verbose_name = _('Industry')
+        verbose_name_plural = _('Industries')
 
 
 class Purpose(WhoAndWhenBase):
     name = models.CharField(max_length=32)
     order = models.PositiveSmallIntegerField(
         default=0, blank=False, null=False)
+
+    def __str__(self):
+        return self.name
 
     class Meta(object):
         ordering = ('order',)
@@ -83,9 +91,10 @@ class Opportunity(WhoAndWhenBase):
     #   - disaster recovery
     #   - relocating
     #   - out of state sales
-    purpose = models.ManyToManyField(
+    purposes = models.ManyToManyField(
         Purpose,
-        verbose_name=_('purpose'))
+        blank=True,
+        verbose_name=_('purposes'))
 
     title = models.CharField(
         max_length=255,
@@ -143,6 +152,9 @@ class OpportunitySearch(WhenBase):
     def save(self, *args, **kwargs):
         self.view_count += 1
         return super(OpportunitySearch, self).save(*args, **kwargs)
+
+    def __str__(self):
+        return 'Opportunity Search %d' % self.pk
 
     class Meta:
         verbose_name = _('Opportunity Search')

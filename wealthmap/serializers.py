@@ -14,8 +14,25 @@ else:
     search_model = models.Opportunity
 
 
+class IndustrySerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = models.Industry
+        exclude = ('creator',)
+
+
+class PurposeSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = models.Purpose
+        exclude = ('creator',)
+
+
 class OpportunitySerializer(serializers.ModelSerializer):
+    industries = IndustrySerializer()
+    purposes = PurposeSerializer()
 
     class Meta:
         model = search_model
-        exclude = ('creator')
+        exclude = ('creator',)
+        depth = 1

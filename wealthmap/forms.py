@@ -8,20 +8,14 @@ class OpportunityListForm(forms.Form):
     opportunities = forms.ModelMultipleChoiceField(
         queryset=models.Opportunity.objects.all())
 
-'''
+
 class OpportunitySearchForm(forms.ModelForm):
 
     class Meta:
         fields = '__all__'
         model = models.OpportunitySearch
-        widgets = {
-            "purpose": ArrayFieldSelectMultiple(
-                choices=models.PURPOSE_SEARCH, attrs={'class': 'chosen'}),
-            "locations": ArrayFieldSelectMultiple(
-                choices=models.LOCATIONS_SEARCH, attrs={'class': 'chosen'}),
-        }
 
-
+'''
 class PurposeSearchForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
@@ -77,6 +71,26 @@ class OpportunityForm(forms.ModelForm):
 
     class Meta:
         model = models.Opportunity
+        exclude = []
+        widgets = {
+            "creator": forms.HiddenInput(),
+        }
+
+
+class IndustryForm(forms.ModelForm):
+
+    class Meta:
+        model = models.Industry
+        exclude = []
+        widgets = {
+            "creator": forms.HiddenInput(),
+        }
+
+
+class PurposeForm(forms.ModelForm):
+
+    class Meta:
+        model = models.Purpose
         exclude = []
         widgets = {
             "creator": forms.HiddenInput(),

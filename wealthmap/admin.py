@@ -1,18 +1,20 @@
 from django.contrib import admin
+from adminsortable2.admin import SortableAdminMixin
 from wealthmap import models, forms
 
 
 class AddCreatorMixin:
-    """Subclass of ``ModelAdmin``s which adds the user to the creator field.
-    """
 
     def get_form(self, request, *args, **kwargs):
-        form = super(AddCreator, self).get_form(request, *args, **kwargs)
+        form = super(AddCreatorMixin, self).get_form(request, *args, **kwargs)
         form.base_fields['creator'].initial = request.user
         return form
 
 
-class AddCreator(admin.ModelAdmin, AddCreatorMixin):
+class AddCreator(AddCreatorMixin, admin.ModelAdmin):
+
+    """Subclass of ``ModelAdmin``s which adds the user to the creator field.
+    """
     pass
 
 
@@ -25,7 +27,6 @@ class OpportunityAdmin(AddCreator):
     form = forms.OpportunityForm
 
 
-'''
 @admin.register(models.OpportunitySearch)
 class OpportunitySearchAdmin(admin.ModelAdmin):
 
@@ -40,4 +41,17 @@ class OpportunitySearchAdmin(admin.ModelAdmin):
 
     def has_delete_permission(self, request, obj=None):
         return False
-'''
+
+
+class SortableAdmin(SortableAdminMixin, AddCreator):
+    pass
+
+
+@admin.register(models.Purpose)
+class PurposeAdmin(SortableAdmin):
+    form = forms.PurposeForm
+
+
+@admin.register(models.Industry)
+class IndustryAdmin(SortableAdmin):
+    form = forms.IndustryForm
