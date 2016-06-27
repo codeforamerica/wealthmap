@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'bootstrapform',
+    'adminsortable2',
     'wealthmap',
 ]
 

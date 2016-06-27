@@ -7,15 +7,21 @@ from localflavor.us.models import USStateField, USZipCodeField
 from localflavor.us.models import PhoneNumberField
 
 
-class WhoAndWhenBase(models.Model):
+class WhenBase(models.Model):
+    created_at = models.DateTimeField(
+        auto_now_add=True, verbose_name=_('Created At'))
+    updated_at = models.DateTimeField(
+        auto_now=True, verbose_name=_('Last Modified'))
+
+    class Meta:
+        abstract = True
+
+
+class WhoAndWhenBase(WhenBase):
 
     """An abstract base class which manages created at and updated at as well
     as who created it.
     """
-    created_at = models.DateTimeField(
-        auto_now_add=True, verbose_name=_('Made On'))
-    updated_at = models.DateTimeField(
-        auto_now=True, verbose_name=_('Last Modified'))
     creator = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         verbose_name=_('creator'))
@@ -26,17 +32,25 @@ class WhoAndWhenBase(models.Model):
 
 class Industry(WhoAndWhenBase):
     name = models.CharField(max_length=32)
+    order = models.PositiveSmallIntegerField(
+        default=0, blank=False, null=False)
+
+    class Meta(object):
+        ordering = ('order',)
 
 
 class Purpose(WhoAndWhenBase):
     name = models.CharField(max_length=32)
+    order = models.PositiveSmallIntegerField(
+        default=0, blank=False, null=False)
+
+    class Meta(object):
+        ordering = ('order',)
 
 
-PURPOSE = (
-    ('any', 'Any'),  # should be any
-)
-
-PURPOSE_SEARCH = PURPOSE[1:]  # excludes the first 'any' option
+EXISTING_BUSINESS_CHOICES = (
+    ('existing', _('existing business')),
+    ('new', _('new business')))
 
 
 class Opportunity(WhoAndWhenBase):
@@ -50,16 +64,14 @@ class Opportunity(WhoAndWhenBase):
     # Industry options: [manufacturing, finance, agriculture, other]
     industries = models.ManyToManyField(
         Industry,
+        blank=True,
         verbose_name=_('industries'))
     personal_investment = models.BooleanField(
         verbose_name=_('personal investment'))
     existing_business = models.CharField(max_length=8,
                                          null=True,
                                          blank=True,
-                                         choices=(
-                                             ('existing',
-                                              _('existing business')),
-                                             ('new', _('new business'))),
+                                         choices=EXISTING_BUSINESS_CHOICES,
                                          verbose_name=_('existing business'))
     small_business = models.BooleanField(
         verbose_name=_('small business'))
@@ -95,51 +107,50 @@ class ExampleOpportunity(Opportunity):
     description = models.TextField()
 
 
+class OpportunitySearch(WhenBase):
+
+    """Represents a particular user search. Useful for saving past searches,
+    providing analytics, etc."""
+    city = models.CharField(max_length=255, verbose_name=_('city'))
+    state = USStateField(verbose_name=_('state'))
+    # Industry options: [manufacturing, finance, agriculture, other]
+    industries = models.ForeignKey(
+        Industry,
+        null=True,
+        blank=True,
+        verbose_name=_('industries'))
+    personal_investment = models.BooleanField(
+        verbose_name=_('personal investment'))
+
+    existing_business = models.CharField(max_length=8,
+                                         choices=EXISTING_BUSINESS_CHOICES,
+                                         verbose_name=_('existing business'))
+    small_business = models.BooleanField(
+        verbose_name=_('small business'))
+    # Purpose options:
+    #   - equipment purchase
+    #   - construction/remodel
+    #   - hiring
+    #   - training
+    #   - disaster recovery
+    #   - relocating
+    #   - out of state sales
+    purpose = models.ManyToManyField(
+        Purpose,
+        verbose_name=_('purpose'))
+    view_count = models.PositiveIntegerField(default=0)
+
+    def save(self, *args, **kwargs):
+        self.view_count += 1
+        return super(OpportunitySearch, self).save(*args, **kwargs)
+
+    class Meta:
+        verbose_name = _('Opportunity Search')
+        verbose_name_plural = _('Opportunity Searches')
+
+
 '''
 class OpportunitySearch(models.Model):
-    """Is created every time a new search is run and contains all
-    the search options.
-    """
-    created_at = models.DateTimeField(
-        auto_now_add=True, verbose_name=_('Search Date and Time'))
-    purpose = ArrayField(
-        models.CharField(max_length=255, choices=PURPOSE_SEARCH),
-        default=list, verbose_name=_('How would you use the incentive?'),
-    )
-    investing_own_money = models.BooleanField(
-        verbose_name=_(
-            'Will the CEOs be investing money from their own pockets?'),
-        choices=YES_NO,
-        blank=False,
-        default=False,
-    )
-    gender = models.CharField(max_length=6,
-                              choices=(('male', _('Male')),
-                                       ('female', _('Female')),
-                                       ('both', _('Both')),
-                                       ('other', _('Other')),),
-                              verbose_name=_("What are the owner's genders?"),
-                              )
-    entity_type = models.CharField(
-        max_length=255,
-        choices=ENTITY_TYPES_SEARCH,
-        verbose_name=_('What is the business structure?'))
-    industry = models.CharField(
-        max_length=255,
-        choices=INDUSTRIES_SEARCH,
-        verbose_name=_('What industry is your business?'))
-    locations = ArrayField(
-        models.CharField(max_length=255, choices=LOCATIONS_SEARCH),
-        default=list,
-        verbose_name=_('Where are the physical locations of your businesses?'),
-    )
-    employees = models.IntegerField(verbose_name=_(
-        'How many full time employees do you have?'))
-    years_in_business = models.IntegerField(
-        verbose_name=_('How many years have you been in business?'))
-    annual_revenue = models.IntegerField(
-        verbose_name=_(
-            'What was the gross revenue for your last fiscal calendar year?'))
 
     def search(self):
         opps = Opportunity.objects

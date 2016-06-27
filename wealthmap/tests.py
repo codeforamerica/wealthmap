@@ -1,10 +1,10 @@
 from django.conf import settings
-from django.db import models
+from django.contrib.auth import models as auth_models
 from django.test import TestCase, override_settings
-from .models import Opportunity, ExampleOpportunity
+from . import models
 
 
-@override_settings(WEALTHMAP_SEARCHABLE_OPPORTUNITY=ExampleOpportunity)
+@override_settings(WEALTHMAP_SEARCHABLE_OPPORTUNITY=models.ExampleOpportunity)
 class OpportunityTestCase(TestCase):
 
     """
@@ -23,8 +23,39 @@ class OpportunityTestCase(TestCase):
         self.OpportunitySerializer = OppSerializer
 
     def test_create_api_uses_settings(self):
-        """Test that the create API endpoint uses the model defined in 
+        """Test that the create API endpoint uses the model defined in
         settings.WEALTHMAP_SEARCHABLE_OPPORTUNITY"""
 
         self.assertEqual(
-            self.OpportunitySerializer.Meta.model, ExampleOpportunity)
+            self.OpportunitySerializer.Meta.model, models.ExampleOpportunity)
+
+
+class OpportunitySearchTestCase(TestCase):
+
+    """
+    Tests for the creating and viewing instances of OpportunitySearch model.
+    """
+
+    def setUp(self):
+        self.user = auth_models.User.objects.create(
+            username='A', password='B')
+        self.industry = models.Industry.objects.create(
+            name='Manufacturing', creator=self.user)
+        self.purpose = models.Purpose.objects.create(
+            name='Hiring', creator=self.user)
+
+    def test_view_count_increments(self):
+        """Test that saving an existing search model increments the counter
+        by one."""
+
+        search = models.OpportunitySearch.objects.create(
+            city='Long Beach',
+            state='CA',
+            personal_investment=True,
+            existing_business='new',
+            small_business=True,
+        )
+
+        self.assertEqual(search.view_count, 1)
+        search.save()
+        self.assertEqual(search.view_count, 2)

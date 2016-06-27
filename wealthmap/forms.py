@@ -72,6 +72,7 @@ class SizeSearchForm(forms.ModelForm):
         fields = ['employees', 'years_in_business', 'annual_revenue']
 '''
 
+
 class OpportunityForm(forms.ModelForm):
 
     class Meta:

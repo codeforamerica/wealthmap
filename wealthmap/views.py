@@ -11,4 +11,4 @@ class OpportunityLCAPI(ListCreateAPIView):
 
 
 class OpportunityRAPI(RetrieveAPIView):
-    return NotImplemented
+    pass

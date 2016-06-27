@@ -9,8 +9,13 @@ on the environment in which the code is running.
 '''
 # TODO: Set ExampleOpportunity as default in app settings.
 if hasattr(settings, 'WEALTHMAP_SEARCHABLE_OPPORTUNITY'):
-    class OpportunitySerializer(serializers.ModelSerializer):
+    search_model = settings.WEALTHMAP_SEARCHABLE_OPPORTUNITY
+else:
+    search_model = models.Opportunity
 
-        class Meta:
-            model = settings.WEALTHMAP_SEARCHABLE_OPPORTUNITY
-            exclude = ('creator')
+
+class OpportunitySerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = search_model
+        exclude = ('creator')
