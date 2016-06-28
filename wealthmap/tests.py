@@ -39,16 +39,25 @@ class OpportunitySearchTestCase(TestCase):
     def setUp(self):
         self.user = auth_models.User.objects.create(
             username='A', password='B')
-        self.industry = models.Industry.objects.create(
+        self.industry_A = models.Industry.objects.create(
             name='Manufacturing', creator=self.user)
-        self.purpose = models.Purpose.objects.create(
+        self.industry_B = models.Industry.objects.create(
+            name='Agriculture', creator=self.user)
+        self.purpose_A = models.Purpose.objects.create(
             name='Hiring', creator=self.user)
+        self.purpose_B = models.Purpose.objects.create(
+            name='Construction', creator=self.user)
 
-    def test_view_count_increments(self):
-        """Test that saving an existing search model increments the counter
-        by one."""
+        self.opp_base = dict(
+            city='Long Beach',
+            state='CA',
+            personal_investment=True,
+            existing_business='new',
+            small_business=True,
+            creator=self.user,
+        )
 
-        search = models.OpportunitySearch.objects.create(
+        self.opp_search_base = dict(
             city='Long Beach',
             state='CA',
             personal_investment=True,
@@ -56,6 +65,53 @@ class OpportunitySearchTestCase(TestCase):
             small_business=True,
         )
 
-        self.assertEqual(search.view_count, 1)
-        search.save()
-        self.assertEqual(search.view_count, 2)
+    def test_view_count_increments(self):
+        """Test that saving an existing search model increments the counter
+        by one."""
+        opp_search = models.OpportunitySearch.objects.create(
+            **self.opp_search_base)
+
+        self.assertEqual(opp_search.view_count, 1)
+        opp_search.save()
+        self.assertEqual(opp_search.view_count, 2)
+
+    def test_opportunity_search_with_industry(self):
+        opportunity_A = models.Opportunity.objects.create(
+            **{**self.opp_base, **dict(title="A")})
+        opportunity_A.industries.add(self.industry_A)
+        opportunity_B = models.Opportunity.objects.create(
+            **{**self.opp_base, **dict(title="B")})
+        opportunity_B.industries.add(self.industry_B)
+
+        new_industry = {'industry': self.industry_A}
+        opp_search = models.OpportunitySearch.objects.create(
+            **{**self.opp_search_base, **new_industry},
+        )
+
+        result_set = opp_search.search()
+        self.assertEqual(result_set.count(), 1)
+        self.assertEqual(result_set[0], opportunity_A)
+
+    def test_opportunity_search_with_purpose(self):
+        opportunity_A = models.Opportunity.objects.create(
+            **{**self.opp_base, **dict(title="A")})
+        opportunity_A.purposes.add(self.purpose_A)
+        opportunity_B = models.Opportunity.objects.create(
+            **{**self.opp_base, **dict(title="B")})
+        opportunity_B.purposes.add(self.purpose_B)
+
+        opp_search = models.OpportunitySearch.objects.create(
+            **self.opp_search_base)
+        opp_search.purposes.add(self.purpose_A)
+
+        result_set = opp_search.search()
+        self.assertEqual(result_set.count(), 1)
+        self.assertEqual(result_set[0], opportunity_A)
+
+    def test_opportunity_search_when_no_industry(self):
+        # TODO: `null` is effectively the same as "Other"
+        # If nothing is searched for, only give Opportunities without industry
+        raise NotImplemetedError
+
+    def test_opportunity_search_when_no_purpose(self):
+        raise NotImplemetedError

@@ -4,7 +4,7 @@ WealthMap is a django project for the Puerto Rican government to allow local bus
 
 ## Install Instructions
 
-Requires Postgres and Django be installed.  This project is developed and tested with Python 3.5 and Django 1.9.
+Requires Postgres and Django be installed.  This project is developed and *only* works with Python 3.5 and Django 1.9 (and probably higher).
 
   pip install -r requirements/app.txt
 

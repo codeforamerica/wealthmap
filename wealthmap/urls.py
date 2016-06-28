@@ -5,4 +5,5 @@ from . import views
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
     url(r'^opportunity/(?P<pk>\d+)/$', views.OpportunityRAPI.as_view()),
+    url(r'^search/(?P<pk>\d+)/$', views.SearchRAPI.as_view()),
 ]

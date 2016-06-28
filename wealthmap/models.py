@@ -67,7 +67,10 @@ class Opportunity(WhoAndWhenBase):
     These fields represent the properties of a business that would
     be eligible or well-suited for a particular opportunity.
     """
-    city = models.CharField(max_length=255, verbose_name=_('city'))
+    city = models.CharField(
+        max_length=255,
+        blank=False,
+        verbose_name=_('city'))
     state = USStateField(verbose_name=_('state'))
     # Industry options: [manufacturing, finance, agriculture, other]
     industries = models.ManyToManyField(
@@ -99,6 +102,7 @@ class Opportunity(WhoAndWhenBase):
     title = models.CharField(
         max_length=255,
         unique=True,
+        blank=False,
         verbose_name=_('title'))
 
     def __str__(self):
@@ -123,7 +127,7 @@ class OpportunitySearch(WhenBase):
     city = models.CharField(max_length=255, verbose_name=_('city'))
     state = USStateField(verbose_name=_('state'))
     # Industry options: [manufacturing, finance, agriculture, other]
-    industries = models.ForeignKey(
+    industry = models.ForeignKey(
         Industry,
         null=True,
         blank=True,
@@ -144,9 +148,9 @@ class OpportunitySearch(WhenBase):
     #   - disaster recovery
     #   - relocating
     #   - out of state sales
-    purpose = models.ManyToManyField(
+    purposes = models.ManyToManyField(
         Purpose,
-        verbose_name=_('purpose'))
+        verbose_name=_('purposes'))
     view_count = models.PositiveIntegerField(default=0)
 
     def save(self, *args, **kwargs):
@@ -159,6 +163,19 @@ class OpportunitySearch(WhenBase):
     class Meta:
         verbose_name = _('Opportunity Search')
         verbose_name_plural = _('Opportunity Searches')
+
+    def search(self):
+        opps = Opportunity.objects.filter(
+            city__iexact=self.city).filter(
+            state=self.state)
+
+        if self.industry:
+            opps = opps.filter(industries=self.industry)
+
+        if self.purposes.count() > 0:
+            opps = opps.filter(purposes__in=self.purposes.all())
+
+        return opps
 
 
 '''

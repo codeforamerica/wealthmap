@@ -36,3 +36,10 @@ class OpportunitySerializer(serializers.ModelSerializer):
         model = search_model
         exclude = ('creator',)
         depth = 1
+
+
+class OpportunitySearchSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = models.OpportunitySearch
+        exclude = ('creator',)
