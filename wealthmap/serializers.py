@@ -29,8 +29,8 @@ class PurposeSerializer(serializers.ModelSerializer):
 
 
 class OpportunitySerializer(serializers.ModelSerializer):
-    industries = IndustrySerializer()
-    purposes = PurposeSerializer()
+    industries = IndustrySerializer
+    purposes = PurposeSerializer
 
     class Meta:
         model = search_model
@@ -39,7 +39,15 @@ class OpportunitySerializer(serializers.ModelSerializer):
 
 
 class OpportunitySearchSerializer(serializers.ModelSerializer):
+    results = serializers.SerializerMethodField()
+
+    def get_results(self, obj):
+        # TODO: Dirty way to get valid JSON.
+        # Should actually use OpportunitySerializer somehow
+        serializer = OpportunitySerializer(obj.search(), many=True)
+        return serializer.data
 
     class Meta:
         model = models.OpportunitySearch
-        exclude = ('creator',)
+        exclude = ()
+        depth = 1

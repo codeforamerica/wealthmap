@@ -170,7 +170,23 @@ class OpportunitySearch(WhenBase):
             state=self.state)
 
         if self.industry:
-            opps = opps.filter(industries=self.industry)
+            opps = opps.filter(
+                Q(industries=self.industry) | Q(industries__isnull=True))
+        else:
+            opps = opps.filter(industries__isnull=True)
+
+        # only filter by personal_investment if `False`
+        # if `True`, just return all Opps to the user
+        if not self.personal_investment:
+            opps = opps.filter(personal_investment=self.personal_investment)
+
+        if self.existing_business:
+            opps = opps.filter(existing_business=self.existing_business)
+
+        # only filter by small_business if `False`
+        # if `True`, just return all Opps to the user
+        if not self.small_business:
+            opps = opps.filter(small_business=self.small_business)
 
         if self.purposes.count() > 0:
             opps = opps.filter(purposes__in=self.purposes.all())
