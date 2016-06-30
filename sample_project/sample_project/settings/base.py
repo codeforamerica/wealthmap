@@ -136,3 +136,7 @@ REST_FRAMEWORK = {
     # Adds extra info to the OPTIONS call based on the model schema
     'DEFAULT_METADATA_CLASS': 'rest_framework.metadata.SimpleMetadata',
 }
+
+# Set this to the Opportunity model specific to your use case
+# E.g. LongBeachOpportunity
+WEALTHMAP_SEARCHABLE_OPPORTUNITY = 'ExampleOpportunity'

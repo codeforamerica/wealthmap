@@ -1,10 +1,11 @@
 from django.conf import settings
 from django.contrib.auth import models as auth_models
-from django.test import TestCase, override_settings
+from django.test import Client, TestCase, override_settings
+from .serializers import OpportunitySerializer
 from . import models
 
 
-@override_settings(WEALTHMAP_SEARCHABLE_OPPORTUNITY=models.ExampleOpportunity)
+@override_settings(WEALTHMAP_SEARCHABLE_OPPORTUNITY='ExampleOpportunity')
 class OpportunityTestCase(TestCase):
 
     """
@@ -17,17 +18,13 @@ class OpportunityTestCase(TestCase):
         Serializer is loaded *after* the app is initialized
         so that settings can be overridden first (see @override_settings).
         """
-        from .serializers import OpportunitySerializer as OppSerializer
-        # This line is a hack because self.X can't be assigned in an import
-        # TODO: There must be a better way to do this.
-        self.OpportunitySerializer = OppSerializer
 
     def test_create_api_uses_settings(self):
         """Test that the create API endpoint uses the model defined in
         settings.WEALTHMAP_SEARCHABLE_OPPORTUNITY"""
 
         self.assertEqual(
-            self.OpportunitySerializer.Meta.model, models.ExampleOpportunity)
+            OpportunitySerializer.Meta.model, models.ExampleOpportunity)
 
 
 class OpportunitySearchTestCase(TestCase):
@@ -207,3 +204,17 @@ class OpportunitySearchTestCase(TestCase):
 
         result_set_B = opp_search_B.search()
         self.assertEqual(result_set_B.count(), 2)
+
+    def test_opportunity_search_create_endpoint(self):
+        models.Opportunity.objects.create(
+            **{**self.opp_base, **dict(title="A", small_business=True)})
+        models.Opportunity.objects.create(
+            **{**self.opp_base, **dict(title="B", small_business=False)})
+
+        client = Client()
+        response = client.post('/wm-api/search/', {
+            **{**self.opp_search_base, **{'small_business': False}}
+        })
+
+        self.assertEqual(response.status_code, 201)
+        self.assertEqual(len(response.data['results']), 1)

@@ -105,6 +105,8 @@ class Opportunity(WhoAndWhenBase):
         blank=False,
         verbose_name=_('title'))
 
+    description = models.TextField()
+
     def __str__(self):
         return self.title
 
@@ -117,7 +119,7 @@ class ExampleOpportunity(Opportunity):
 
     """Subclassed Opportunity model used as an example
     and for writing test cases."""
-    description = models.TextField()
+    # additional_description = models.TextField()
 
 
 class OpportunitySearch(WhenBase):
@@ -136,6 +138,8 @@ class OpportunitySearch(WhenBase):
         verbose_name=_('personal investment'))
 
     existing_business = models.CharField(max_length=8,
+                                         null=True,
+                                         blank=True,
                                          choices=EXISTING_BUSINESS_CHOICES,
                                          verbose_name=_('existing business'))
     small_business = models.BooleanField(
