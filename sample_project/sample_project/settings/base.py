@@ -139,4 +139,7 @@ REST_FRAMEWORK = {
 
 # Set this to the Opportunity model specific to your use case
 # E.g. LongBeachOpportunity
-WEALTHMAP_SEARCHABLE_OPPORTUNITY = 'ExampleOpportunity'
+WEALTHMAP_SEARCHABLE_OPPORTUNITY = dict(
+    app_label='wealthmap',
+    model_name='ExampleOpportunity'
+)

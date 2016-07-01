@@ -1,3 +1,4 @@
+from django.apps import apps
 from django.conf import settings
 from django.contrib.postgres.fields import ArrayField
 from django.db import models
@@ -105,8 +106,6 @@ class Opportunity(WhoAndWhenBase):
         blank=False,
         verbose_name=_('title'))
 
-    description = models.TextField()
-
     def __str__(self):
         return self.title
 
@@ -119,7 +118,7 @@ class ExampleOpportunity(Opportunity):
 
     """Subclassed Opportunity model used as an example
     and for writing test cases."""
-    # additional_description = models.TextField()
+    description = models.TextField()
 
 
 class OpportunitySearch(WhenBase):
@@ -169,7 +168,8 @@ class OpportunitySearch(WhenBase):
         verbose_name_plural = _('Opportunity Searches')
 
     def search(self):
-        opps = Opportunity.objects.filter(
+        opps = apps.get_model(**settings.WEALTHMAP_SEARCHABLE_OPPORTUNITY
+            ).objects.filter(
             city__iexact=self.city).filter(
             state=self.state)
 

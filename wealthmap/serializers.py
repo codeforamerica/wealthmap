@@ -10,9 +10,7 @@ on the environment in which the code is running.
 '''
 # TODO: Set ExampleOpportunity as default in app settings.
 if hasattr(settings, 'WEALTHMAP_SEARCHABLE_OPPORTUNITY'):
-    search_model = apps.get_model(
-        app_label='wealthmap',
-        model_name=settings.WEALTHMAP_SEARCHABLE_OPPORTUNITY)
+    search_model = apps.get_model(**settings.WEALTHMAP_SEARCHABLE_OPPORTUNITY)
 else:
     search_model = models.ExampleOpportunity
 

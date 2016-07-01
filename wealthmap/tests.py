@@ -5,7 +5,10 @@ from .serializers import OpportunitySerializer
 from . import models
 
 
-@override_settings(WEALTHMAP_SEARCHABLE_OPPORTUNITY='ExampleOpportunity')
+@override_settings(WEALTHMAP_SEARCHABLE_OPPORTUNITY={
+    'app_label': 'wealthmap',
+    'model_name': 'ExampleOpportunity',
+})
 class OpportunityTestCase(TestCase):
 
     """
@@ -26,7 +29,12 @@ class OpportunityTestCase(TestCase):
         self.assertEqual(
             OpportunitySerializer.Meta.model, models.ExampleOpportunity)
 
-
+# This override isn't actually used below
+# But is included because Django is confused if settings change during testing
+@override_settings(WEALTHMAP_SEARCHABLE_OPPORTUNITY={
+    'app_label': 'wealthmap',
+    'model_name': 'ExampleOpportunity',
+})
 class OpportunitySearchTestCase(TestCase):
 
     """
@@ -72,13 +80,13 @@ class OpportunitySearchTestCase(TestCase):
 
     def test_opportunity_search_with_industry(self):
         # Should return Opps with appropriate industry *or* `null` industry
-        opportunity_A = models.Opportunity.objects.create(
+        opportunity_A = models.ExampleOpportunity.objects.create(
             **{**self.opp_base, **dict(title="A")})
         opportunity_A.industries.add(self.industry_manuf)
-        opportunity_B = models.Opportunity.objects.create(
+        opportunity_B = models.ExampleOpportunity.objects.create(
             **{**self.opp_base, **dict(title="B")})
         opportunity_B.industries.add(self.industry_agri)
-        opportunity_C = models.Opportunity.objects.create(
+        opportunity_C = models.ExampleOpportunity.objects.create(
             **{**self.opp_base, **dict(title="C")})
 
         new_industry = {'industry': self.industry_manuf}
@@ -92,10 +100,10 @@ class OpportunitySearchTestCase(TestCase):
         self.assertEqual(result_set[1], opportunity_C)
 
     def test_opportunity_search_with_purpose(self):
-        opportunity_A = models.Opportunity.objects.create(
+        opportunity_A = models.ExampleOpportunity.objects.create(
             **{**self.opp_base, **dict(title="A")})
         opportunity_A.purposes.add(self.purpose_A)
-        opportunity_B = models.Opportunity.objects.create(
+        opportunity_B = models.ExampleOpportunity.objects.create(
             **{**self.opp_base, **dict(title="B")})
         opportunity_B.purposes.add(self.purpose_B)
 
@@ -112,10 +120,10 @@ class OpportunitySearchTestCase(TestCase):
         If nothing is searched for, only give Opportunities without industry.
         `null` is effectively the same as "Other"
         """
-        opportunity_A = models.Opportunity.objects.create(
+        opportunity_A = models.ExampleOpportunity.objects.create(
             **{**self.opp_base, **dict(title="A")})
         opportunity_A.industries.add(self.industry_manuf)
-        opportunity_B = models.Opportunity.objects.create(
+        opportunity_B = models.ExampleOpportunity.objects.create(
             **{**self.opp_base, **dict(title="B")})
 
         opp_search = models.OpportunitySearch.objects.create(
@@ -130,10 +138,10 @@ class OpportunitySearchTestCase(TestCase):
         If nothing is searched for, return all Opportunities
         TODO: Could this be more specific? Check back on user data in a year.
         """
-        opportunity_A = models.Opportunity.objects.create(
+        opportunity_A = models.ExampleOpportunity.objects.create(
             **{**self.opp_base, **dict(title="A")})
         opportunity_A.purposes.add(self.purpose_A)
-        opportunity_B = models.Opportunity.objects.create(
+        opportunity_B = models.ExampleOpportunity.objects.create(
             **{**self.opp_base, **dict(title="B")})
 
         opp_search = models.OpportunitySearch.objects.create(
@@ -143,9 +151,9 @@ class OpportunitySearchTestCase(TestCase):
         self.assertEqual(result_set.count(), 2)
 
     def test_opportunity_search_with_personal_investment(self):
-        opportunity_A = models.Opportunity.objects.create(
+        opportunity_A = models.ExampleOpportunity.objects.create(
             **{**self.opp_base, **dict(title="A", personal_investment=True)})
-        opportunity_B = models.Opportunity.objects.create(
+        opportunity_B = models.ExampleOpportunity.objects.create(
             **{**self.opp_base, **dict(title="B", personal_investment=False)})
 
         # Return *only* Opps with `False` if user is not investing (False)
@@ -163,12 +171,12 @@ class OpportunitySearchTestCase(TestCase):
         self.assertEqual(result_set_B.count(), 2)
 
     def test_opportunity_search_with_existing_business(self):
-        models.Opportunity.objects.create(
+        models.ExampleOpportunity.objects.create(
             **{**self.opp_base,
                **dict(title="A", existing_business='existing')})
-        models.Opportunity.objects.create(
+        models.ExampleOpportunity.objects.create(
             **{**self.opp_base, **dict(title="B", existing_business='new')})
-        models.Opportunity.objects.create(
+        models.ExampleOpportunity.objects.create(
             **{**self.opp_base, **dict(title="C")})
 
         # Return *only* Opps with relevant value when specified
@@ -186,9 +194,9 @@ class OpportunitySearchTestCase(TestCase):
         self.assertEqual(result_set_B.count(), 3)
 
     def test_opportunity_search_with_small_business(self):
-        models.Opportunity.objects.create(
+        models.ExampleOpportunity.objects.create(
             **{**self.opp_base, **dict(title="A", small_business=True)})
-        models.Opportunity.objects.create(
+        models.ExampleOpportunity.objects.create(
             **{**self.opp_base, **dict(title="B", small_business=False)})
 
         # Return *only* Opps with `False` when user has a large business
@@ -206,9 +214,9 @@ class OpportunitySearchTestCase(TestCase):
         self.assertEqual(result_set_B.count(), 2)
 
     def test_opportunity_search_create_endpoint(self):
-        models.Opportunity.objects.create(
+        models.ExampleOpportunity.objects.create(
             **{**self.opp_base, **dict(title="A", small_business=True)})
-        models.Opportunity.objects.create(
+        models.ExampleOpportunity.objects.create(
             **{**self.opp_base, **dict(title="B", small_business=False)})
 
         client = Client()
