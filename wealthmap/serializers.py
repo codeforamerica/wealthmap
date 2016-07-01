@@ -14,6 +14,7 @@ if hasattr(settings, 'WEALTHMAP_SEARCHABLE_OPPORTUNITY'):
 else:
     search_model = models.ExampleOpportunity
 
+
 class IndustrySerializer(serializers.ModelSerializer):
 
     class Meta:
@@ -40,12 +41,21 @@ class OpportunitySerializer(serializers.ModelSerializer):
 
 class OpportunitySearchSerializer(serializers.ModelSerializer):
     results = serializers.SerializerMethodField()
+    purposes = serializers.PrimaryKeyRelatedField(
+        queryset=models.Purpose.objects.all(), many=True)
 
     def get_results(self, obj):
         # TODO: Dirty way to get valid JSON.
         # Should actually use OpportunitySerializer somehow
         serializer = OpportunitySerializer(obj.search(), many=True)
         return serializer.data
+
+    def create(self, validated_data):
+        purposes = validated_data.pop('purposes')
+        obj = models.OpportunitySearch.objects.create(**validated_data)
+        if purposes:
+            obj.purposes.add(*purposes)
+        return obj
 
     class Meta:
         model = models.OpportunitySearch

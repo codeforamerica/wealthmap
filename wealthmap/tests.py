@@ -31,6 +31,8 @@ class OpportunityTestCase(TestCase):
 
 # This override isn't actually used below
 # But is included because Django is confused if settings change during testing
+
+
 @override_settings(WEALTHMAP_SEARCHABLE_OPPORTUNITY={
     'app_label': 'wealthmap',
     'model_name': 'ExampleOpportunity',
@@ -48,9 +50,9 @@ class OpportunitySearchTestCase(TestCase):
             name='Manufacturing', creator=self.user)
         self.industry_agri = models.Industry.objects.create(
             name='Agriculture', creator=self.user)
-        self.purpose_A = models.Purpose.objects.create(
+        self.purpose_a = models.Purpose.objects.create(
             name='Hiring', creator=self.user)
-        self.purpose_B = models.Purpose.objects.create(
+        self.purpose_b = models.Purpose.objects.create(
             name='Construction', creator=self.user)
 
         self.opp_base = dict(
@@ -80,13 +82,13 @@ class OpportunitySearchTestCase(TestCase):
 
     def test_opportunity_search_with_industry(self):
         # Should return Opps with appropriate industry *or* `null` industry
-        opportunity_A = models.ExampleOpportunity.objects.create(
+        opportunity_a = models.ExampleOpportunity.objects.create(
             **{**self.opp_base, **dict(title="A")})
-        opportunity_A.industries.add(self.industry_manuf)
-        opportunity_B = models.ExampleOpportunity.objects.create(
+        opportunity_a.industries.add(self.industry_manuf)
+        opportunity_b = models.ExampleOpportunity.objects.create(
             **{**self.opp_base, **dict(title="B")})
-        opportunity_B.industries.add(self.industry_agri)
-        opportunity_C = models.ExampleOpportunity.objects.create(
+        opportunity_b.industries.add(self.industry_agri)
+        opportunity_c = models.ExampleOpportunity.objects.create(
             **{**self.opp_base, **dict(title="C")})
 
         new_industry = {'industry': self.industry_manuf}
@@ -96,34 +98,34 @@ class OpportunitySearchTestCase(TestCase):
 
         result_set = opp_search.search()
         self.assertEqual(result_set.count(), 2)
-        self.assertEqual(result_set[0], opportunity_A)
-        self.assertEqual(result_set[1], opportunity_C)
+        self.assertEqual(result_set[0], opportunity_a)
+        self.assertEqual(result_set[1], opportunity_c)
 
     def test_opportunity_search_with_purpose(self):
-        opportunity_A = models.ExampleOpportunity.objects.create(
+        opportunity_a = models.ExampleOpportunity.objects.create(
             **{**self.opp_base, **dict(title="A")})
-        opportunity_A.purposes.add(self.purpose_A)
-        opportunity_B = models.ExampleOpportunity.objects.create(
+        opportunity_a.purposes.add(self.purpose_a)
+        opportunity_b = models.ExampleOpportunity.objects.create(
             **{**self.opp_base, **dict(title="B")})
-        opportunity_B.purposes.add(self.purpose_B)
+        opportunity_b.purposes.add(self.purpose_b)
 
         opp_search = models.OpportunitySearch.objects.create(
             **self.opp_search_base)
-        opp_search.purposes.add(self.purpose_A)
+        opp_search.purposes.add(self.purpose_a)
 
         result_set = opp_search.search()
         self.assertEqual(result_set.count(), 1)
-        self.assertEqual(result_set[0], opportunity_A)
+        self.assertEqual(result_set[0], opportunity_a)
 
     def test_opportunity_search_when_no_industry(self):
         """
         If nothing is searched for, only give Opportunities without industry.
         `null` is effectively the same as "Other"
         """
-        opportunity_A = models.ExampleOpportunity.objects.create(
+        opportunity_a = models.ExampleOpportunity.objects.create(
             **{**self.opp_base, **dict(title="A")})
-        opportunity_A.industries.add(self.industry_manuf)
-        opportunity_B = models.ExampleOpportunity.objects.create(
+        opportunity_a.industries.add(self.industry_manuf)
+        opportunity_b = models.ExampleOpportunity.objects.create(
             **{**self.opp_base, **dict(title="B")})
 
         opp_search = models.OpportunitySearch.objects.create(
@@ -131,17 +133,17 @@ class OpportunitySearchTestCase(TestCase):
 
         result_set = opp_search.search()
         self.assertEqual(result_set.count(), 1)
-        self.assertEqual(result_set[0], opportunity_B)
+        self.assertEqual(result_set[0], opportunity_b)
 
     def test_opportunity_search_when_no_purpose(self):
         """
         If nothing is searched for, return all Opportunities
         TODO: Could this be more specific? Check back on user data in a year.
         """
-        opportunity_A = models.ExampleOpportunity.objects.create(
+        opportunity_a = models.ExampleOpportunity.objects.create(
             **{**self.opp_base, **dict(title="A")})
-        opportunity_A.purposes.add(self.purpose_A)
-        opportunity_B = models.ExampleOpportunity.objects.create(
+        opportunity_a.purposes.add(self.purpose_a)
+        opportunity_b = models.ExampleOpportunity.objects.create(
             **{**self.opp_base, **dict(title="B")})
 
         opp_search = models.OpportunitySearch.objects.create(
@@ -151,9 +153,9 @@ class OpportunitySearchTestCase(TestCase):
         self.assertEqual(result_set.count(), 2)
 
     def test_opportunity_search_with_personal_investment(self):
-        opportunity_A = models.ExampleOpportunity.objects.create(
+        opportunity_a = models.ExampleOpportunity.objects.create(
             **{**self.opp_base, **dict(title="A", personal_investment=True)})
-        opportunity_B = models.ExampleOpportunity.objects.create(
+        opportunity_b = models.ExampleOpportunity.objects.create(
             **{**self.opp_base, **dict(title="B", personal_investment=False)})
 
         # Return *only* Opps with `False` if user is not investing (False)
@@ -207,8 +209,8 @@ class OpportunitySearchTestCase(TestCase):
         self.assertEqual(result_set_A.count(), 1)
 
         # Return *all* Opps when user is small business (True)
-        opp_search_B = models.OpportunitySearch.objects.create(
-            **{**self.opp_search_base, **{'small_business': True}})
+        query_dict = {**self.opp_search_base, **{'small_business': True}}
+        opp_search_B = models.OpportunitySearch.objects.create(**query_dict)
 
         result_set_B = opp_search_B.search()
         self.assertEqual(result_set_B.count(), 2)
@@ -223,6 +225,22 @@ class OpportunitySearchTestCase(TestCase):
         response = client.post('/wm-api/search/', {
             **{**self.opp_search_base, **{'small_business': False}}
         })
+
+        self.assertEqual(response.status_code, 201)
+        self.assertEqual(len(response.data['results']), 1)
+
+    def test_opportunity_search_create_endpoint_with_purposes(self):
+        opportunity_a = models.ExampleOpportunity.objects.create(
+            **{**self.opp_base, **dict(title="A")})
+        opportunity_a.purposes.add(self.purpose_a)
+        opportunity_b = models.ExampleOpportunity.objects.create(
+            **{**self.opp_base, **dict(title="B")})
+        opportunity_b.purposes.add(self.purpose_b)
+
+        client = Client()
+        query_dict = self.opp_search_base
+        query_dict['purposes'] = [self.purpose_a.pk, ]
+        response = client.post('/wm-api/search/', query_dict)
 
         self.assertEqual(response.status_code, 201)
         self.assertEqual(len(response.data['results']), 1)

@@ -168,10 +168,8 @@ class OpportunitySearch(WhenBase):
         verbose_name_plural = _('Opportunity Searches')
 
     def search(self):
-        opps = apps.get_model(**settings.WEALTHMAP_SEARCHABLE_OPPORTUNITY
-            ).objects.filter(
-            city__iexact=self.city).filter(
-            state=self.state)
+        opps = apps.get_model(**settings.WEALTHMAP_SEARCHABLE_OPPORTUNITY)\
+            .objects.filter(city__iexact=self.city).filter(state=self.state)
 
         if self.industry:
             opps = opps.filter(
