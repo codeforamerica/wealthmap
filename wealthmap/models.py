@@ -1,3 +1,4 @@
+from django.apps import apps
 from django.conf import settings
 from django.contrib.postgres.fields import ArrayField
 from django.db import models
@@ -136,6 +137,8 @@ class OpportunitySearch(WhenBase):
         verbose_name=_('personal investment'))
 
     existing_business = models.CharField(max_length=8,
+                                         null=True,
+                                         blank=True,
                                          choices=EXISTING_BUSINESS_CHOICES,
                                          verbose_name=_('existing business'))
     small_business = models.BooleanField(
@@ -165,7 +168,8 @@ class OpportunitySearch(WhenBase):
         verbose_name_plural = _('Opportunity Searches')
 
     def search(self):
-        opps = Opportunity.objects.filter(
+        opps = apps.get_model(**settings.WEALTHMAP_SEARCHABLE_OPPORTUNITY
+            ).objects.filter(
             city__iexact=self.city).filter(
             state=self.state)
 
