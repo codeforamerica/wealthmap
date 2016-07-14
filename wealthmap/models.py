@@ -168,7 +168,7 @@ class OpportunitySearch(WhenBase):
         verbose_name_plural = _('Opportunity Searches')
 
     def search(self):
-        opps = apps.get_model(**settings.WEALTHMAP_SEARCHABLE_OPPORTUNITY)\
+        opps = get_search_model()\
             .objects.filter(city__iexact=self.city).filter(state=self.state)
 
         if self.industry:
@@ -196,109 +196,17 @@ class OpportunitySearch(WhenBase):
         return opps
 
 
-'''
-class OpportunitySearch(models.Model):
+def get_search_model():
+    '''
+    Serializer shouldn't be defined unless settings are present
+    This situation arises when testing, as tests shouldn't depend
+    on the environment in which the code is running.
+    '''
+    # TODO: Set ExampleOpportunity as default in app settings.
+    if hasattr(settings, 'WEALTHMAP_SEARCHABLE_OPPORTUNITY'):
+        search_model = apps.get_model(
+            **settings.WEALTHMAP_SEARCHABLE_OPPORTUNITY)
+    else:
+        search_model = models.ExampleOpportunity
 
-    def search(self):
-        opps = Opportunity.objects
-
-        def min_max_query(query, field_name, value):
-            """
-            modifies a query so if finds Opportunities which match searches.
-            """
-            min_query = {field_name + '_min__lte': value}
-            max_query = {field_name + '_max__gte': value}
-            no_max = {field_name + '_max__isnull': True}
-            return query.filter(
-                Q(**min_query) & Q(Q(**max_query) | Q(**no_max)))
-
-        def make_contains(field_name, search_term):
-            query_str = '%s__contains' % field_name
-            return Q(**{query_str: [search_term, ]})
-
-        def multi_select(field_name, select):
-            q = make_contains(field_name, 'any')
-            for s in select:
-                q |= make_contains(field_name, s)
-            return q
-
-        opps = opps.filter(multi_select('purpose', self.purpose))
-        if not self.investing_own_money:
-            opps = opps.filter(investing_own_money=False)
-        genders = ['any']
-        if self.gender == 'both':
-            genders.extend(['male', 'female'])
-        else:
-            genders.append(self.gender)
-        opps = opps.filter(gender__in=genders)
-        opps = opps.filter(multi_select('entity_types', [self.entity_type, ]))
-        opps = opps.filter(multi_select('industries', [self.industry, ]))
-        opps = opps.filter(multi_select('locations', self.locations))
-        opps = min_max_query(opps, 'employees', self.employees)
-        opps = opps.filter(
-            minimum_years_in_business__lte=self.years_in_business)
-        opps = min_max_query(opps, 'annual_revenue', self.annual_revenue)
-        opps = opps.order_by('title')
-        return opps
-
-    def segment_search(self):
-        results = self.search()
-        opps_by_type = {
-            key: {'name': value, 'opps': []} for (key, value) in BENEFIT_TYPES}
-        for result in results:
-            for benefit_type in result.benefit_types:
-                opps_by_type[benefit_type]['opps'].append(result)
-        return opps_by_type
-
-    def __str__(self):
-        return 'Search: %s' % self.pk
-
-    class Meta:
-        verbose_name = _('Opportunity Search')
-        verbose_name_plural = _('Opportunity Searches')
-
-
-class Contact(models.Model):
-    """The contact information added to a search so that Agencies
-    get an email.
-    """
-    created_at = models.DateTimeField(
-        auto_now_add=True, verbose_name=_('Contact Date and Time'))
-    full_name = models.CharField(max_length=255,
-                                 verbose_name=_('Full Name'))
-    phone_number = PhoneNumberField(verbose_name=_('Phone Number'))
-    email = models.EmailField(verbose_name=_('Email'))
-    address = models.CharField(max_length=255,
-                               verbose_name=_('Postal Address'))
-    city = models.CharField(max_length=255,
-                            verbose_name=_('City / Town'))
-    state = USStateField(verbose_name=_('State or Province'))
-    postal_code = USZipCodeField(verbose_name=_('Postal Code'))
-    incorporated = models.BooleanField(
-        verbose_name=_('Are You Incorporated?'),
-        choices=YES_NO,
-        blank=False,
-        default=False,
-    )
-    company = models.CharField(max_length=255,
-                               verbose_name=_('Legal Business Name'))
-    company_municipality = models.CharField(
-        max_length=255,
-        verbose_name=_('Company Municipality')
-    )
-    company_state = USStateField(verbose_name=_('Company State or Province'))
-    company_postal_code = USZipCodeField(verbose_name=_('Company Postal Code'))
-    search = models.ForeignKey(OpportunitySearch,
-                               verbose_name=_('Related Search'))
-    opportunities = models.ManyToManyField(
-        Opportunity,
-        verbose_name=_('Related Opportunities')
-    )
-
-    def __str__(self):
-        return self.full_name
-
-    class Meta:
-        verbose_name = _('Search Contact')
-        verbose_name_plural = _('Search Contacts')
-'''
+    return search_model
