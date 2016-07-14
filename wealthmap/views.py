@@ -5,7 +5,7 @@ from . import models
 
 
 class OpportunityRAPI(RetrieveAPIView):
-    queryset = models.Opportunity.objects.all()
+    queryset = models.get_search_model().objects.all()
     serializer_class = OpportunitySerializer
     permission_classes = (AllowAny,)
 
