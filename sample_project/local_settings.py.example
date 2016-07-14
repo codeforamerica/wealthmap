@@ -9,11 +9,8 @@ SECRET_KEY = 'change me'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'sample_project',
+        'NAME': 'wm_sample_project',
     }
 }
-
-COMPRESS_ENABLE = True
-COMPRESS_ROOT = '/tmp/'
 
 DEBUG = True
