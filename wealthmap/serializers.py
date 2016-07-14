@@ -42,7 +42,7 @@ class OpportunitySerializer(serializers.ModelSerializer):
 class OpportunitySearchSerializer(serializers.ModelSerializer):
     results = serializers.SerializerMethodField()
     industry = serializers.PrimaryKeyRelatedField(
-        queryset=models.Industry.objects.all())
+        queryset=models.Industry.objects.all(), required=False)
     purposes = serializers.PrimaryKeyRelatedField(
         queryset=models.Purpose.objects.all(), many=True)
 
