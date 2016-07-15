@@ -271,3 +271,21 @@ class OpportunitySearchTestCase(TestCase):
 
         self.assertEqual(response.status_code, 201)
         self.assertEqual(len(response.data['results']), 1)
+
+    def test_opportunity_search_create_endpoint_with_multiple_purposes(self):
+        opportunity_a = models.ExampleOpportunity.objects.create(
+            **{**self.opp_base, **dict(title="A")})
+        opportunity_a.purposes.add(self.purpose_a)
+        opportunity_a.purposes.add(self.purpose_b)
+        opportunity_b = models.ExampleOpportunity.objects.create(
+            **{**self.opp_base, **dict(title="B")})
+        opportunity_b.purposes.add(self.purpose_a)
+        opportunity_b.purposes.add(self.purpose_b)
+
+        client = Client()
+        query_dict = self.opp_search_base
+        query_dict['purposes'] = [self.purpose_a.pk, self.purpose_b.pk, ]
+        response = client.post('/wm-api/search/', query_dict)
+
+        self.assertEqual(response.status_code, 201)
+        self.assertEqual(len(response.data['results']), 2)

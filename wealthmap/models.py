@@ -222,6 +222,10 @@ class OpportunitySearch(WhenBase):
         if self.purposes.count() > 0:
             opps = opps.filter(purposes__in=self.purposes.all())
 
+        # opps with multiple purposes, industries, etc.
+        # may show up multiple times due to joins
+        opps = opps.distinct()
+
         return opps
 
 
