@@ -47,6 +47,11 @@ class SortableAdmin(SortableAdminMixin, AddCreator):
     pass
 
 
+@admin.register(models.BenefitType)
+class BenefitTypeAdmin(SortableAdmin):
+    form = forms.BenefitTypeForm
+
+
 @admin.register(models.Purpose)
 class PurposeAdmin(SortableAdmin):
     form = forms.PurposeForm
