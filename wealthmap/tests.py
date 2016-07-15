@@ -12,15 +12,9 @@ from . import models
 class OpportunityTestCase(TestCase):
 
     """
-    Tests to demonstrate that the API uses the proper Opportunity subclass
+    Test to demonstrate that the API uses the proper Opportunity subclass
     specified by settings.
     """
-
-    def setUp(self):
-        """
-        Serializer is loaded *after* the app is initialized
-        so that settings can be overridden first (see @override_settings).
-        """
 
     def test_create_api_uses_settings(self):
         """Test that the create API endpoint uses the model defined in
@@ -29,7 +23,7 @@ class OpportunityTestCase(TestCase):
         self.assertEqual(
             OpportunitySerializer.Meta.model, models.ExampleOpportunity)
 
-# This override isn't actually used below
+# This override isn't actually used in the tests below
 # But is included because Django is confused if settings change during testing
 
 
@@ -46,6 +40,10 @@ class OpportunitySearchTestCase(TestCase):
     def setUp(self):
         self.user = auth_models.User.objects.create(
             username='A', password='B')
+        self.benefit_money = models.BenefitType.objects.create(
+            name='Money', creator=self.user)
+        self.benefit_advice = models.BenefitType.objects.create(
+            name='Advice', creator=self.user)
         self.industry_manuf = models.Industry.objects.create(
             name='Manufacturing', creator=self.user)
         self.industry_agri = models.Industry.objects.create(
@@ -91,10 +89,9 @@ class OpportunitySearchTestCase(TestCase):
         opportunity_c = models.ExampleOpportunity.objects.create(
             **{**self.opp_base, **dict(title="C")})
 
-        new_industry = {'industry': self.industry_manuf}
         opp_search = models.OpportunitySearch.objects.create(
-            **{**self.opp_search_base, **new_industry},
-        )
+            **self.opp_search_base)
+        opp_search.industries.add(self.industry_manuf)
 
         result_set = opp_search.search()
         self.assertEqual(result_set.count(), 2)
@@ -117,7 +114,7 @@ class OpportunitySearchTestCase(TestCase):
         self.assertEqual(result_set.count(), 1)
         self.assertEqual(result_set[0], opportunity_a)
 
-    def test_opportunity_search_when_no_industry(self):
+    def test_opportunity_search_without_industry(self):
         """
         If nothing is searched for, only give Opportunities without industry.
         `null` is effectively the same as "Other"
@@ -135,7 +132,7 @@ class OpportunitySearchTestCase(TestCase):
         self.assertEqual(result_set.count(), 1)
         self.assertEqual(result_set[0], opportunity_b)
 
-    def test_opportunity_search_when_no_purpose(self):
+    def test_opportunity_search_without_purpose(self):
         """
         If nothing is searched for, return all Opportunities
         TODO: Could this be more specific? Check back on user data in a year.
@@ -145,6 +142,36 @@ class OpportunitySearchTestCase(TestCase):
         opportunity_a.purposes.add(self.purpose_a)
         opportunity_b = models.ExampleOpportunity.objects.create(
             **{**self.opp_base, **dict(title="B")})
+
+        opp_search = models.OpportunitySearch.objects.create(
+            **self.opp_search_base)
+
+        result_set = opp_search.search()
+        self.assertEqual(result_set.count(), 2)
+
+    def test_opportunity_search_with_benefit_type(self):
+        opportunity_a = models.ExampleOpportunity.objects.create(
+            **{**self.opp_base, **dict(title="A")})
+        opportunity_a.benefit_types.add(self.benefit_money)
+        opportunity_b = models.ExampleOpportunity.objects.create(
+            **{**self.opp_base, **dict(title="B")})
+        opportunity_b.benefit_types.add(self.benefit_advice)
+
+        opp_search = models.OpportunitySearch.objects.create(
+            **self.opp_search_base)
+        opp_search.benefit_types.add(self.benefit_money)
+
+        result_set = opp_search.search()
+        self.assertEqual(result_set.count(), 1)
+        self.assertEqual(result_set[0], opportunity_a)
+
+    def test_opportunity_search_without_benefit_type(self):
+        opportunity_a = models.ExampleOpportunity.objects.create(
+            **{**self.opp_base, **dict(title="A")})
+        opportunity_a.benefit_types.add(self.benefit_money)
+        opportunity_b = models.ExampleOpportunity.objects.create(
+            **{**self.opp_base, **dict(title="B")})
+        opportunity_b.benefit_types.add(self.benefit_advice)
 
         opp_search = models.OpportunitySearch.objects.create(
             **self.opp_search_base)

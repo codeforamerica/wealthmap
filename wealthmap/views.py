@@ -26,6 +26,18 @@ class SearchRAPI(RetrieveAPIView):
     permission_classes = (AllowAny,)
 
 
+class BenefitTypeLAPI(ListAPIView):
+    queryset = models.BenefitType.objects.all()
+    serializer_class = BenefitTypeSerializer
+    permission_classes = (AllowAny,)
+
+
+class BenefitTypeRAPI(RetrieveAPIView):
+    queryset = models.BenefitType.objects.all()
+    serializer_class = BenefitTypeSerializer
+    permission_classes = (AllowAny,)
+
+
 class IndustryLAPI(ListAPIView):
     queryset = models.Industry.objects.all()
     serializer_class = IndustrySerializer

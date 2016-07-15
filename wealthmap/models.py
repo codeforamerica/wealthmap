@@ -57,6 +57,22 @@ class Purpose(WhoAndWhenBase):
         ordering = ('order',)
 
 
+class BenefitType(WhoAndWhenBase):
+    name = models.CharField(max_length=32)
+    order = models.PositiveSmallIntegerField(
+        default=0, blank=False, null=False)
+
+    def __str__(self):
+        return self.name
+
+    class Meta(object):
+        ordering = ('order',)
+
+
+BENEFIT_TYPE_CHOICES = (
+    ('money', _('money')),
+    ('advice', _('advice')))
+
 EXISTING_BUSINESS_CHOICES = (
     ('existing', _('existing business')),
     ('new', _('new business')))
@@ -73,6 +89,10 @@ class Opportunity(WhoAndWhenBase):
         blank=False,
         verbose_name=_('city'))
     state = USStateField(verbose_name=_('state'))
+    benefit_types = models.ManyToManyField(
+        BenefitType,
+        blank=True,
+        verbose_name=_('benefit types'))
     # Industry options: [manufacturing, finance, agriculture, other]
     industries = models.ManyToManyField(
         Industry,
@@ -127,11 +147,12 @@ class OpportunitySearch(WhenBase):
     providing analytics, etc."""
     city = models.CharField(max_length=255, verbose_name=_('city'))
     state = USStateField(verbose_name=_('state'))
+    benefit_types = models.ManyToManyField(
+        BenefitType,
+        verbose_name=_('benefit types'))
     # Industry options: [manufacturing, finance, agriculture, other]
-    industry = models.ForeignKey(
+    industries = models.ManyToManyField(
         Industry,
-        null=True,
-        blank=True,
         verbose_name=_('industries'))
     personal_investment = models.BooleanField(
         verbose_name=_('personal investment'))
@@ -171,9 +192,17 @@ class OpportunitySearch(WhenBase):
         opps = get_search_model()\
             .objects.filter(city__iexact=self.city).filter(state=self.state)
 
-        if self.industry:
+        if self.benefit_types.count() > 0:
             opps = opps.filter(
-                Q(industries=self.industry) | Q(industries__isnull=True))
+                Q(benefit_types__in=self.benefit_types.all()) |
+                Q(benefit_types__isnull=True))
+
+        # If nothing is searched for, only give Opportunities without industry.
+        # `null` is effectively the same as "Other"
+        if self.industries.count() > 0:
+            opps = opps.filter(
+                Q(industries__in=self.industries.all()) |
+                Q(industries__isnull=True))
         else:
             opps = opps.filter(industries__isnull=True)
 
