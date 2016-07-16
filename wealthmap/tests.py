@@ -52,6 +52,8 @@ class OpportunitySearchTestCase(TestCase):
             name='Hiring', creator=self.user)
         self.purpose_b = models.Purpose.objects.create(
             name='Construction', creator=self.user)
+        self.agency = models.Agency.objects.create(
+            name='TestAgency', creator=self.user)
 
         self.opp_base = dict(
             city='Long Beach',
@@ -59,6 +61,7 @@ class OpportunitySearchTestCase(TestCase):
             personal_investment=True,
             small_business=True,
             creator=self.user,
+            agency=self.agency
         )
 
         self.opp_search_base = dict(

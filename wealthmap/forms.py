@@ -36,6 +36,16 @@ class BenefitTypeForm(forms.ModelForm):
         }
 
 
+class AgencyForm(forms.ModelForm):
+
+    class Meta:
+        model = models.Agency
+        exclude = []
+        widgets = {
+            "creator": forms.HiddenInput(),
+        }
+
+
 class IndustryForm(forms.ModelForm):
 
     class Meta:

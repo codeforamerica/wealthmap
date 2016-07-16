@@ -78,6 +78,32 @@ EXISTING_BUSINESS_CHOICES = (
     ('new', _('new business')))
 
 
+class Agency(WhoAndWhenBase):
+
+    """A government or other entity that Opportunities belong to.
+    """
+    name = models.CharField(
+        max_length=255,
+        unique=True,
+        verbose_name=_('name'))
+    phone = models.CharField(
+        max_length=255,
+        blank=True,
+        verbose_name=_('phone'))
+    fax = models.CharField(blank=True, max_length=255, verbose_name=_('fax'))
+    email = models.EmailField(blank=True, verbose_name=_('email'))
+    street_address = models.TextField(blank=True,
+                                      verbose_name=_('street address'))
+    url = models.URLField(max_length=255, blank=True, verbose_name=_('url'))
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = _('Agency')
+        verbose_name_plural = _('Agencies')
+
+
 class Opportunity(WhoAndWhenBase):
 
     """A government sponsored incentive/grant/tax break for businesses.
@@ -125,6 +151,8 @@ class Opportunity(WhoAndWhenBase):
         unique=True,
         blank=False,
         verbose_name=_('title'))
+
+    agency = models.ForeignKey(Agency, verbose_name=_('agency'))
 
     def __str__(self):
         return self.title

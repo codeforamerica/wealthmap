@@ -18,8 +18,9 @@ class AddCreator(AddCreatorMixin, admin.ModelAdmin):
     pass
 
 
-class AddCreatorInline(admin.StackedInline, AddCreatorMixin):
-    pass
+@admin.register(models.Agency)
+class AgencyAdmin(AddCreator):
+    form = forms.AgencyForm
 
 
 @admin.register(models.Opportunity)
