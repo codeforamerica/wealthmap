@@ -58,6 +58,8 @@ class OpportunitySearchSerializer(serializers.ModelSerializer):
 
         obj = models.OpportunitySearch.objects.create(**validated_data)
 
+        if benefit_types:
+            obj.benefit_types.add(*benefit_types)
         if purposes:
             obj.purposes.add(*purposes)
         if industries:
