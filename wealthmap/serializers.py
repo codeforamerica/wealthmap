@@ -46,8 +46,6 @@ class OpportunitySearchSerializer(serializers.ModelSerializer):
         queryset=models.Purpose.objects.all(), many=True)
 
     def get_results(self, obj):
-        # TODO: Dirty way to get valid JSON.
-        # Should actually use OpportunitySerializer somehow
         serializer = OpportunitySerializer(obj.search(), many=True)
         return serializer.data
 

@@ -205,10 +205,6 @@ class OpportunitySearch(WhenBase):
         verbose_name=_('purposes'))
     view_count = models.PositiveIntegerField(default=0)
 
-    def save(self, *args, **kwargs):
-        self.view_count += 1
-        return super(OpportunitySearch, self).save(*args, **kwargs)
-
     def __str__(self):
         return 'Opportunity Search %d' % self.pk
 
@@ -253,7 +249,8 @@ class OpportunitySearch(WhenBase):
         # opps with multiple purposes, industries, etc.
         # may show up multiple times due to joins
         opps = opps.distinct()
-
+        self.view_count += 1
+        self.save()
         return opps
 
 

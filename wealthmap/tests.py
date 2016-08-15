@@ -76,10 +76,11 @@ class OpportunitySearchTestCase(TestCase):
         by one."""
         opp_search = models.OpportunitySearch.objects.create(
             **self.opp_search_base)
-
-        self.assertEqual(opp_search.view_count, 1)
         opp_search.save()
-        self.assertEqual(opp_search.view_count, 2)
+
+        self.assertEqual(opp_search.view_count, 0)
+        opp_search.search()
+        self.assertEqual(opp_search.view_count, 1)
 
     def test_opportunity_search_with_industry(self):
         # Should return Opps with appropriate industry *or* `null` industry
