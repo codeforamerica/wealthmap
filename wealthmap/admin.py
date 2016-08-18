@@ -23,11 +23,6 @@ class AgencyAdmin(AddCreator):
     form = forms.AgencyForm
 
 
-@admin.register(models.Opportunity)
-class OpportunityAdmin(AddCreator):
-    form = forms.OpportunityForm
-
-
 @admin.register(models.OpportunitySearch)
 class OpportunitySearchAdmin(admin.ModelAdmin):
 
