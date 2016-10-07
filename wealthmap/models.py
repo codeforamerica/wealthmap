@@ -78,6 +78,11 @@ EXISTING_BUSINESS_CHOICES = (
     ('new', _('new business')))
 
 
+
+class AgencyProvider(models.Model):
+    name = models.CharField(max_length=64, unique=True)
+
+
 class Agency(WhoAndWhenBase):
 
     """A government or other entity that Opportunities belong to.
@@ -95,6 +100,7 @@ class Agency(WhoAndWhenBase):
     street_address = models.TextField(blank=True,
                                       verbose_name=_('street address'))
     url = models.URLField(max_length=255, blank=True, verbose_name=_('url'))
+    provider = models.ForeignKey(AgencyProvider, null=True, blank=True)
 
     def __str__(self):
         return self.name
@@ -110,6 +116,13 @@ class Opportunity(WhoAndWhenBase):
     These fields represent the properties of a business that would
     be eligible or well-suited for a particular opportunity.
     """
+
+    title = models.CharField(
+        max_length=255,
+        unique=True,
+        blank=False,
+        verbose_name=_('title'))
+
     city = models.CharField(
         max_length=255,
         blank=False,
@@ -133,25 +146,10 @@ class Opportunity(WhoAndWhenBase):
                                          verbose_name=_('existing business'))
     small_business = models.BooleanField(
         verbose_name=_('small business'))
-    # Purpose options:
-    #   - equipment purchase
-    #   - construction/remodel
-    #   - hiring
-    #   - training
-    #   - disaster recovery
-    #   - relocating
-    #   - out of state sales
     purposes = models.ManyToManyField(
         Purpose,
         blank=True,
         verbose_name=_('purposes'))
-
-    title = models.CharField(
-        max_length=255,
-        unique=True,
-        blank=False,
-        verbose_name=_('title'))
-
     agency = models.ForeignKey(Agency, verbose_name=_('agency'))
 
     def __str__(self):
@@ -178,7 +176,6 @@ class OpportunitySearch(WhenBase):
     benefit_types = models.ManyToManyField(
         BenefitType,
         verbose_name=_('benefit types'))
-    # Industry options: [manufacturing, finance, agriculture, other]
     industries = models.ManyToManyField(
         Industry,
         verbose_name=_('industries'))
@@ -192,14 +189,6 @@ class OpportunitySearch(WhenBase):
                                          verbose_name=_('existing business'))
     small_business = models.BooleanField(
         verbose_name=_('small business'))
-    # Purpose options:
-    #   - equipment purchase
-    #   - construction/remodel
-    #   - hiring
-    #   - training
-    #   - disaster recovery
-    #   - relocating
-    #   - out of state sales
     purposes = models.ManyToManyField(
         Purpose,
         verbose_name=_('purposes'))
