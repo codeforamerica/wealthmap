@@ -82,6 +82,8 @@ EXISTING_BUSINESS_CHOICES = (
 class AgencyProvider(models.Model):
     name = models.CharField(max_length=64, unique=True)
 
+    def __str__(self):
+        return self.name
 
 class Agency(WhoAndWhenBase):
 
