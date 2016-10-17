@@ -21,8 +21,6 @@ setup(
     author_email='support@codeforamerica.org',
     install_requires=[
         'django-localflavor>=1.2',
-        'django-formtools>=1.0',
-        'django-bootstrap-form>=3.2,<4.0',
         'djangorestframework>=3.3.3,<3.4',
         'django-cors-headers==1.1.0',
         'django-admin-sortable2==0.6.4',
