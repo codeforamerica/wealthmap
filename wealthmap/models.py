@@ -111,7 +111,7 @@ class Agency(WhoAndWhenBase):
         verbose_name = _('Agency')
         verbose_name_plural = _('Agencies')
 
-
+ 
 class Opportunity(WhoAndWhenBase):
 
     """A government sponsored incentive/grant/tax break for businesses.
@@ -140,18 +140,21 @@ class Opportunity(WhoAndWhenBase):
         blank=True,
         verbose_name=_('industries'))
     personal_investment = models.BooleanField(
-        verbose_name=_('personal investment'))
-    existing_business = models.CharField(max_length=8,
-                                         null=True,
-                                         blank=True,
-                                         choices=EXISTING_BUSINESS_CHOICES,
-                                         verbose_name=_('existing business'))
+        verbose_name=_('requires personal investment'))
+    existing_business = models.CharField(
+        max_length=8,
+        null=True,
+        blank=True,
+        choices=EXISTING_BUSINESS_CHOICES,
+        #empty_label=_('applies to both'),
+        verbose_name=_('does this require a business already exist or not?'))
     small_business = models.BooleanField(
         verbose_name=_('small business'))
     purposes = models.ManyToManyField(
         Purpose,
         blank=True,
-        verbose_name=_('purposes'))
+        verbose_name=_('purposes'),
+        help_text=_('leave blank if none apply'))
     agency = models.ForeignKey(Agency, verbose_name=_('agency'))
 
     def __str__(self):
@@ -184,11 +187,12 @@ class OpportunitySearch(WhenBase):
     personal_investment = models.BooleanField(
         verbose_name=_('personal investment'))
 
-    existing_business = models.CharField(max_length=8,
-                                         null=True,
-                                         blank=True,
-                                         choices=EXISTING_BUSINESS_CHOICES,
-                                         verbose_name=_('existing business'))
+    existing_business = models.CharField(
+            max_length=8,
+            null=True,
+            blank=True,
+            choices=EXISTING_BUSINESS_CHOICES,
+            verbose_name=_('existing business'))
     small_business = models.BooleanField(
         verbose_name=_('small business'))
     purposes = models.ManyToManyField(
@@ -256,6 +260,6 @@ def get_search_model():
         search_model = apps.get_model(
             **settings.WEALTHMAP_SEARCHABLE_OPPORTUNITY)
     else:
-        search_model = models.ExampleOpportunity
+        search_model = ExampleOpportunity
 
     return search_model
