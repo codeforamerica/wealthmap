@@ -48,14 +48,11 @@ class OpportunitySearchSerializer(serializers.ModelSerializer):
         return serializer.data
 
     def create(self, validated_data):
-        benefit_types = validated_data.pop('benefit_types')
         purposes = validated_data.pop('purposes')
         industries = validated_data.pop('industries')
 
         obj = models.OpportunitySearch.objects.create(**validated_data)
 
-        if benefit_types:
-            obj.benefit_types.add(*benefit_types)
         if purposes:
             obj.purposes.add(*purposes)
         if industries:
