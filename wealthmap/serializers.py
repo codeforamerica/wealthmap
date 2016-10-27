@@ -38,8 +38,6 @@ class OpportunitySerializer(serializers.ModelSerializer):
 
 class OpportunitySearchSerializer(serializers.ModelSerializer):
     results = serializers.SerializerMethodField()
-    benefit_types = serializers.PrimaryKeyRelatedField(
-        queryset=models.BenefitType.objects.all(), many=True)
     industries = serializers.PrimaryKeyRelatedField(
         queryset=models.Industry.objects.all(), many=True)
     purposes = serializers.PrimaryKeyRelatedField(
