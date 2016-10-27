@@ -149,36 +149,6 @@ class OpportunitySearchTestCase(TestCase):
         result_set = opp_search.search()
         self.assertEqual(result_set.count(), 2)
 
-    def test_opportunity_search_with_benefit_type(self):
-        opportunity_a = models.ExampleOpportunity.objects.create(
-            **{**self.opp_base, **dict(title="A")})
-        opportunity_a.benefit_types.add(self.benefit_money)
-        opportunity_b = models.ExampleOpportunity.objects.create(
-            **{**self.opp_base, **dict(title="B")})
-        opportunity_b.benefit_types.add(self.benefit_advice)
-
-        opp_search = models.OpportunitySearch.objects.create(
-            **self.opp_search_base)
-        opp_search.benefit_types.add(self.benefit_money)
-
-        result_set = opp_search.search()
-        self.assertEqual(result_set.count(), 1)
-        self.assertEqual(result_set[0], opportunity_a)
-
-    def test_opportunity_search_without_benefit_type(self):
-        opportunity_a = models.ExampleOpportunity.objects.create(
-            **{**self.opp_base, **dict(title="A")})
-        opportunity_a.benefit_types.add(self.benefit_money)
-        opportunity_b = models.ExampleOpportunity.objects.create(
-            **{**self.opp_base, **dict(title="B")})
-        opportunity_b.benefit_types.add(self.benefit_advice)
-
-        opp_search = models.OpportunitySearch.objects.create(
-            **self.opp_search_base)
-
-        result_set = opp_search.search()
-        self.assertEqual(result_set.count(), 2)
-
     def test_opportunity_search_with_personal_investment(self):
         opportunity_a = models.ExampleOpportunity.objects.create(
             **{**self.opp_base, **dict(title="A", personal_investment=True)})

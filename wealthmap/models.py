@@ -85,6 +85,7 @@ class AgencyProvider(models.Model):
     def __str__(self):
         return self.name
 
+
 class Agency(WhoAndWhenBase):
 
     """A government or other entity that Opportunities belong to.
@@ -111,7 +112,7 @@ class Agency(WhoAndWhenBase):
         verbose_name = _('Agency')
         verbose_name_plural = _('Agencies')
 
- 
+
 class Opportunity(WhoAndWhenBase):
 
     """A government sponsored incentive/grant/tax break for businesses.
@@ -171,9 +172,6 @@ class OpportunitySearch(WhenBase):
 
     """Represents a particular user search. Useful for saving past searches,
     providing analytics, etc."""
-    benefit_types = models.ManyToManyField(
-        BenefitType,
-        verbose_name=_('benefit types'))
     industries = models.ManyToManyField(
         Industry,
         verbose_name=_('industries'))
@@ -202,11 +200,6 @@ class OpportunitySearch(WhenBase):
 
     def search(self):
         opps = get_search_model().objects
-
-        if self.benefit_types.count() > 0:
-            opps = opps.filter(
-                Q(benefit_types__in=self.benefit_types.all()) |
-                Q(benefit_types__isnull=True))
 
         # If nothing is searched for, only give Opportunities without industry.
         # `null` is effectively the same as "Other"
