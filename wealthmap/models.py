@@ -125,11 +125,6 @@ class Opportunity(WhoAndWhenBase):
         blank=False,
         verbose_name=_('title'))
 
-    city = models.CharField(
-        max_length=255,
-        blank=False,
-        verbose_name=_('city'))
-    state = USStateField(verbose_name=_('state'))
     benefit_types = models.ManyToManyField(
         BenefitType,
         blank=True,
@@ -176,8 +171,6 @@ class OpportunitySearch(WhenBase):
 
     """Represents a particular user search. Useful for saving past searches,
     providing analytics, etc."""
-    city = models.CharField(max_length=255, verbose_name=_('city'))
-    state = USStateField(verbose_name=_('state'))
     benefit_types = models.ManyToManyField(
         BenefitType,
         verbose_name=_('benefit types'))
@@ -208,8 +201,7 @@ class OpportunitySearch(WhenBase):
         verbose_name_plural = _('Opportunity Searches')
 
     def search(self):
-        opps = get_search_model()\
-            .objects.filter(city__iexact=self.city).filter(state=self.state)
+        opps = get_search_model().objects
 
         if self.benefit_types.count() > 0:
             opps = opps.filter(

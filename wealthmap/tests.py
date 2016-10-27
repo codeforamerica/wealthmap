@@ -56,8 +56,6 @@ class OpportunitySearchTestCase(TestCase):
             name='TestAgency', creator=self.user)
 
         self.opp_base = dict(
-            city='Long Beach',
-            state='CA',
             personal_investment=True,
             small_business=True,
             creator=self.user,
@@ -65,8 +63,6 @@ class OpportunitySearchTestCase(TestCase):
         )
 
         self.opp_search_base = dict(
-            city='Long Beach',
-            state='CA',
             personal_investment=True,
             small_business=True,
         )
