@@ -69,14 +69,6 @@ class BenefitType(WhoAndWhenBase):
         ordering = ('order',)
 
 
-BENEFIT_TYPE_CHOICES = (
-    ('money', _('money')),
-    ('advice', _('advice')))
-
-EXISTING_BUSINESS_CHOICES = (
-    ('existing', _('existing business')),
-    ('new', _('new business')))
-
 
 
 class AgencyProvider(models.Model):
@@ -113,6 +105,17 @@ class Agency(WhoAndWhenBase):
         verbose_name_plural = _('Agencies')
 
 
+BENEFIT_TYPE_CHOICES = (
+    ('money', _('money')),
+    ('advice', _('advice')),
+    )
+
+EXISTING_BUSINESS_CHOICES = (
+    ('existing', _('existing business')),
+    ('new', _('new business')),
+    ('', _('either')),
+    )
+
 class Opportunity(WhoAndWhenBase):
 
     """A government sponsored incentive/grant/tax break for businesses.
@@ -142,8 +145,7 @@ class Opportunity(WhoAndWhenBase):
         null=True,
         blank=True,
         choices=EXISTING_BUSINESS_CHOICES,
-        #empty_label=_('applies to both'),
-        verbose_name=_('does this require a business already exist or not?'))
+        verbose_name=_('this opportunity applies to'))
     small_business = models.BooleanField(
         verbose_name=_('small business'))
     purposes = models.ManyToManyField(
