@@ -147,7 +147,7 @@ class Opportunity(WhoAndWhenBase):
         choices=EXISTING_BUSINESS_CHOICES,
         verbose_name=_('this opportunity applies to'))
     small_business = models.BooleanField(
-        verbose_name=_('small business'))
+        verbose_name=_('must be a small business'))
     purposes = models.ManyToManyField(
         Purpose,
         blank=True,
