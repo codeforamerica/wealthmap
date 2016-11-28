@@ -1,7 +1,30 @@
+from django.views.generic.edit import CreateView
+from django.views.generic.detail import DetailView
+from django.views.generic.list import ListView
 from rest_framework.generics import CreateAPIView, RetrieveAPIView, ListAPIView
 from rest_framework.permissions import AllowAny
 from .serializers import *
-from . import models
+from . import forms, models
+
+
+class OpportunitySearchCreateView(CreateView):
+        model = models.OpportunitySearch
+        form_class = forms.OpportunitySearchForm
+        template_name = 'wealthmap/opportunity_search_form.html'
+
+class OpportunityDetailView(DetailView):
+        model = models.get_search_model()
+        template_name = 'wealthmap/opportunity_detail.html'
+
+
+class OpportunityListView(ListView):
+        model = models.get_search_model()
+        template_name = 'wealthmap/opportunity_list.html'
+
+
+class OpportunitySearchDetailView(DetailView):
+        model = models.OpportunitySearch
+        template_name = 'wealthmap/opportunity_search_detail.html'
 
 
 class OpportunityRAPI(RetrieveAPIView):

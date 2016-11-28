@@ -1,0 +1,8 @@
+{% extends "wealthmap/base.html" %}
+{% block title %}{{ object.title }}{% endblock %}
+{% block header %}{{ object.title }}{% endblock %}
+{% block content %}
+{% if object.description %}
+  {{ object.description|linebreaks }}
+{% endif %}
+{% endblock %}

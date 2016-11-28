@@ -3,6 +3,7 @@ from django.conf import settings
 from django.contrib.postgres.fields import ArrayField
 from django.db import models
 from django.db.models import Q
+from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext as _
 from localflavor.us.models import USStateField, USZipCodeField
 from localflavor.us.models import PhoneNumberField
@@ -199,6 +200,9 @@ class OpportunitySearch(WhenBase):
     class Meta:
         verbose_name = _('Opportunity Search')
         verbose_name_plural = _('Opportunity Searches')
+
+    def get_absolute_url(self):
+        return reverse('wealthmap:opportunity-search-detail', args=(self.pk,))
 
     def search(self):
         opps = get_search_model().objects

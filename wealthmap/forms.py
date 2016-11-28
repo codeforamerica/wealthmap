@@ -12,7 +12,7 @@ class OpportunityListForm(forms.Form):
 class OpportunitySearchForm(forms.ModelForm):
 
     class Meta:
-        fields = '__all__'
+        exclude = ('view_count',)
         model = models.OpportunitySearch
 
 

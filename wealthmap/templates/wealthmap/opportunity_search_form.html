@@ -1,0 +1,9 @@
+{% extends "wealthmap/base.html" %}
+{% block title %}Opportunities Search{% endblock %}
+{% block header %}Opportunity Search{% endblock %}
+{% block content %}
+<form action="" method="post">{% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="Save" />
+</form>
+{% endblock %}
