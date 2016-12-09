@@ -6,7 +6,7 @@
   {% for opportunity in object.search %}
   <li><a href="{% url 'wealthmap:opportunity-detail' opportunity.pk %}">
       {{ opportunity.title}}
-  </a></li>
+    </a><p>{{ opportunity.description }}</p></li>
   {% endfor %}
 </ul>
 {% endblock %}
