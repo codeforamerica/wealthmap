@@ -3,7 +3,7 @@
 {% block header %}Complete List of Opportunities{% endblock %}
 {% block content %}
 <ul>
-  {% for opportunity in (object_list )%}
+  {% for opportunity in object_list %}
   <li><a href="{% url 'wealthmap:opportunity-detail' opportunity.pk %}">
       {{ opportunity.title}}
   </a></li>
