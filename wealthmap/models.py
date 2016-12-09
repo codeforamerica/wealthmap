@@ -177,21 +177,21 @@ class OpportunitySearch(WhenBase):
     providing analytics, etc."""
     industries = models.ManyToManyField(
         Industry,
-        verbose_name=_('industries'))
+        verbose_name=_('What type of business are you?'))
     personal_investment = models.BooleanField(
-        verbose_name=_('personal investment'))
+        verbose_name=_('Are you investing personal money?'))
 
     existing_business = models.CharField(
             max_length=8,
             null=True,
             blank=True,
             choices=EXISTING_BUSINESS_CHOICES,
-            verbose_name=_('existing business'))
+            verbose_name=_('What stage are you at?'))
     small_business = models.BooleanField(
-        verbose_name=_('small business'))
+        verbose_name=_('Are you a small business?'))
     purposes = models.ManyToManyField(
         Purpose,
-        verbose_name=_('purposes'))
+        verbose_name=_('What are you looking for?'))
     view_count = models.PositiveIntegerField(default=0)
 
     def __str__(self):
