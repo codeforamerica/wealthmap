@@ -1,7 +1,7 @@
 {% extends "wealthmap/base.html" %}
 {% load i18n %}
-{% block title %}Opportunities Search2{% endblock %}
-{% block header %}<h1 class="form-card__title">Opportunity Search</h1>{% endblock %}
+{% block title %}Opportunities Search{% endblock %}
+{% block header %}Opportunity Search{% endblock %}
 {% block content %}
 <form action="" method="post">{% csrf_token %}
   {{ form.as_p }}
