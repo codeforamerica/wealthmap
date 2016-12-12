@@ -1,12 +1,17 @@
 {% extends "wealthmap/base.html" %}
 {% block title %}Opportunities{% endblock %}
-{% block header %}Opportunities Search{% endblock %}
+{% block header %}Search Results{% endblock %}
 {% block content %}
 <ul>
   {% for opportunity in object.search %}
-  <li><a href="{% url 'wealthmap:opportunity-detail' opportunity.pk %}">
+  <li>
+  <h2>
+  	<a href="{% url 'wealthmap:opportunity-detail' opportunity.pk %}">
       {{ opportunity.title}}
-    </a><p>{{ opportunity.description }}</p></li>
+    </a>
+   </h2>
+    <p>{{ opportunity.description }}</p>
+  </li>
   {% endfor %}
 </ul>
 {% endblock %}
