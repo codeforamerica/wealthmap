@@ -8,23 +8,24 @@ from . import forms, models
 
 
 class OpportunitySearchCreateView(CreateView):
-        model = models.OpportunitySearch
-        form_class = forms.OpportunitySearchForm
-        template_name = 'wealthmap/opportunity_search_form.html'
+    model = models.OpportunitySearch
+    form_class = forms.OpportunitySearchForm
+    template_name = 'wealthmap/opportunity_search_form.html'
+
 
 class OpportunityDetailView(DetailView):
-        model = models.get_search_model()
-        template_name = 'wealthmap/opportunity_detail.html'
+    model = models.get_search_model()
+    template_name = 'wealthmap/opportunity_detail.html'
 
 
 class OpportunityListView(ListView):
-        model = models.get_search_model()
-        template_name = 'wealthmap/opportunity_list.html'
+    model = models.get_search_model()
+    template_name = 'wealthmap/opportunity_list.html'
 
 
 class OpportunitySearchDetailView(DetailView):
-        model = models.OpportunitySearch
-        template_name = 'wealthmap/opportunity_search_detail.html'
+    model = models.OpportunitySearch
+    template_name = 'wealthmap/opportunity_search_detail.html'
 
 
 class OpportunityRAPI(RetrieveAPIView):

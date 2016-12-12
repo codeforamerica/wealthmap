@@ -70,8 +70,6 @@ class BenefitType(WhoAndWhenBase):
         ordering = ('order',)
 
 
-
-
 class AgencyProvider(models.Model):
     name = models.CharField(max_length=64, unique=True)
 
@@ -109,13 +107,14 @@ class Agency(WhoAndWhenBase):
 BENEFIT_TYPE_CHOICES = (
     ('money', _('money')),
     ('advice', _('advice')),
-    )
+)
 
 EXISTING_BUSINESS_CHOICES = (
     ('existing', _('existing business')),
     ('new', _('new business')),
     ('', _('either')),
-    )
+)
+
 
 class Opportunity(WhoAndWhenBase):
 
@@ -182,11 +181,11 @@ class OpportunitySearch(WhenBase):
         verbose_name=_('Are you investing personal money?'))
 
     existing_business = models.CharField(
-            max_length=8,
-            null=True,
-            blank=True,
-            choices=EXISTING_BUSINESS_CHOICES,
-            verbose_name=_('What stage are you at?'))
+        max_length=8,
+        null=True,
+        blank=True,
+        choices=EXISTING_BUSINESS_CHOICES,
+        verbose_name=_('What stage are you at?'))
     small_business = models.BooleanField(
         verbose_name=_('Are you a small business?'))
     purposes = models.ManyToManyField(
