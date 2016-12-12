@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'adminsortable2',
     'wealthmap',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE_CLASSES = [

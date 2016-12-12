@@ -24,6 +24,7 @@ setup(
         'djangorestframework>=3.3.3,<3.4',
         'django-cors-headers==1.1.0',
         'django-admin-sortable2==0.6.4',
+        'django-widget-tweaks==1.4.1',
     ],
     classifiers=[
         'Environment :: Web Environment',
