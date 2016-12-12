@@ -57,6 +57,7 @@ class PurposeAdmin(SortableAdmin):
 class IndustryAdmin(SortableAdmin):
     form = forms.IndustryForm
 
+
 @admin.register(models.AgencyProvider)
 class AgencyProviderAdmin(admin.ModelAdmin):
     pass

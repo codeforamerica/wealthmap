@@ -14,6 +14,10 @@ class OpportunitySearchForm(forms.ModelForm):
     class Meta:
         exclude = ('view_count',)
         model = models.OpportunitySearch
+        widgets = {
+            "industries": forms.CheckboxSelectMultiple(),
+            "purposes": forms.CheckboxSelectMultiple(),
+        }
 
 
 class OpportunityForm(forms.ModelForm):

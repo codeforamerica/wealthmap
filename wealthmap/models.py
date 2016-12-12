@@ -70,8 +70,6 @@ class BenefitType(WhoAndWhenBase):
         ordering = ('order',)
 
 
-
-
 class AgencyProvider(models.Model):
     name = models.CharField(max_length=64, unique=True)
 
@@ -109,13 +107,14 @@ class Agency(WhoAndWhenBase):
 BENEFIT_TYPE_CHOICES = (
     ('money', _('money')),
     ('advice', _('advice')),
-    )
+)
 
 EXISTING_BUSINESS_CHOICES = (
     ('existing', _('existing business')),
     ('new', _('new business')),
     ('', _('either')),
-    )
+)
+
 
 class Opportunity(WhoAndWhenBase):
 
@@ -177,21 +176,21 @@ class OpportunitySearch(WhenBase):
     providing analytics, etc."""
     industries = models.ManyToManyField(
         Industry,
-        verbose_name=_('industries'))
+        verbose_name=_('What type of business are you?'))
     personal_investment = models.BooleanField(
-        verbose_name=_('personal investment'))
+        verbose_name=_('Are you investing personal money?'))
 
     existing_business = models.CharField(
-            max_length=8,
-            null=True,
-            blank=True,
-            choices=EXISTING_BUSINESS_CHOICES,
-            verbose_name=_('existing business'))
+        max_length=8,
+        null=True,
+        blank=True,
+        choices=EXISTING_BUSINESS_CHOICES,
+        verbose_name=_('What stage are you at?'))
     small_business = models.BooleanField(
-        verbose_name=_('small business'))
+        verbose_name=_('Are you a small business?'))
     purposes = models.ManyToManyField(
         Purpose,
-        verbose_name=_('purposes'))
+        verbose_name=_('What are you looking for?'))
     view_count = models.PositiveIntegerField(default=0)
 
     def __str__(self):
