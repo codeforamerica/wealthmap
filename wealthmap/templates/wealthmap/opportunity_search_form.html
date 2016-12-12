@@ -3,11 +3,17 @@
 {% block title %}Opportunities Search{% endblock %}
 {% block header %}Opportunity Search{% endblock %}
 {% block content %}
-<form action="" method="post">{% csrf_token %}
+
+
+
+<form action="" method="post">
+{% csrf_token %}
   {{ form.as_p }}
 
-  <div class="form-card__footer">
+  <div class="form-card__footer form-group">
+
   	<input type="submit" value="{% trans 'Search' %}" class="button button--small button--primary" />
+
   </div>
 </form>
 {% endblock %}
