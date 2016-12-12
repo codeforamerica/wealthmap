@@ -7,13 +7,15 @@
 
 
 <form action="" method="post">
-{% csrf_token %}
-  {{ form.as_p }}
-
-  <div class="form-card__footer form-group">
-
-  	<input type="submit" value="{% trans 'Search' %}" class="button button--small button--primary" />
-
-  </div>
+	{% csrf_token %}
+	{% for field in form %}
+	<div class=" form-group">
+		<label class="checkbox">{{ field.label }}</label>
+		{% render_field field class+="form-control" %}
+	</div>
+	{% endfor %}
+	<div class="form-card__footer">
+		<input type="submit" value="{% trans 'Search' %}" class="button button--small button--primary" />
+	</div>
 </form>
 {% endblock %}
