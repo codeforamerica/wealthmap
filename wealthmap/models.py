@@ -48,6 +48,7 @@ class Industry(WhoAndWhenBase):
 
 class Purpose(WhoAndWhenBase):
     name = models.CharField(max_length=32)
+    description = models.CharField(max_length=255)
     order = models.PositiveSmallIntegerField(
         default=0, blank=False, null=False)
 
