@@ -228,8 +228,8 @@ class OpportunitySearch(WhenBase):
         if not self.personal_investment:
             opps = opps.filter(personal_investment=self.personal_investment)
 
-        if self.existing_business:
-            opps = opps.filter(existing_business=self.existing_business)
+        opps = opps.filter(Q(existing_business=self.existing_business) |\
+                        Q(existing_business__isnull=True))
 
         # only filter by small_business if `False`
         # if `True`, just return all Opps to the user

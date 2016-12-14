@@ -13,7 +13,6 @@ class OpportunitySearchCreateView(CreateView):
     template_name = 'wealthmap/opportunity_search_form.html'
 
 
-
 class OpportunityDetailView(DetailView):
     model = models.get_search_model()
     template_name = 'wealthmap/opportunity_detail.html'

@@ -59,12 +59,13 @@ class OpportunitySearchTestCase(TestCase):
             personal_investment=True,
             small_business=True,
             creator=self.user,
-            agency=self.agency
+            agency=self.agency,
         )
 
         self.opp_search_base = dict(
             personal_investment=True,
             small_business=True,
+            existing_business='existing',
         )
 
     def test_view_count_increments(self):
@@ -178,19 +179,12 @@ class OpportunitySearchTestCase(TestCase):
         models.ExampleOpportunity.objects.create(
             **{**self.opp_base, **dict(title="C")})
 
-        # Return *only* Opps with relevant value when specified
+        # Return *only* Opps with relevant value and also where its null
         opp_search_A = models.OpportunitySearch.objects.create(
             **{**self.opp_search_base, **{'existing_business': 'existing'}})
 
         result_set_A = opp_search_A.search()
-        self.assertEqual(result_set_A.count(), 1)
-
-        # Return *all* Opps when no value is specified
-        opp_search_B = models.OpportunitySearch.objects.create(
-            **self.opp_search_base)
-
-        result_set_B = opp_search_B.search()
-        self.assertEqual(result_set_B.count(), 3)
+        self.assertEqual(result_set_A.count(), 2)
 
     def test_opportunity_search_with_small_business(self):
         models.ExampleOpportunity.objects.create(
