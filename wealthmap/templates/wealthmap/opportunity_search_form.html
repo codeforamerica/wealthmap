@@ -2,15 +2,23 @@
 {% load i18n widget_tweaks %}
 {% block title %}Opportunities Search{% endblock %}
 {% block header %}Opportunity Search{% endblock %}
+{% block subhead %}
+	San Diego has many resources for local businesses.
+	These include grants, training, mentorship, and more.
+	Answer a few questions about your business and we'll
+	tell you what you're eligible for.
+{% endblock %}
 {% block content %}
-
 
 
 <form action="" method="post">
 	{% csrf_token %}
+
+
+
 	{% for field in form %}
-	<div class=" form-group">
-		<label class="checkbox">{{ field.label }}</label>
+	<div class="form-group">
+		<label>{{ field.label }}</label>
 		{% render_field field class+="form-control" %}
 	</div>
 	{% endfor %}

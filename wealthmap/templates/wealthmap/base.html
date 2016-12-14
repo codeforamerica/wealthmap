@@ -4,16 +4,19 @@
   <link rel="stylesheet" href="/static/wealthmap/css/style.css">
 </head>
 <body>
-<div class="slab">
-<div class="grid">
-	<div class="form-card">
-		<header class="form-card__header"><h1 class="form-card__title">{% block header %}{% endblock %}</h1></header>
-		<section>
-		  {% block content %}
-		  {% endblock %}
-		</section>
-	</div>
-</div>
-</div>
+  <div class="slab">
+    <div class="grid">
+      <div class="form-card">
+        <header class="form-card__header">
+          <h1 class="form-card__title">{% block header %}{% endblock %}</h1>
+          <p>{% block subhead %}{% endblock %}</p>
+        </header>
+        <section>
+          {% block content %}
+          {% endblock %}
+        </section>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

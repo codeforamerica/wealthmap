@@ -4,9 +4,14 @@
 {% block content %}
 <ul>
   {% for opportunity in object.search %}
-  <li><a href="{% url 'wealthmap:opportunity-detail' opportunity.pk %}">
+  <li>
+    <a href="{% url 'wealthmap:opportunity-detail' opportunity.pk %}">
       {{ opportunity.title}}
-    </a><p>{{ opportunity.description }}</p></li>
+    </a>
+    <p>
+      {{ opportunity.description }}
+    </p>
+  </li>
   {% endfor %}
 </ul>
 {% endblock %}

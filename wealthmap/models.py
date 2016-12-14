@@ -33,6 +33,7 @@ class WhoAndWhenBase(WhenBase):
 
 
 class Industry(WhoAndWhenBase):
+    question_text = models.CharField(max_length=255, null=True)
     name = models.CharField(max_length=32)
     order = models.PositiveSmallIntegerField(
         default=0, blank=False, null=False)
@@ -68,8 +69,6 @@ class BenefitType(WhoAndWhenBase):
 
     class Meta(object):
         ordering = ('order',)
-
-
 
 
 class AgencyProvider(models.Model):
@@ -178,6 +177,7 @@ class OpportunitySearch(WhenBase):
     industries = models.ManyToManyField(
         Industry,
         verbose_name=_('What type of business are you?'))
+
     personal_investment = models.BooleanField(
         verbose_name=_('Are you investing personal money?'))
 
@@ -187,11 +187,14 @@ class OpportunitySearch(WhenBase):
             blank=True,
             choices=EXISTING_BUSINESS_CHOICES,
             verbose_name=_('What stage are you at?'))
+
     small_business = models.BooleanField(
         verbose_name=_('Are you a small business?'))
+
     purposes = models.ManyToManyField(
         Purpose,
         verbose_name=_('What are you looking for?'))
+
     view_count = models.PositiveIntegerField(default=0)
 
     def __str__(self):
