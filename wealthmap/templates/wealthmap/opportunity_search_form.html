@@ -14,16 +14,62 @@
 <form action="" method="post">
 	{% csrf_token %}
 
-
-
-	{% for field in form %}
-	<div class="form-group">
-		<label>{{ field.label }}</label>
-		{% render_field field class+="form-control" %}
+	<strong>
+		<legend>Which types of business are you?</legend>
+	</strong>
+	<p>Pick which terms descript your industry. You can choose more than one.</p>
+	<div class="grid with-padding-large">
+		{% for item in form.industries %}
+			<div class="grid__item width-one-half {% cycle '' 'end-row' %}">
+				<label class="radio-button">
+					{{ item }}
+				</label>
+			</div>
+		{% endfor %}
 	</div>
+
+	<strong>
+		<label>Is this a personal investment?</label>
+	</strong>
+	<p>Are you self-funded or do you receive outside funding?</p>
+	<div class="grid with-padding-large">
+		{% for item in form.personal_investment %}
+			<label class="radio-button">
+				{{ item }}
+				Yes, I am a self-funded business.
+			</label>
+		{% endfor %}
+	</div>
+
+	<strong>
+		<label>What stage are you at?</label>
+	</strong>
+	<p>Tailor your results to the stage of your business.</p>
+	<div class="grid with-padding-large">
+		{% for item in form.existing_business %}
+			<div class="grid__item width-one-third {% cycle '' '' 'end-row' %}">
+				<label class="radio-button">
+					{{ item }}
+				</label>
+			</div>
+		{% endfor %}
+	</div>
+
+	<strong><label>What are you looking for?</label></strong>
+	<p>Narrow down your results by choosing which type of resources you're interested in.
+	You can pick as many as you like.</p>
+	<div class="grid with-padding-large">
+	{% for item in form.purposes %}
+		<div class="grid__item width-one-half {% cycle '' 'end-row' %}">
+			<label class="radio-button">
+				{{ item }}
+			</label>
+		</div>
 	{% endfor %}
+	</div>
+
 	<div class="form-card__footer">
-		<input type="submit" value="{% trans 'Search' %}" class="button button--small button--primary" />
+		<input type="submit" value="{% trans 'Search' %}" class="button button--large button--primary" />
 	</div>
 </form>
 {% endblock %}

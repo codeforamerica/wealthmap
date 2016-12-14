@@ -33,7 +33,6 @@ class WhoAndWhenBase(WhenBase):
 
 
 class Industry(WhoAndWhenBase):
-    question_text = models.CharField(max_length=255, null=True)
     name = models.CharField(max_length=32)
     order = models.PositiveSmallIntegerField(
         default=0, blank=False, null=False)
