@@ -117,6 +117,9 @@ EXISTING_BUSINESS_CHOICES = (
 )
 
 
+EXISTING_BUSINESS_CHOICES_SEARCH = EXISTING_BUSINESS_CHOICES[0:2]
+
+
 class Opportunity(WhoAndWhenBase):
 
     """A government sponsored incentive/grant/tax break for businesses.
@@ -183,9 +186,10 @@ class OpportunitySearch(WhenBase):
 
     existing_business = models.CharField(
         max_length=8,
-        null=True,
-        blank=True,
-        choices=EXISTING_BUSINESS_CHOICES,
+        null=False,
+        blank=False,
+        default='Unspecified',
+        choices=EXISTING_BUSINESS_CHOICES_SEARCH,
         verbose_name=_('What stage are you at?'))
     small_business = models.BooleanField(
         verbose_name=_('Are you a small business?'))
