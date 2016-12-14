@@ -17,7 +17,7 @@ class OpportunitySearchForm(forms.ModelForm):
         widgets = {
             "industries": forms.CheckboxSelectMultiple(),
             "purposes": forms.CheckboxSelectMultiple(),
-            "existing_business": forms.CheckboxSelectMultiple(),
+            "existing_business": forms.RadioSelect(),
         }
 
 

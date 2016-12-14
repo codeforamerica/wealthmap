@@ -48,6 +48,7 @@ class Industry(WhoAndWhenBase):
 
 class Purpose(WhoAndWhenBase):
     name = models.CharField(max_length=32)
+    description = models.CharField(max_length=255)
     order = models.PositiveSmallIntegerField(
         default=0, blank=False, null=False)
 
@@ -107,13 +108,17 @@ class Agency(WhoAndWhenBase):
 BENEFIT_TYPE_CHOICES = (
     ('money', _('money')),
     ('advice', _('advice')),
-    )
+)
 
 EXISTING_BUSINESS_CHOICES = (
     ('existing', _('existing business')),
     ('new', _('new business')),
     ('', _('either')),
-    )
+)
+
+
+EXISTING_BUSINESS_CHOICES_SEARCH = EXISTING_BUSINESS_CHOICES[0:2]
+
 
 class Opportunity(WhoAndWhenBase):
 
@@ -181,12 +186,12 @@ class OpportunitySearch(WhenBase):
         verbose_name=_('Are you investing personal money?'))
 
     existing_business = models.CharField(
-            max_length=8,
-            null=True,
-            blank=True,
-            choices=EXISTING_BUSINESS_CHOICES,
-            verbose_name=_('What stage are you at?'))
-
+        max_length=8,
+        null=False,
+        blank=False,
+        default='Unspecified',
+        choices=EXISTING_BUSINESS_CHOICES_SEARCH,
+        verbose_name=_('What stage are you at?'))
     small_business = models.BooleanField(
         verbose_name=_('Are you a small business?'))
 
