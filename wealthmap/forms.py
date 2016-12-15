@@ -10,7 +10,6 @@ class OpportunityListForm(forms.Form):
 
 
 class OpportunitySearchForm(forms.ModelForm):
-
     class Meta:
         exclude = ('view_count',)
         model = models.OpportunitySearch
