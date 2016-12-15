@@ -5,4 +5,8 @@
 {% if object.description %}
   {{ object.description|linebreaks }}
 {% endif %}
+	<div class="form-card__footer">
+		<a onclick="window.history.back();" class="button button--primary">Return to results</a>
+		<a href="/"  class="button">New search</a>
+	</div>
 {% endblock %}
