@@ -111,8 +111,8 @@ BENEFIT_TYPE_CHOICES = (
 )
 
 EXISTING_BUSINESS_CHOICES = (
-    ('existing', _('existing business')),
-    ('new', _('new business')),
+    ('existing', _('Existing business')),
+    ('new', _('New business')),
     ('', _('either')),
 )
 
