@@ -446,10 +446,10 @@ h4:first-child {
     margin-top: 0em
 }
 a {
-    color: #019C86
+    color: #1899d8
 }
 a:hover {
-    color: #017d6b
+    color: #1273a2
 }
 .link--subtle {
     color: inherit
@@ -1075,32 +1075,32 @@ only screen and (min-width: 601px) and (min-resolution: 1.3dppx) {
 }
 .button--cta {
     color: #FFFFFF;
-    background-color: #A6005E;
-    border-color: #A6005E;
-    border-bottom-color: #8d0050
+    background-color: #eb9541;
+    border-color: #eb9541;
+    border-bottom-color: #b07031
 }
 .button--cta:hover {
-    background-color: #b8337e;
+    background-color: #b07031;
     color: #FFFFFF
 }
 .button--cta:active {
-    background-color: #8d0050
+    background-color: #b07031
 }
 .button--primary,
 .pagination .pagination__selected {
     color: #FFFFFF;
-    background-color: #019C86;
-    border-color: #019C86;
-    border-bottom-color: #018572
+    background-color: #1899d8;
+    border-color: #1899d8;
+    border-bottom-color: #1273a2
 }
 .button--primary:hover,
 .pagination .pagination__selected:hover {
-    background-color: #34b09e;
+    background-color: #1273a2;
     color: #FFFFFF
 }
 .button--primary:active,
 .pagination .pagination__selected:active {
-    background-color: #018572
+    background-color: #1273a2
 }
 .button--danger {
     color: #D40000
@@ -1128,7 +1128,8 @@ fieldset {
     margin: 0
 }
 label {
-    line-height: 1.5em
+    line-height: 1.5em;
+    cursor: pointer;
 }
 .form-question {
     display: block;
@@ -1155,7 +1156,7 @@ label {
     outline: none
 }
 .text-input:focus {
-    border-color: #019C86
+    border-color: #1899d8
 }
 .text-input::-webkit-input-placeholder {
     color: #AAAAAA
@@ -1196,8 +1197,8 @@ label {
     background-color: #EAEAE9
 }
 .radio-button.is-selected {
-    background-color: #019C86;
-    border-color: #019C86;
+    background-color: #1899d8;
+    border-color: #1899d8;
     color: #fff
 }
 .checkbox {
@@ -1227,8 +1228,8 @@ label {
     background-color: #EAEAE9
 }
 .checkbox.is-selected {
-    background-color: #019C86;
-    border-color: #019C86;
+    background-color: #1899d8;
+    border-color: #1899d8;
     color: #fff
 }
 .textarea {
@@ -1241,7 +1242,7 @@ label {
     margin-bottom: .5em
 }
 .textarea:focus {
-    border-color: #019C86
+    border-color: #1899d8
 }
 .select {
     position: relative;
@@ -1263,7 +1264,7 @@ label {
     font-family: "icomoon";
     content: '\e313';
     background-color: #EAEAE9;
-    color: #019C86;
+    color: #1899d8;
     border: 2px solid #EAEAE9;
     width: 2em;
     text-align: center;
@@ -1295,7 +1296,7 @@ label {
     background-color: transparent
 }
 .select__element:focus {
-    border-color: #019C86
+    border-color: #1899d8
 }
 .file-upload__input {
     width: .1px;
@@ -1361,6 +1362,7 @@ label {
 .media-box--reversed .media--icon {
     margin-left: 1em
 }
+
 .media--small {
     width: 4.8em;
     margin-right: 1em
@@ -1487,7 +1489,7 @@ label {
     padding: .7em 1em;
     font-size: 1.6rem;
     background-color: #FFFFFF;
-    border: 2px solid #019C86;
+    border: 2px solid #1899d8;
     border-top: 0;
     border-radius: 2px;
     border-top-left-radius: 0;
@@ -1530,7 +1532,7 @@ label {
     color: #666666;
     text-align: center;
     text-decoration: none;
-    border-left: 0px solid #019C86
+    border-left: 0px solid #1899d8
 }
 .flash__dismiss:hover {
     background-color: #e6f5f3
@@ -1577,7 +1579,7 @@ label {
     outline: 0
 }
 .searchbar__input:focus {
-    border-color: #019C86
+    border-color: #1899d8
 }
 .searchbar__button {
     -webkit-transition: all 0.1s ease-out;
@@ -1593,7 +1595,7 @@ label {
     width: 1%;
     border: 2px solid #EAEAE9;
     background-color: #EAEAE9;
-    color: #019C86;
+    color: #1899d8;
     text-align: center;
     margin: 0
 }
@@ -1601,12 +1603,12 @@ label {
     display: none
 }
 .searchbar__button:hover {
-    color: #019C86;
+    color: #1899d8;
     background-color: #f0f0f0;
     border-color: #f0f0f0
 }
 .searchbar__button:active {
-    color: #019C86;
+    color: #1899d8;
     background-color: #d3d3d2;
     border-color: #d3d3d2
 }
@@ -1744,7 +1746,7 @@ label {
     -ms-user-select: none;
     user-select: none;
     cursor: pointer;
-    color: #019C86;
+    color: #1899d8;
     display: table-cell;
     width: 1%;
     background-color: #EAEAE9;
@@ -1814,7 +1816,7 @@ label {
     color: #FFFFFF
 }
 .scroller--light:hover {
-    color: #A6005E
+    color: #eb9541
 }
 .progress-indicator {
     width: 10em;
@@ -1839,7 +1841,7 @@ label {
     height: 6px;
     min-width: 6px;
     border-radius: 3px;
-    background-color: #019C86
+    background-color: #1899d8
 }
 .progress-indicator__percentage {
     margin-top: .5em;
@@ -1895,7 +1897,7 @@ label {
 }
 .data-table th .is-selected,
 .data-table td .is-selected {
-    color: #019C86;
+    color: #1899d8;
     font-weight: 700
 }
 @media screen and (min-width: 601px) {
@@ -2223,7 +2225,7 @@ body {
     background-color: #DEDED1
 }
 .template--styleguide .color--teal:before {
-    background-color: #019C86
+    background-color: #1899d8
 }
 .template--styleguide .color--darkest-grey:before {
     background-color: #30302F
