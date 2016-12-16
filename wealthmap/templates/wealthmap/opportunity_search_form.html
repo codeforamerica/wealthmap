@@ -14,6 +14,19 @@
 <form action="" method="post">
 	{% csrf_token %}
 
+	<strong><label>What are you looking for?</label></strong>
+	<p>Narrow down your results by choosing which type of resources you're interested in.
+	You can pick as many as you like.</p>
+	<div class="grid with-padding-large">
+	{% for item in form.purposes %}
+		<div class="grid__item width-one-half {% cycle '' 'end-row' %}">
+			<label class="checkbox">
+				{{ item }}
+			</label>
+		</div>
+	{% endfor %}
+	</div>
+
 	<strong>
 		<legend>
 			Which types of business are you?
@@ -35,13 +48,16 @@
 	</strong>
 	<p>Some opportunities offer money that you're required to raise match funding for.</p>
 	<div class="grid with-padding-large">
-		<div class="input-group--block">
+		<div class="input-group">
 			{% for item in form.personal_investment %}
 				<label class="checkbox">
 					{{ item }}
-					Yes I have access to money for match funding.
+					Yes, I have access to money for match funding.
 				</label>
 			{% endfor %}
+			{% if form.personal_investment.error %}
+				<p>There was an error</p>
+			{% endif %}
 		</div>
 	</div>
 
@@ -57,19 +73,6 @@
 				</label>
 			</div>
 		{% endfor %}
-	</div>
-
-	<strong><label>What are you looking for?</label></strong>
-	<p>Narrow down your results by choosing which type of resources you're interested in.
-	You can pick as many as you like.</p>
-	<div class="grid with-padding-large">
-	{% for item in form.purposes %}
-		<div class="grid__item width-one-half {% cycle '' 'end-row' %}">
-			<label class="checkbox">
-				{{ item }}
-			</label>
-		</div>
-	{% endfor %}
 	</div>
 
 	<div class="form-card__footer">
